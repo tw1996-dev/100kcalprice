@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator kosztu 100 kcal</title>
+
+        <!-- STYLES -->
+     <link rel="stylesheet" href="css/calc.css">
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 Kalkulator kosztu 100 kcal</h1>
+            <p>Sprawdź, ile kosztuje energia w różnych produktach</p>
+        </header>
+
+        <div class="mode-switcher">
+            <div class="mode-slider"></div>
+            <button class="mode-btn active" onclick="switchMode(0)">
+                Za kilogram
+            </button>
+            <button class="mode-btn" onclick="switchMode(1)">
+                Za sztukę
+            </button>
+        </div>
+
+        <div class="controls">
+            <!-- Mode 1: Per kilogram -->
+            <div class="input-section active" id="mode-kg">
+                <div class="form-group">
+                    <input type="text" id="productName1" placeholder=" ">
+                    <label for="productName1">Nazwa produktu (opcjonalnie)</label>
+                </div>
+                
+            <div class="forms-wrapper">
+                <div class="form-group">
+                    <input type="number" id="calories1" placeholder=" " min="1" inputmode="numeric">
+                    <label for="calories1">Kcal/100g</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" id="pricePerKg" placeholder=" " step="0.01" min="0" inputmode="decimal">
+                    <label for="pricePerKg">Cena za kg (zł)</label>
+                </div>
+            </div>  
+                <button class="btn" onclick="addProductKg()">➕ Dodaj produkt</button>
+            </div>
+
+            <!-- Mode 2: Per piece -->
+            <div class="input-section" id="mode-piece">
+                <div class="form-group">
+                    <input type="text" id="productName2" placeholder=" ">
+                    <label for="productName2">Nazwa produktu (opcjonalnie)</label>
+                </div>
+                
+            <div class="forms-wrapper">
+                <div class="form-group">
+                    <input type="number" id="pieceWeight" placeholder=" " min="1" inputmode="numeric">
+                    <label for="pieceWeight">Waga sztuki (g)</label>
+                </div>
+                
+                <div class="form-group">
+                    <input type="number" id="calories2" placeholder=" " min="1" inputmode="numeric">
+                    <label for="calories2">Kcal/100g</label>
+                </div>
+            </div>
+            
+            <div class="forms-wrapper">
+                <div class="price-inputs">
+                    <div class="price-input-group">
+                        <input type="number" id="pricePerPiece" placeholder=" " step="0.01" min="0" inputmode="decimal">
+                        <label for="pricePerPiece">Cena za sztukę (zł)</label>
+                    </div>
+                    <div class="price-input-group">
+                        <input type="number" id="pricePerKg2" placeholder=" " step="0.01" min="0" inputmode="decimal">
+                        <label for="pricePerKg2">Cena za kilogram (zł)</label>
+                    </div>
+                </div>
+            </div>
+                <button class="btn" onclick="addProductPiece()">➕ Dodaj produkt</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>🍎 Produkt</th>
+                        <th>🔥 Kcal/100g</th>
+                        <th>💵 Cena za kg</th>
+                        <th>💰 Koszt 100 kcal</th>
+                        <th>🗑️</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <tr class="no-products">
+                        <td colspan="5">Dodaj pierwszy produkt, aby zobaczyć porównanie kosztów! 🚀</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/calculator.js"></script>
+</body>
+</html>

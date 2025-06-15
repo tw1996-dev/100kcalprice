@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kalkulator kosztu 100 kcal</title>
 
-        <!-- STYLES -->
-     <link rel="stylesheet" href="css/calc.css">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="css/calc.css">
 
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -30,55 +32,53 @@
             <!-- Mode 1: Per kilogram -->
             <div class="input-section active" id="mode-kg">
                 <div class="form-group">
-                    <input type="text" id="productName1" placeholder=" ">
+                    <input type="text" id="productName1" maxlength="30" placeholder=" ">
                     <label for="productName1">Nazwa produktu (opcjonalnie)</label>
                 </div>
-                
-            <div class="forms-wrapper">
-                <div class="form-group">
-                    <input type="number" id="calories1" placeholder=" " min="1" inputmode="numeric">
-                    <label for="calories1">Kcal/100g</label>
+
+                <div class="forms-wrapper">
+                    <div class="form-group">
+                        <input type="number" id="calories1" placeholder=" " min="1" inputmode="numeric">
+                        <label for="calories1">Kcal/100g</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" id="pricePerKg" placeholder=" " step="0.01" min="0.1" inputmode="decimal">
+                        <label for="pricePerKg">Cena za kg (zł)</label>
+                    </div>
                 </div>
-                
-                <div class="form-group">
-                    <input type="number" id="pricePerKg" placeholder=" " step="0.01" min="0" inputmode="decimal">
-                    <label for="pricePerKg">Cena za kg (zł)</label>
-                </div>
-            </div>  
                 <button class="btn" onclick="addProductKg()">➕ Dodaj produkt</button>
             </div>
 
             <!-- Mode 2: Per piece -->
             <div class="input-section" id="mode-piece">
                 <div class="form-group">
-                    <input type="text" id="productName2" placeholder=" ">
+                    <input type="text" id="productName2" maxlength="30" placeholder=" ">
                     <label for="productName2">Nazwa produktu (opcjonalnie)</label>
                 </div>
-                
-            <div class="forms-wrapper">
-                <div class="form-group">
-                    <input type="number" id="pieceWeight" placeholder=" " min="1" inputmode="numeric">
-                    <label for="pieceWeight">Waga sztuki (g)</label>
-                </div>
-                
-                <div class="form-group">
-                    <input type="number" id="calories2" placeholder=" " min="1" inputmode="numeric">
-                    <label for="calories2">Kcal/100g</label>
-                </div>
-            </div>
-            
-            <div class="forms-wrapper">
-                <div class="price-inputs">
-                    <div class="price-input-group">
-                        <input type="number" id="pricePerPiece" placeholder=" " step="0.01" min="0" inputmode="decimal">
-                        <label for="pricePerPiece">Cena za sztukę (zł)</label>
+
+                <div class="forms-wrapper">
+                    <div class="form-group">
+                        <input type="number" id="pieceWeight" placeholder=" " min="1" inputmode="numeric">
+                        <label for="pieceWeight">Waga sztuki (g)</label>
                     </div>
-                    <div class="price-input-group">
-                        <input type="number" id="pricePerKg2" placeholder=" " step="0.01" min="0" inputmode="decimal">
-                        <label for="pricePerKg2">Cena za kilogram (zł)</label>
+
+                    <div class="form-group">
+                        <input type="number" id="calories2" placeholder=" " min="1" inputmode="numeric">
+                        <label for="calories2">Kcal/100g</label>
                     </div>
                 </div>
-            </div>
+
+                <div class="forms-wrapper">
+                    <div class="price-input-group">
+                        <input type="number" id="pricePerPiece" placeholder=" " step="0.01" min="0" inputmode="numeric">
+                        <label for="pricePerPiece">Cena za sztukę</label>
+                    </div>
+                    <div class="price-input-group">
+                        <input type="number" id="pricePerKg2" placeholder=" " step="0.01" min="0" inputmode="numeric">
+                        <label for="pricePerKg2">Cena za kg</label>
+                    </div>
+                </div>
                 <button class="btn" onclick="addProductPiece()">➕ Dodaj produkt</button>
             </div>
         </div>
@@ -87,10 +87,10 @@
             <table id="productTable">
                 <thead>
                     <tr>
-                        <th>🍎 Produkt</th>
-                        <th>🔥 Kcal/100g</th>
-                        <th>💵 Cena za kg</th>
-                        <th>💰 Koszt 100 kcal</th>
+                        <th data-sort="name" style="cursor: pointer;">🍎 Produkt</th>
+                        <th data-sort="calories" style="cursor: pointer;">🔥 Kcal/100g</th>
+                        <th data-sort="price" style="cursor: pointer;">💵 Cena za kg</th>
+                        <th data-sort="cost" style="cursor: pointer;">💰 Koszt 100 kcal</th>
                         <th>🗑️</th>
                     </tr>
                 </thead>
@@ -104,5 +104,7 @@
     </div>
 
     <script src="js/calculator.js"></script>
+    <script src="js/kcal100gvalidation.js"></script>
 </body>
+
 </html>

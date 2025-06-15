@@ -2,6 +2,21 @@ let products = [];
 let productIdCounter = 1;
 let autoProductCounter = 1;
 let currentMode = 0; // 0 = kg, 1 = piece
+let sortColumn = null;
+let sortDirection = 'asc';
+
+// Security limits
+const MAX_PRODUCTS = 500;
+let lastProductAddTime = 0;
+const ADD_PRODUCT_COOLDOWN = 1000; // 1 second in milliseconds
+
+// Function to format numbers with commas instead of dots and max 2 decimal places
+function formatNumber(number, maxDecimals = 2) {
+    // Round to maximum maxDecimals decimal places
+    const rounded = Math.round(number * Math.pow(10, maxDecimals)) / Math.pow(10, maxDecimals);
+    // Replace dot with comma
+    return rounded.toString().replace('.', ',');
+}
 
 function calculateCostPer100Kcal(caloriesPer100g, pricePerKg) {
     const caloriesPerKg = caloriesPer100g * 10;
@@ -58,6 +73,27 @@ function updateFloatingLabels() {
     });
 }
 
+function checkRateLimit() {
+    const currentTime = Date.now();
+    const timeSinceLastAdd = currentTime - lastProductAddTime;
+    
+    if (timeSinceLastAdd < ADD_PRODUCT_COOLDOWN) {
+        const remainingTime = Math.ceil((ADD_PRODUCT_COOLDOWN - timeSinceLastAdd) / 1000);
+        alert(`⏱️ Poczekaj ${remainingTime} sekund przed dodaniem kolejnego produktu!`);
+        return false;
+    }
+    
+    return true;
+}
+
+function checkProductLimit() {
+    if (products.length >= MAX_PRODUCTS) {
+        alert(`⚠️ Osiągnięto maksymalną liczbę produktów (${MAX_PRODUCTS}). Usuń niektóre produkty, aby dodać nowe.`);
+        return false;
+    }
+    return true;
+}
+
 function switchMode(mode) {
     currentMode = mode;
     const slider = document.querySelector('.mode-slider');
@@ -90,6 +126,11 @@ function switchMode(mode) {
 }
 
 function addProductKg() {
+    // Check security limits
+    if (!checkProductLimit() || !checkRateLimit()) {
+        return;
+    }
+
     const originalProductName = document.getElementById('productName1').value;
     const calories = parseFloat(document.getElementById('calories1').value);
     const pricePerKg = parseFloat(document.getElementById('pricePerKg').value);
@@ -110,9 +151,17 @@ function addProductKg() {
 
     addProductToList(product);
     clearInputsKg();
+    
+    // Update rate limit timestamp
+    lastProductAddTime = Date.now();
 }
 
 function addProductPiece() {
+    // Check security limits
+    if (!checkProductLimit() || !checkRateLimit()) {
+        return;
+    }
+
     const originalProductName = document.getElementById('productName2').value;
     const pieceWeight = parseFloat(document.getElementById('pieceWeight').value);
     const calories = parseFloat(document.getElementById('calories2').value);
@@ -134,7 +183,7 @@ function addProductPiece() {
         costPer100Kcal = calculateCostPer100Kcal(calories, pricePerKg2);
         pricePerKg = pricePerKg2;
     } else {
-        alert('❌ Podaj cenę za sztukę LUB za kilogram!');
+        alert('❌ Enter a price per piece OR per kilogram!');
         return;
     }
 
@@ -149,6 +198,9 @@ function addProductPiece() {
 
     addProductToList(product);
     clearInputsPiece();
+    
+    // Update rate limit timestamp
+    lastProductAddTime = Date.now();
 }
 
 function validateInputs(productName, calories, pricePerKg, pieceWeight, pricePerPiece, pricePerKg2) {
@@ -180,20 +232,62 @@ function validateInputs(productName, calories, pricePerKg, pieceWeight, pricePer
 
 function addProductToList(product) {
     products.push(product);
-    products.sort((a, b) => a.costPer100Kcal - b.costPer100Kcal);
+    renderTable();
+}
+
+function sortTable(column) {
+    if (sortColumn === column) {
+        sortDirection = sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+        sortColumn = column;
+        sortDirection = 'asc';
+    }
+
+    products.sort((a, b) => {
+        let valueA, valueB;
+        
+        switch (column) {
+            case 'name':
+                valueA = a.name.toLowerCase();
+                valueB = b.name.toLowerCase();
+                break;
+            case 'calories':
+                valueA = a.calories;
+                valueB = b.calories;
+                break;
+            case 'price':
+                valueA = a.price;
+                valueB = b.price;
+                break;
+            case 'cost':
+                valueA = a.costPer100Kcal;
+                valueB = b.costPer100Kcal;
+                break;
+            default:
+                return 0;
+        }
+
+        if (typeof valueA === 'string') {
+            if (sortDirection === 'asc') {
+                return valueA.localeCompare(valueB);
+            } else {
+                return valueB.localeCompare(valueA);
+            }
+        } else {
+            if (sortDirection === 'asc') {
+                return valueA - valueB;
+            } else {
+                return valueB - valueA;
+            }
+        }
+    });
+
     renderTable();
 }
 
 function deleteProduct(productId) {
-    // Find the product index
     const productIndex = products.findIndex(p => p.id === productId);
-
-    if (productIndex === -1) {
-        alert('❌ Product to delete not found!');
-        return;
-    }
-
-    if (confirm('🗑️ Are you sure you want to delete product "' + products[productIndex].name + '"?')) {
+    if (productIndex !== -1) {
         products.splice(productIndex, 1);
         renderTable();
     }
@@ -214,9 +308,9 @@ function renderTable() {
     tbody.innerHTML = products.map((product, index) => `
         <tr>
             <td><strong>${product.name}</strong></td>
-            <td>${product.calories} kcal</td>
-            <td>${product.price.toFixed(2)}</td>
-            <td class="cost-cell">${product.costPer100Kcal.toFixed(3)} zł</td>
+            <td>${formatNumber(product.calories)} kcal</td>
+            <td>${formatNumber(product.price)} zł</td>
+            <td class="cost-cell">${formatNumber(product.costPer100Kcal)} zł</td>
             <td>
                 <button class="delete-btn" onclick="deleteProduct(${product.id})">
                     🗑️
@@ -231,7 +325,8 @@ function clearInputsKg() {
     document.getElementById('calories1').value = '';
     document.getElementById('pricePerKg').value = '';
     updateFloatingLabels();
-    document.getElementById('productName1').focus();
+    // Remove automatic focus after clearing inputs
+    document.activeElement.blur();
 }
 
 function clearInputsPiece() {
@@ -240,8 +335,14 @@ function clearInputsPiece() {
     document.getElementById('calories2').value = '';
     document.getElementById('pricePerPiece').value = '';
     document.getElementById('pricePerKg2').value = '';
+    
+    // Re-enable both price fields
+    document.getElementById('pricePerPiece').disabled = false;
+    document.getElementById('pricePerKg2').disabled = false;
+    
     updateFloatingLabels();
-    document.getElementById('productName2').focus();
+    // Remove automatic focus after clearing inputs
+    document.activeElement.blur();
 }
 
 // Event listeners
@@ -259,10 +360,10 @@ document.addEventListener('keypress', function (e) {
 document.addEventListener('input', function (e) {
     updateFloatingLabels();
 
-    // Handle mutual exclusion for price inputs
+    // Handle mutual exclusion for price inputs - only block when the other field has a value
     if (e.target.id === 'pricePerPiece') {
         const pricePerKg2 = document.getElementById('pricePerKg2');
-        if (e.target.value && e.target.value !== '') {
+        if (e.target.value && e.target.value !== '' && parseFloat(e.target.value) > 0) {
             pricePerKg2.disabled = true;
             pricePerKg2.value = '';
         } else {
@@ -273,7 +374,7 @@ document.addEventListener('input', function (e) {
 
     if (e.target.id === 'pricePerKg2') {
         const pricePerPiece = document.getElementById('pricePerPiece');
-        if (e.target.value && e.target.value !== '') {
+        if (e.target.value && e.target.value !== '' && parseFloat(e.target.value) > 0) {
             pricePerPiece.disabled = true;
             pricePerPiece.value = '';
         } else {
@@ -291,4 +392,14 @@ document.addEventListener('blur', updateFloatingLabels, true);
 window.onload = function () {
     document.getElementById('productName1').focus();
     updateFloatingLabels();
+    
+    // Add click listeners for table sorting
+    const headers = document.querySelectorAll('th[data-sort]');
+    headers.forEach(header => {
+        header.style.cursor = 'pointer';
+        header.addEventListener('click', function() {
+            const column = this.getAttribute('data-sort');
+            sortTable(column);
+        });
+    });
 };

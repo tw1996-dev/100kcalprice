@@ -117,10 +117,8 @@ function switchMode(mode) {
         section.classList.toggle('active', index === mode);
     });
 
-    // Focus first input
+    // Update floating labels after mode switch
     setTimeout(() => {
-        const firstInput = sections[mode].querySelector('input');
-        if (firstInput) firstInput.focus();
         updateFloatingLabels();
     }, 300);
 }
@@ -388,9 +386,8 @@ document.addEventListener('input', function (e) {
 document.addEventListener('focus', updateFloatingLabels, true);
 document.addEventListener('blur', updateFloatingLabels, true);
 
-// Focus on load
+// Initialize on load
 window.onload = function () {
-    document.getElementById('productName1').focus();
     updateFloatingLabels();
     
     // Add click listeners for table sorting

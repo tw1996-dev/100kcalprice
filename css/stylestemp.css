@@ -1,9 +1,10 @@
+/* TEMPORARY FILE FOR CALC STYLES */
 html {
     box-sizing: border-box;
     font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
-    background-color: #1A1A2E; 
-
+    background-color: #0d0c1d; 
+    
 }
 
 *,
@@ -17,8 +18,9 @@ body {
     touch-action: manipulation;
     margin: 0;
     letter-spacing: 1px;
-    color: whitesmoke;
 }
+
+
 
 /* NAVIGATION */
 #main-nav {
@@ -27,7 +29,7 @@ body {
     left: 0;
     width: 100%;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
-    background-color: #16213E; 
+    background-color: #1a1a2e; 
     z-index: 5;
 }
 
@@ -48,10 +50,10 @@ body {
 #main-nav .navigation-link {
     display: block;
     width: 100%;
-    color: #EAEAEA; 
+    color: #ffffff;
     font-size: 1.3em;
     padding: 5px 8px;
-    border: 1px solid rgba(100, 100, 100, 0.5); 
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 5px;
     transition: all 0.3s ease;
     height: 35.5px;
@@ -96,11 +98,11 @@ body {
 
 #main-nav .navigation-link:hover,
 #main-nav .navigation-link.mobile-hover-active {
-    color: #BB86FC; 
-    border-color: #BB86FC; 
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.6), 
-                0 0 25px rgba(187, 134, 252, 0.4),
-                0 0 35px rgba(187, 134, 252, 0.2);
+    color: #ff69b4;
+    border-color: #ff69b4;
+    box-shadow: 0 0 15px #ff69b4,
+                0 0 25px #ff69b4,
+                0 0 35px #ff69b4;
     transform: translateY(-3px);
 }
 
@@ -114,9 +116,9 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    background: #1A1A2E; 
+    background: #1a1a2e; 
 }
 
 @media (min-width: 600px) {
@@ -126,7 +128,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #0F0F0F, #1A1A2E); 
+    background: linear-gradient(135deg, #16213e, #1a1a2e); 
     color: #EAEAEA; 
     padding: 20px 15px;
     text-align: center;
@@ -136,7 +138,7 @@ header {
 header h1 {
     font-size: 1.8rem;
     margin-bottom: 8px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.116);
 }
 
 @media (max-width: 480px) {
@@ -152,11 +154,11 @@ header p {
 
 .mode-switcher {
     display: flex;
-    background: #2D2D2D; 
+    background: #f8f9fa;
     border-radius: 12px;
     margin: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 
@@ -168,7 +170,7 @@ header p {
     cursor: pointer;
     font-size: 14px;
     font-weight: 600;
-    color: #EAEAEA; 
+    color: #000000;
     transition: all 0.3s ease;
     position: relative;
     z-index: 2;
@@ -184,7 +186,7 @@ header p {
     left: 0;
     width: 50%;
     height: 100%;
-    background: linear-gradient(135deg, #BB86FC, #6200EE); 
+    background: linear-gradient(135deg, #667eea, #764ba2);
     border-radius: 12px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 1;
@@ -196,7 +198,7 @@ header p {
 
 .controls {
     padding: 20px 15px;
-    background: #1A1A2E; 
+    background: #f8f9fa;
 }
 
 @media (max-width: 480px) {
@@ -231,22 +233,22 @@ header p {
     border-radius: 8px;
     font-size: 16px;
     transition: all 0.3s ease;
-    background: #1A1A2E; 
-    border: 2px solid #3A3A3A; 
+    background: #222831; 
+    border: 2px solid #00ADB5; 
     color: #EAEAEA; 
 
 }
 
 .form-group input:focus {
     outline: none;
-    border-color: #BB86FC; 
-    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.3); 
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .form-group input:disabled {
-    background-color: #3A3A3A; 
-    color: #888888; 
-    border-color: #555555; 
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-color: #e9ecef;
     cursor: not-allowed;
 }
 
@@ -256,11 +258,13 @@ header p {
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
+    color: #6c757d;
     pointer-events: none;
     transition: all 0.3s ease;
     padding: 0 4px;
     font-weight: 500;
-    background: #1A1A2E; 
+    /* background: white; */
+    background: #1a1a2e; /* Dark Mode Update */
 
 }
 
@@ -270,10 +274,10 @@ header p {
     top: 0;
     transform: translateY(-50%);
     font-size: 16px;
-    color: #BB86FC; 
+    color: #667eea;
     font-weight: 600;
     border-radius: 15px;
-    background: #1A1A2E; 
+    background: #f8f9fa;
 }
 
 .forms-wrapper {
@@ -293,6 +297,8 @@ header p {
         margin-bottom: 0;
     }
     
+
+    
     .forms-wrapper .form-group input:focus + label,
     .forms-wrapper .form-group input:not(:placeholder-shown) + label,
     .forms-wrapper .form-group input.has-value + label {
@@ -300,16 +306,12 @@ header p {
     }
 }
 
-
-.price-input-group label {
-    background: #1A1A2E; 
-}
-
-
 @media (max-width: 480px) {
     .forms-wrapper {
         gap: 6px;
     }
+    
+
     
     .forms-wrapper .form-group input:focus + label,
     .forms-wrapper .form-group input:not(:placeholder-shown) + label,
@@ -318,13 +320,9 @@ header p {
     }
 }
 
-.forms-wrapper .form-group label {
-    background: #1A1A2E; 
-}
-
 .btn {
     width: 100%;
-    background: linear-gradient(135deg, #BB86FC, #6200EE); 
+    background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     border: none;
     padding: 15px 25px;
@@ -341,13 +339,12 @@ header p {
 
 .btn:hover, .btn:active {
     transform: translateY(-1px);
-    box-shadow: 0 8px 15px rgba(187, 134, 252, 0.3); 
+    box-shadow: 0 8px 15px rgba(102, 126, 234, 0.3);
 }
 
 .table-container {
     padding: 15px;
     overflow-x: auto;
-    background: #1A1A2E; 
 }
 
 @media (max-width: 480px) {
@@ -361,9 +358,9 @@ table {
     border-collapse: collapse;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     font-size: 14px;
-    background: #1A1A2E; 
+    background: #1a1a2e; /* Dark Mode Update */
 
 }
 
@@ -374,8 +371,8 @@ table {
 }
 
 th {
-    background: linear-gradient(135deg, #2D2D2D, #3A3A3A); 
-    color: #EAEAEA; 
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
     padding: 12px 8px;
     text-align: center;
     font-weight: 600;
@@ -383,23 +380,22 @@ th {
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
-/* TABLE sorting   */
+/* TABLE sorting  */
 th[data-sort] {
     cursor: pointer;
     user-select: none;
 }
 
 th[data-sort]:hover {
-    background-color: rgba(255, 255, 255, 0.05); 
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 td {
     padding: 12px 8px;
     text-align: center;
-    border-bottom: 1px solid #3A3A3A; 
+    border-bottom: 1px solid #e9ecef;
     font-size: 13px;
     word-break: break-word;
-    color: #EAEAEA; 
 }
 
 @media (max-width: 480px) {
@@ -410,20 +406,27 @@ td {
 }
 
 tr:nth-child(even) {
-    background-color: #2D2D2D; 
+    background-color: #f8f9fa;
 }
 
 tr:hover {
-    background-color: #3A3A3A; 
+    background-color: #e3f2fd;
 }
 
 .cost-cell {
     font-weight: bold;
+    color: #28a745;
     font-size: 14px;
 }
 
+@media (max-width: 480px) {
+    .cost-cell {
+        font-size: 12px;
+    }
+}
+
 .delete-btn {
-    background: linear-gradient(135deg, #CF6679, #C850C0); 
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
     color: white;
     border: none;
     padding: 8px 12px;
@@ -437,7 +440,7 @@ tr:hover {
 
 .delete-btn:hover, .delete-btn:active {
     transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(207, 102, 121, 0.3); 
+    box-shadow: 0 4px 8px rgba(255, 107, 107, 0.3);
 }
 
     .price-input-group {
@@ -483,24 +486,22 @@ tr:hover {
 .price-input-group input {
     width: 100%;
     padding: 18px 15px 8px 15px;
-    border: 2px solid #3A3A3A; 
+    border: 2px solid #dee2e6;
     border-radius: 8px;
     font-size: 15px;
     transition: all 0.3s ease;
-    background: #1A1A2E;
-    color: #EAEAEA; 
 }
 
 .price-input-group input:focus {
     outline: none;
-    border-color: #BB86FC; 
-    box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.3); 
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .price-input-group input:disabled {
-    background-color: #3A3A3A; 
-    color: #888888; 
-    border-color: #555555; 
+    background-color: #f8f9fa;
+    color: #6c757d;
+    border-color: #e9ecef;
     cursor: not-allowed;
 }
 
@@ -510,9 +511,10 @@ tr:hover {
     top: 50%;
     transform: translateY(-50%);
     font-size: 16px;
+    color: #6c757d;
     pointer-events: none;
     transition: all 0.3s ease;
-    background: #1A1A2E; 
+    background: white;
     padding: 0 4px;
     font-weight: 500;
 }
@@ -523,14 +525,14 @@ tr:hover {
     top: 0;
     transform: translateY(-50%);
     font-size: 12px;
-    color: #BB86FC; 
+    color: #667eea;
     font-weight: 600;
 }
 
 .no-products {
     text-align: center;
     padding: 30px 15px;
-    color: #888888; 
+    color: #6c757d;
     font-style: italic;
     font-size: 14px;
 }

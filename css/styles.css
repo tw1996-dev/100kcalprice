@@ -11,8 +11,6 @@ html {
 *:before,
 *:after {
     box-sizing: inherit;
-    margin: 0;
-    padding: 0;
 }
 
 ul {
@@ -32,8 +30,12 @@ em {
 }
 
 body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #0d0c1d; 
-    color: #e0e0f0;            
+    touch-action: manipulation;
+    margin: 0;
+    letter-spacing: 1px;
+    color: #e0e0f0;    
 }
 
 
@@ -44,14 +46,13 @@ body {
     left: 0;
     width: 100%;
     background-color: #1a1a1a;
-    padding: 15px 0;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
 }
 
 #main-nav ul {
     display: flex;
     width: 100%;
-    gap: 3px;
+    gap: 1px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -78,18 +79,40 @@ body {
     font-weight: 700;
     font-style: normal;
 }
-@media (max-width: 330px) 
-{ #main-nav .navigation-link {
-    font-size: 1.1em;
-}
-
-}
-@media (min-width: 368px) {
+/* NAV MEDIA QUERY */
+@media (min-width: 434px) {
     #main-nav .navigation-link {
         padding: 8px 12px;
         height: 46px;
     }
 }
+
+@media (min-width: 352px) {
+     #main-nav .navigation-link {
+    font-size: 1.1em;
+    }
+}
+
+@media (min-width: 333px) { 
+    #main-nav .navigation-link {
+    font-size: 1em;
+    }
+}
+
+@media (max-width: 332px) { 
+    #main-nav .navigation-link {
+    font-size: 90%;
+    letter-spacing: 0.7px;
+    }
+}
+
+@media (max-width: 317px) { 
+    #main-nav .navigation-link {
+    font-size: 80%;
+    letter-spacing: 0.6px;
+    }
+}
+
 
 #main-nav .navigation-link:hover,
 #main-nav .navigation-link.mobile-hover-active {
@@ -110,7 +133,7 @@ body {
 
 /* HEADER*/
 header {
-    margin-top: 75px;
+    margin-top: 20px;
     padding: 8px;
     text-wrap: balance;
     text-align: center;
@@ -129,8 +152,5 @@ main {
 }
 
 p {
-    margin: 3px 0;
-    padding: 3px;
-    letter-spacing: 1px;
     font-weight: 500;
 }

@@ -45,14 +45,15 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #1a1a1a;
-    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.438);
+    background-color: #141414;
+    z-index: 5;
 }
+
 
 #main-nav ul {
     display: flex;
     width: 100%;
-    gap: 1px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -61,16 +62,16 @@ body {
 
 #main-nav li {
     flex: 1;
+    margin-top: 1px;
 }
 
 #main-nav .navigation-link {
     display: block;
     width: 100%;
-    color: #ffffff;
+    color: #E0E1DD;
     font-size: 1.3em;
-    padding: 5px 8px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
+    padding: 10px 6px;
+    border: 1px solid rgba(224, 225, 221, 0.5);
     transition: all 0.3s ease;
     height: 35.5px;
     text-align: center;
@@ -78,6 +79,8 @@ body {
     white-space: nowrap;
     font-weight: 700;
     font-style: normal;
+    height: 45px;
+
 }
 /* NAV MEDIA QUERY */
 @media (min-width: 434px) {
@@ -99,28 +102,26 @@ body {
     }
 }
 
-@media (max-width: 332px) { 
+@media (max-width: 333px) { 
     #main-nav .navigation-link {
     font-size: 90%;
-    letter-spacing: 0.7px;
     }
 }
 
-@media (max-width: 317px) { 
+@media (max-width: 303px) { 
     #main-nav .navigation-link {
     font-size: 80%;
-    letter-spacing: 0.6px;
     }
 }
 
 
 #main-nav .navigation-link:hover,
 #main-nav .navigation-link.mobile-hover-active {
-    color: #ff69b4;
-    border-color: #ff69b4;
-    box-shadow: 0 0 15px #ff69b4,
-                0 0 25px #ff69b4,
-                0 0 35px #ff69b4;
+    color: #BB86FC; 
+    border-color: #BB86FC; 
+    box-shadow: 0 0 15px rgba(187, 134, 252, 0.6), 
+                0 0 25px rgba(187, 134, 252, 0.4),
+                0 0 35px rgba(187, 134, 252, 0.2);
     transform: translateY(-3px);
 }
 
@@ -128,6 +129,7 @@ body {
 .navigation-link {
     transition: transform 0.3s ease-in-out;
 }
+
 
 
 

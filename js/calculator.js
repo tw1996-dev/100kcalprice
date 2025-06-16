@@ -37,7 +37,7 @@ function calculateCostPer100KcalFromPiece(pieceWeight, caloriesPer100g, pricePer
 function generateUniqueProductName(originalName) {
     // If no name is provided, use an automatic one
     if (!originalName || originalName.trim() === '') {
-        return `Produkt${autoProductCounter++}`;
+        return `Product${autoProductCounter++}`;
     }
 
     const baseName = originalName.trim();
@@ -79,7 +79,7 @@ function checkRateLimit() {
     
     if (timeSinceLastAdd < ADD_PRODUCT_COOLDOWN) {
         const remainingTime = Math.ceil((ADD_PRODUCT_COOLDOWN - timeSinceLastAdd) / 1000);
-        alert(`⏱️ Poczekaj ${remainingTime} sekund przed dodaniem kolejnego produktu!`);
+        alert(`⏱️ Please wait ${remainingTime} seconds before adding another product!`);
         return false;
     }
     
@@ -88,7 +88,7 @@ function checkRateLimit() {
 
 function checkProductLimit() {
     if (products.length >= MAX_PRODUCTS) {
-        alert(`⚠️ Osiągnięto maksymalną liczbę produktów (${MAX_PRODUCTS}). Usuń niektóre produkty, aby dodać nowe.`);
+        alert(`⚠️ Maximum number of products (${MAX_PRODUCTS}) reached. Delete some products to add new ones.`);
         return false;
     }
     return true;
@@ -184,6 +184,7 @@ function addProductPiece() {
         alert('❌ Enter a price per piece OR per kilogram!');
         return;
     }
+
 
     const product = {
         id: productIdCounter++,
@@ -307,8 +308,8 @@ function renderTable() {
         <tr>
             <td><strong>${product.name}</strong></td>
             <td>${formatNumber(product.calories)} kcal</td>
-            <td>${formatNumber(product.price)} zł</td>
-            <td class="cost-cell">${formatNumber(product.costPer100Kcal)} zł</td>
+            <td>${formatNumber(product.price)} $</td>
+            <td class="cost-cell">${formatNumber(product.costPer100Kcal)} $</td>
             <td>
                 <button class="delete-btn" onclick="deleteProduct(${product.id})">
                     🗑️

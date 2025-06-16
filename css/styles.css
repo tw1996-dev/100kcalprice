@@ -134,24 +134,33 @@ body {
 
 
 /* HEADER*/
-header {
-    margin-top: 20px;
+#mainPageHeader {
+    margin-top: 35px;
     padding: 8px;
     text-wrap: balance;
     text-align: center;
 }
 
-@media (min-width: 368px) {
-    header {
-        margin-top: 85px;
-    }
-}
+
 
 /* MAIN*/
-main {
-    padding: 10px;
+#mainPageMain {
+    padding: 0 14px 14px 16px;
     margin: 0 auto;
 }
+#mainPageh2 {
+    text-align: center;
+    text-wrap: balance
+    ;
+}
+
+#mainPageul {
+    padding-left: 15px;
+}
+#mainPageul li {
+    margin-top: 5px;
+}
+
 
 p {
     font-weight: 500;

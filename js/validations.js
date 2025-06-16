@@ -189,7 +189,7 @@ function enforceWeightLimits(input) {
             if (numValue > 10000) {
                 cleaned = '10000';
             } else if (numValue < 1) {
-                cleaned = '1';
+                cleaned = '';
             }
         }
         
@@ -225,7 +225,7 @@ function enforceWeightLimits(input) {
         const numValue = parseInt(value);
         
         if (isNaN(numValue) || value === '' || numValue < 1) {
-            input.value = '1';
+            input.value = '';
         } else if (numValue > 10000) {
             input.value = '10000';
         } else {
@@ -312,7 +312,7 @@ function enforceCalorieLimits(input) {
             if (numValue > 900) {
                 cleaned = '900';
             } else if (numValue < 1) {
-                cleaned = '1';
+                cleaned = '';
             }
         }
         
@@ -370,9 +370,9 @@ function enforceCalorieLimits(input) {
         
         const numValue = parseFloat(value);
         if (isNaN(numValue) || value === '') {
-            input.value = '1';
+            input.value = '';
         } else if (numValue < 1) {
-            input.value = '1';
+            input.value = '';
         } else if (numValue > 900) {
             input.value = '900';
         } else {

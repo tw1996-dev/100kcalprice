@@ -211,8 +211,8 @@ function validateInputs(productName, calories, pricePerKg, pieceWeight, pricePer
     }
 
     if (currentMode === 0) {
-        if (!pricePerKg || pricePerKg < 0) {
-            alert('❌ Enter a valid price per kg (greater than or equal to 0)!');
+        if (!pricePerKg || pricePerKg <= 0) {
+            alert('❌ Enter a valid price per kg (greater than 0)!');
             return false;
         }
     } else {

@@ -495,11 +495,14 @@ tr:hover {
     box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.3); 
 }
 
-.price-input-group input:disabled {
+.price-input-group input:disabled  {
     background-color: #3A3A3A; 
     color: #888888; 
     border-color: #555555; 
     cursor: not-allowed;
+}
+.price-input-group input:disabled + label {
+    background-color: #3A3A3A; 
 }
 
 .price-input-group label {

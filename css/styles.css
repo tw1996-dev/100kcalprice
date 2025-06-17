@@ -135,7 +135,7 @@ body {
 
 /* HEADER*/
 #mainPageHeader {
-    margin-top: 35px;
+    margin-top: 60px;
     padding: 8px;
     text-wrap: balance;
     text-align: center;
@@ -145,13 +145,14 @@ body {
 
 /* MAIN*/
 #mainPageMain {
-    padding: 0 14px 14px 16px;
+    padding: 0 14px 14px 18px;
     margin: 0 auto;
+    max-width: 600px;
 }
-#mainPageh2 {
+h2 {
     text-align: center;
     text-wrap: balance
-    ;
+    
 }
 
 #mainPageul {
@@ -163,5 +164,86 @@ body {
 
 
 p {
+    font-weight: 500;
+}
+
+/* LANGUAGE SELECTOR */
+#language-selector {
+    right: 30px;
+    position: absolute;
+
+    
+}
+
+#language-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px 8px;
+    transition: all 0.3s ease;
+}
+
+#language-toggle:hover {
+    box-shadow: 0 0 10px rgba(187, 134, 252, 0.4);
+}
+
+#current-flag {
+    width: 40px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+#dropdown-arrow {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #E0E1DD;
+    transition: transform 0.3s ease;
+}
+
+#language-toggle.active #dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+#language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #141414;
+    border: 1px solid rgba(224, 225, 221, 0.5);
+    border-radius: 4px;
+    margin-top: 2px;
+    display: none;
+    min-width: 100px;
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.438);
+}
+
+#language-dropdown.show {
+    display: block;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    color: #E0E1DD;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.language-option:hover {
+    background-color: rgba(187, 134, 252, 0.2);
+}
+
+.language-option img {
+    width: 20px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.language-option span {
     font-weight: 500;
 }

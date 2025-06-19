@@ -5,27 +5,46 @@ let currentMode = 0; // 0 = kg, 1 = piece
 let sortColumn = null;
 let sortDirection = 'asc';
 
-// ========== CURRENCY SUPPORT VARIABLES - START ==========
+// Currency support variables
 let currentCurrency = { code: 'USD', name: 'US Dollar', symbol: '$' }; // Default currency
-// ========== CURRENCY SUPPORT VARIABLES - END ==========
 
 // Security limits
 const MAX_PRODUCTS = 500;
 let lastProductAddTime = 0;
 const ADD_PRODUCT_COOLDOWN = 1000; // 1 second in milliseconds
 
-// ========== CURRENCY SUPPORT FUNCTIONS - START ==========
+// Update input labels with current currency symbol
+function updateCurrencyLabelsAndPlaceholders() {
+    const currencySymbol = currentCurrency.symbol;
+    
+    // Update labels for price inputs
+    const priceLabels = [
+        { id: 'pricePerKg', text: `Price per kg (${currencySymbol})` },
+        { id: 'pricePerPiece', text: `Price per piece (${currencySymbol})` },
+        { id: 'pricePerKg2', text: `Price per kg (${currencySymbol})` }
+    ];
+    
+    priceLabels.forEach(labelInfo => {
+        const label = document.querySelector(`label[for="${labelInfo.id}"]`);
+        if (label) {
+            label.textContent = labelInfo.text;
+        }
+    });
+}
+
 // Load selected currency from localStorage
 function loadSelectedCurrency() {
     try {
         const saved = localStorage.getItem('selectedCurrency');
         if (saved) {
             currentCurrency = JSON.parse(saved);
-            updateCurrencyDisplay();
         }
+        // Always update display regardless of whether currency was loaded from storage
+        updateCurrencyDisplay();
     } catch (error) {
         console.log('Error loading currency:', error);
-        // Keep default currency
+        // Keep default currency and update display
+        updateCurrencyDisplay();
     }
 }
 
@@ -37,6 +56,9 @@ function updateCurrencyDisplay() {
         element.textContent = currentCurrency.symbol;
     });
     
+    // Update input labels and placeholders with currency symbol
+    updateCurrencyLabelsAndPlaceholders();
+    
     // Update any existing product displays
     renderTable();
 }
@@ -45,9 +67,8 @@ function updateCurrencyDisplay() {
 function getCurrencySymbol() {
     return currentCurrency.symbol;
 }
-// ========== CURRENCY SUPPORT FUNCTIONS - END ==========
 
-// Function to format numbers with commas instead of dots and max 2 decimal places
+// Format numbers with commas instead of dots and max 2 decimal places
 function formatNumber(number, maxDecimals = 2) {
     // Round to maximum maxDecimals decimal places
     const rounded = Math.round(number * Math.pow(10, maxDecimals)) / Math.pow(10, maxDecimals);
@@ -55,13 +76,11 @@ function formatNumber(number, maxDecimals = 2) {
     return rounded.toString().replace('.', ',');
 }
 
-// ========== UPDATED FORMAT PRICE FUNCTION - START ==========
-// Function to format price with current currency symbol
+// Format price with current currency symbol
 function formatPrice(price, maxDecimals = 2) {
     const formattedNumber = formatNumber(price, maxDecimals);
     return `${formattedNumber} ${getCurrencySymbol()}`;
 }
-// ========== UPDATED FORMAT PRICE FUNCTION - END ==========
 
 function calculateCostPer100Kcal(caloriesPer100g, pricePerKg) {
     const caloriesPerKg = caloriesPer100g * 10;
@@ -336,7 +355,7 @@ function deleteProduct(productId) {
     }
 }
 
-// ========== UPDATED RENDER TABLE FUNCTION - START ==========
+// Render products table
 function renderTable() {
     const tbody = document.getElementById('productTableBody');
 
@@ -363,7 +382,6 @@ function renderTable() {
         </tr>
     `).join('');
 }
-// ========== UPDATED RENDER TABLE FUNCTION - END ==========
 
 function clearInputsKg() {
     document.getElementById('productName1').value = '';
@@ -433,7 +451,6 @@ document.addEventListener('input', function (e) {
 document.addEventListener('focus', updateFloatingLabels, true);
 document.addEventListener('blur', updateFloatingLabels, true);
 
-// ========== UPDATED INITIALIZATION FUNCTION - START ==========
 // Initialize on load
 window.onload = function () {
     // Load selected currency from localStorage
@@ -451,4 +468,3 @@ window.onload = function () {
         });
     });
 };
-// ========== UPDATED INITIALIZATION FUNCTION - END ==========

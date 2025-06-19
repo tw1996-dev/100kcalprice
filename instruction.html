@@ -33,6 +33,23 @@
         </ul>
     </nav>
 
+    <!-- ========== CURRENCY SELECTOR SECTION - START ========== -->
+<section id="currency-selector">
+    <p id="selectorFirstP">💰 Choose Your Currency</p>
+    <p>Select your preferred currency for price calculations. This setting will be remembered and used in the calculator.</p>
+    
+    <div class="currency-dropdown-container">
+        <input type="text" id="currency-search" placeholder="Type to search currencies " autocomplete="off">
+        <div id="currency-results"></div>
+    </div>
+    
+    <div class="selected-currency" id="selected-currency" style="display: none;">
+        <div class="selected-currency-text">
+            Selected: <span id="selected-currency-display"></span>
+        </div>
+    </div>
+</section>
+<!-- ========== CURRENCY SELECTOR SECTION - END ========== -->
 
     
 <main id="instructions">
@@ -166,5 +183,6 @@
 
 
 <script src="js/mobilehover.js"></script>
+<script src="js/currencySelect.js"></script>
 </body>
 </html>

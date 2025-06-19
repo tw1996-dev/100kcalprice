@@ -5,10 +5,47 @@ let currentMode = 0; // 0 = kg, 1 = piece
 let sortColumn = null;
 let sortDirection = 'asc';
 
+// ========== CURRENCY SUPPORT VARIABLES - START ==========
+let currentCurrency = { code: 'USD', name: 'US Dollar', symbol: '$' }; // Default currency
+// ========== CURRENCY SUPPORT VARIABLES - END ==========
+
 // Security limits
 const MAX_PRODUCTS = 500;
 let lastProductAddTime = 0;
 const ADD_PRODUCT_COOLDOWN = 1000; // 1 second in milliseconds
+
+// ========== CURRENCY SUPPORT FUNCTIONS - START ==========
+// Load selected currency from localStorage
+function loadSelectedCurrency() {
+    try {
+        const saved = localStorage.getItem('selectedCurrency');
+        if (saved) {
+            currentCurrency = JSON.parse(saved);
+            updateCurrencyDisplay();
+        }
+    } catch (error) {
+        console.log('Error loading currency:', error);
+        // Keep default currency
+    }
+}
+
+// Update currency symbol throughout the interface
+function updateCurrencyDisplay() {
+    // Update all currency symbols in the table headers and content
+    const currencyElements = document.querySelectorAll('.currency-symbol');
+    currencyElements.forEach(element => {
+        element.textContent = currentCurrency.symbol;
+    });
+    
+    // Update any existing product displays
+    renderTable();
+}
+
+// Get current currency symbol for use in formatting
+function getCurrencySymbol() {
+    return currentCurrency.symbol;
+}
+// ========== CURRENCY SUPPORT FUNCTIONS - END ==========
 
 // Function to format numbers with commas instead of dots and max 2 decimal places
 function formatNumber(number, maxDecimals = 2) {
@@ -17,6 +54,14 @@ function formatNumber(number, maxDecimals = 2) {
     // Replace dot with comma
     return rounded.toString().replace('.', ',');
 }
+
+// ========== UPDATED FORMAT PRICE FUNCTION - START ==========
+// Function to format price with current currency symbol
+function formatPrice(price, maxDecimals = 2) {
+    const formattedNumber = formatNumber(price, maxDecimals);
+    return `${formattedNumber} ${getCurrencySymbol()}`;
+}
+// ========== UPDATED FORMAT PRICE FUNCTION - END ==========
 
 function calculateCostPer100Kcal(caloriesPer100g, pricePerKg) {
     const caloriesPerKg = caloriesPer100g * 10;
@@ -185,7 +230,6 @@ function addProductPiece() {
         return;
     }
 
-
     const product = {
         id: productIdCounter++,
         name: productName,
@@ -292,6 +336,7 @@ function deleteProduct(productId) {
     }
 }
 
+// ========== UPDATED RENDER TABLE FUNCTION - START ==========
 function renderTable() {
     const tbody = document.getElementById('productTableBody');
 
@@ -308,8 +353,8 @@ function renderTable() {
         <tr>
             <td><strong>${product.name}</strong></td>
             <td>${formatNumber(product.calories)} kcal</td>
-            <td>${formatNumber(product.price)} $</td>
-            <td class="cost-cell">${formatNumber(product.costPer100Kcal)} $</td>
+            <td>${formatPrice(product.price)}</td>
+            <td class="cost-cell">${formatPrice(product.costPer100Kcal)}</td>
             <td>
                 <button class="delete-btn" onclick="deleteProduct(${product.id})">
                     🗑️
@@ -318,6 +363,7 @@ function renderTable() {
         </tr>
     `).join('');
 }
+// ========== UPDATED RENDER TABLE FUNCTION - END ==========
 
 function clearInputsKg() {
     document.getElementById('productName1').value = '';
@@ -387,8 +433,12 @@ document.addEventListener('input', function (e) {
 document.addEventListener('focus', updateFloatingLabels, true);
 document.addEventListener('blur', updateFloatingLabels, true);
 
+// ========== UPDATED INITIALIZATION FUNCTION - START ==========
 // Initialize on load
 window.onload = function () {
+    // Load selected currency from localStorage
+    loadSelectedCurrency();
+    
     updateFloatingLabels();
     
     // Add click listeners for table sorting
@@ -401,3 +451,4 @@ window.onload = function () {
         });
     });
 };
+// ========== UPDATED INITIALIZATION FUNCTION - END ==========

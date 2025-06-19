@@ -125,9 +125,101 @@
         </div>
     </div>
 
+<!-- Food Cost Calculator Section -->
+<div class="food-cost-section">
+    <div class="food-cost-section-header">
+        <h2>🤔 Fun Fact</h2>
+        <p>You can calculate how much you'll spend on food at a specific cost per 100 kcal</p>
+    </div>
+
+    <div class="cost-mode-switcher">
+        <div class="cost-mode-slider"></div>
+        <button class="cost-mode-btn active" onclick="switchCostMode(0)">
+            Normal
+        </button>
+        <button class="cost-mode-btn" onclick="switchCostMode(1)">
+            Training/Rest
+        </button>
+    </div>
+
+    <!-- Normal Mode -->
+    <div class="cost-input-section active" id="cost-mode-normal">
+        <div class="cost-form-group">
+            <input type="number" id="dailyCalories" placeholder=" " inputmode="numeric">
+            <label for="dailyCalories">How many calories do you eat daily</label>
+        </div>
+
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="cost100kcal1" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="cost100kcal1">Average cost per 100 kcal</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="cost100kcal2" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="cost100kcal2">Second cost per 100 kcal (optional)</label>
+            </div>
+        </div>
+
+        <button class="cost-calculate-btn" onclick="calculateNormalCost()">
+            🧮 Calculate Costs
+        </button>
+    </div>
+
+    <!-- Training/Rest Mode -->
+    <div class="cost-input-section" id="cost-mode-dtdnt">
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="trainingDayCalories" placeholder=" " inputmode="numeric">
+                <label for="trainingDayCalories">Calories on training day</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="nonTrainingDayCalories" placeholder=" " inputmode="numeric">
+                <label for="nonTrainingDayCalories">Calories on rest day</label>
+            </div>
+        </div>
+
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="trainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
+                <label for="trainingDaysPerWeek">Training days per week</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="nonTrainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
+                <label for="nonTrainingDaysPerWeek">Rest days per week</label>
+            </div>
+        </div>
+
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="dtCost100kcal1" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="dtCost100kcal1">Average cost per 100 kcal</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="dtCost100kcal2" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="dtCost100kcal2">Second cost per 100 kcal (optional)</label>
+            </div>
+        </div>
+
+        <button class="cost-calculate-btn" onclick="calculateDTDNTCost()">
+            🧮 Calculate Costs
+        </button>
+    </div>
+
+    <!-- Results -->
+    <div class="cost-results" id="costResults">
+        <h3>💰 Your Food Expenses</h3>
+        <div class="cost-comparison" id="costComparison">
+            <!-- Results will be inserted here by JavaScript -->
+        </div>
+    </div>
+</div>
+
+
+
     <script src="js/calculator.js"></script>
     <script src="js/validations.js"></script>
     <script src="js/mobilehover.js"></script>
+    <script src="js/extracounting.js"></script>
 </body>
 
 </html>

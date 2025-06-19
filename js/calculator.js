@@ -447,6 +447,14 @@ document.addEventListener('input', function (e) {
     }
 });
 
+// Additional event listeners for paste support and floating labels
+document.addEventListener('paste', function(e) {
+    // Allow natural paste behavior, then update floating labels
+    setTimeout(() => {
+        updateFloatingLabels();
+    }, 10);
+});
+
 // Focus and blur event listeners
 document.addEventListener('focus', updateFloatingLabels, true);
 document.addEventListener('blur', updateFloatingLabels, true);

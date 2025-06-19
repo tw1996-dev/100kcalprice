@@ -1,40 +1,145 @@
-// Language dropdown toggle
+// Language data - only 3 languages as in original
+const languages = [
+    { code: 'en', name: 'English', native: 'English', flag: 'gb' },
+    { code: 'pl', name: 'Polish', native: 'Polski', flag: 'pl' },
+    { code: 'no', name: 'Norwegian', native: 'Norsk', flag: 'no' }
+];
+
+let currentLanguage = 'en';
+let isDropdownOpen = false;
+
+// Initialize language selector on DOM load
+document.addEventListener('DOMContentLoaded', function() {
+    initializeLanguageSelector();
+});
+
+// Initialize language selector
+function initializeLanguageSelector() {
+    // Load saved language preference
+    const savedLang = localStorage.getItem('selectedLanguage');
+    if (savedLang && languages.find(lang => lang.code === savedLang)) {
+        currentLanguage = savedLang;
+        updateCurrentFlag();
+    }
+    
+    // Set up search input
+    const searchInput = document.getElementById('language-search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', handleLanguageSearch);
+        
+        // Prevent dropdown from closing when clicking on search input
+        searchInput.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
+    // Prevent dropdown from closing when clicking inside
+    const dropdown = document.getElementById('language-dropdown');
+    if (dropdown) {
+        dropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
+    // Initialize language list
+    renderLanguageList(languages);
+}
+
+// Render language list
+function renderLanguageList(languagesToShow) {
+    const languageList = document.getElementById('language-list');
+    if (!languageList) return;
+    
+    if (languagesToShow.length === 0) {
+        languageList.innerHTML = '<div class="no-results">No languages found</div>';
+        return;
+    }
+
+    languageList.innerHTML = languagesToShow.map(lang => `
+        <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
+             onclick="changeLanguage('${lang.code}')"
+             data-code="${lang.code}">
+            <img src="flags/${lang.flag}.svg" 
+                 alt="${lang.name} flag">
+            <div class="language-info">
+                <span class="language-name">${lang.name}</span>
+                <span class="language-native">${lang.native}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Handle language search
+function handleLanguageSearch(e) {
+    const searchTerm = e.target.value.toLowerCase().trim();
+    
+    const filtered = languages.filter(lang => 
+        lang.name.toLowerCase().includes(searchTerm) ||
+        lang.native.toLowerCase().includes(searchTerm) ||
+        lang.code.toLowerCase().includes(searchTerm)
+    );
+    
+    renderLanguageList(filtered);
+}
+
+// Update current flag
+function updateCurrentFlag() {
+    const currentFlag = document.getElementById('current-flag');
+    const currentLang = languages.find(lang => lang.code === currentLanguage);
+    
+    if (currentFlag && currentLang) {
+        currentFlag.src = `flags/${currentLang.flag}.svg`;
+        currentFlag.alt = currentLang.name;
+    }
+}
+
+// Toggle language dropdown
 function toggleLanguageDropdown() {
     const dropdown = document.getElementById('language-dropdown');
     const toggle = document.getElementById('language-toggle');
+    const searchInput = document.getElementById('language-search-input');
     
-    dropdown.classList.toggle('show');
-    toggle.classList.toggle('active');
+    isDropdownOpen = !isDropdownOpen;
+    
+    if (isDropdownOpen) {
+        dropdown.classList.add('show');
+        toggle.classList.add('active');
+        
+        // Reset search and focus
+        if (searchInput) {
+            searchInput.value = '';
+            setTimeout(() => searchInput.focus(), 100); // Small delay for smooth animation
+        }
+        
+        // Reset language list to show all
+        renderLanguageList(languages);
+    } else {
+        dropdown.classList.remove('show');
+        toggle.classList.remove('active');
+    }
 }
 
-// Language change function
+// Change language function
 function changeLanguage(selectedLang) {
-    const currentFlag = document.getElementById('current-flag');
-    const dropdown = document.getElementById('language-dropdown');
-    const toggle = document.getElementById('language-toggle');
+    const langData = languages.find(lang => lang.code === selectedLang);
+    if (!langData) return;
+    
+    currentLanguage = selectedLang;
+    
+    // Save language preference
+    localStorage.setItem('selectedLanguage', selectedLang);
     
     // Update current flag
-    switch(selectedLang) {
-        case 'en':
-            currentFlag.src = 'flags/gb.svg';
-            currentFlag.alt = 'English';
-            break;
-        case 'pl':
-            currentFlag.src = 'flags/pl.svg';
-            currentFlag.alt = 'Polish';
-            break;
-        case 'no':
-            currentFlag.src = 'flags/no.svg';
-            currentFlag.alt = 'Norwegian';
-            break;
-    }
+    updateCurrentFlag();
     
     // Close dropdown
+    const dropdown = document.getElementById('language-dropdown');
+    const toggle = document.getElementById('language-toggle');
     dropdown.classList.remove('show');
     toggle.classList.remove('active');
+    isDropdownOpen = false;
     
-
-    // For now, just showing an alert as placeholder
+    // Show alert (as per original implementation)
     switch(selectedLang) {
         case 'pl':
             alert('Przekierowanie do polskiej wersji strony...');
@@ -56,8 +161,18 @@ document.addEventListener('click', function(event) {
     const dropdown = document.getElementById('language-dropdown');
     const toggle = document.getElementById('language-toggle');
     
-    if (!selector.contains(event.target)) {
-        dropdown.classList.remove('show');
-        toggle.classList.remove('active');
+    if (!selector || !selector.contains(event.target)) {
+        if (isDropdownOpen) {
+            dropdown.classList.remove('show');
+            toggle.classList.remove('active');
+            isDropdownOpen = false;
+        }
+    }
+});
+
+// Close dropdown on Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && isDropdownOpen) {
+        toggleLanguageDropdown();
     }
 });

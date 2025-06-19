@@ -2,7 +2,6 @@
 
 html {
     box-sizing: border-box;
-    font-family: "Noto Sans", sans-serif;
     font-optical-sizing: auto;
     
 }
@@ -47,7 +46,7 @@ body {
     width: 100%;
     box-shadow: 0 4px 9px rgba(0, 0, 0, 0.438);
     background-color: #141414;
-    z-index: 5;
+    z-index: 35;
 }
 
 
@@ -178,7 +177,6 @@ p {
 }
 @media (min-width: 800px) {
     #language-selector {
-        top: 5px;
         right: 20px;
 
 
@@ -202,6 +200,8 @@ p {
     width: 40px;
     height: 30px;
     margin-right: 5px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 #dropdown-arrow {
@@ -256,4 +256,256 @@ p {
 
 .language-option span {
     font-weight: 500;
+}
+
+
+/* HOW USE */
+
+/* Main instructions container */
+
+#instructions {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 18px;
+    margin-top: 60px; 
+}
+
+
+/* Headings */
+
+#instructions h1 {
+    text-align: center;
+    text-wrap: balance;
+    margin-bottom: 30px;
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #BB86FC;
+}
+
+#instructions h2 {
+    color: #E0E1DD;
+    border-left: 4px solid #BB86FC;
+    padding-left: 15px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-wrap: balance;
+    position: relative;
+    text-align: left;
+    color: #BB86FC;
+}
+
+
+
+#instructions h3 {
+    color: #BB86FC;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Lists */
+
+#instructions ol,
+#instructions ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+#instructions li {
+    margin: 8px 0;
+    line-height: 1.6;
+    position: relative;
+}
+
+#instructions ol li {
+    counter-increment: step-counter;
+}
+
+#instructions ol li::marker {
+    color: #BB86FC;
+    font-weight: 700;
+}
+
+#instructions ul li::before {
+    content: '▶';
+    color: #BB86FC;
+    font-size: 0.8em;
+    position: absolute;
+    left: -20px;
+    top: 2px;
+}
+
+/* Highlighted text */
+
+#instructions .strong {
+    color: #BB86FC;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(187, 134, 252, 0.2);
+}
+
+/* Informational boxes */
+
+.highlight {
+    background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(187, 134, 252, 0.05) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(187, 134, 252, 0.1);
+    position: relative;
+}
+
+.highlight::before {
+    content: '💡';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 0 8px;
+    font-size: 1.2em;
+}
+
+.important {
+    background: linear-gradient(135deg, rgba(124, 77, 255, 0.1) 0%, rgba(124, 77, 255, 0.05) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(124, 77, 255, 0.3);
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(124, 77, 255, 0.1);
+    position: relative;
+}
+
+.important::before {
+    content: '🎯';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 0 8px;
+    font-size: 1.2em;
+}
+
+.examples {
+    background: linear-gradient(135deg, rgba(0, 255, 127, 0.1) 0%, rgba(0, 255, 127, 0.05) 100%);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 127, 0.3);
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0, 255, 127, 0.1);
+    position: relative;
+}
+
+.examples::before {
+    content: '📋';
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    padding: 0 8px;
+    font-size: 1.2em;
+}
+
+/* Inline code */
+
+#instructions code {
+    background: rgba(224, 225, 221, 0.1);
+    color: #BB86FC;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    border: 1px solid rgba(187, 134, 252, 0.2);
+}
+
+/* Sections */
+
+#instructions section {
+    margin-bottom: 40px;
+}
+
+#instructions article {
+    margin-bottom: 25px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    #instructions {
+        padding: 15px 14px;
+    }
+    
+    #instructions{
+        padding: 20px;
+    }
+    
+    #instructions h1 {
+        font-size: 1.5em;
+    }
+    
+    #instructions h2 {
+        font-size: 1.2em;
+    }
+    
+    #instructions h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 400px) {
+    #instructions {
+        padding: 15px;
+    }
+    
+    .highlight,
+    .important,
+    .examples {
+        padding: 15px;
+        margin: 15px 0;
+    }
+}
+
+/* Hover effects for interactive elements */
+
+#instructions section:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
+/* Smooth fade-in animations */
+
+#instructions {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional styles for improved readability */
+
+#instructions p {
+    font-weight: 500;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Highlighting step numbers */
+
+#instructions ol > li {
+    position: relative;
+    padding-left: 10px;
+}
+
+
+
+/* Reset counter for each new list */
+
+#instructions ol {
+    counter-reset: step-counter;
 }

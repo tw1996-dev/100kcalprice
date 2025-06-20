@@ -667,7 +667,7 @@ input[type="number"] {
 
 .cost-form-group input {
     width: 100%;
-    padding: 18px 15px 8px 15px;
+    padding: 19px 15px 10px 15px;
     border-radius: 8px;
     font-size: 15px;
     transition: all 0.3s ease;
@@ -721,12 +721,10 @@ input[type="number"] {
     .cost-forms-wrapper {
         flex-direction: row; 
         gap: 8px; 
-        margin-bottom: 13px;
+        margin-bottom: 10px;
     }
     
-    .cost-forms-wrapper .cost-form-group {
-        margin-bottom: 0; 
-    }
+
     
     .cost-forms-wrapper .cost-form-group input:focus + label,
     .cost-forms-wrapper .cost-form-group input:not(:placeholder-shown) + label {
@@ -744,6 +742,8 @@ input[type="number"] {
         font-size: 13px;
     }
 }
+
+
 
 /* Cost Calculate Button */
 .cost-calculate-btn {

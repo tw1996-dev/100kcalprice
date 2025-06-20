@@ -721,7 +721,7 @@ input[type="number"] {
     .cost-forms-wrapper {
         flex-direction: row; 
         gap: 8px; 
-        margin-bottom: 5px;
+        margin-bottom: 13px;
     }
     
     .cost-forms-wrapper .cost-form-group {

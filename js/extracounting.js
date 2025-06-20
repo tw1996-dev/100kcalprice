@@ -1,3 +1,20 @@
+// Rate limiting for calculations
+let lastCalculationTime = 0;
+const CALCULATION_COOLDOWN = 1000; // 1 second in milliseconds
+
+function checkRateLimit() {
+    const currentTime = Date.now();
+    const timeSinceLastCalculation = currentTime - lastCalculationTime;
+    
+    if (timeSinceLastCalculation < CALCULATION_COOLDOWN) {
+        const remainingTime = Math.ceil((CALCULATION_COOLDOWN - timeSinceLastCalculation) / 1000);
+        alert(`⏱️ Please wait ${remainingTime} seconds before calculating again!`);
+        return false;
+    }
+    
+    return true;
+}
+
 // Mode switching functions for the cost calculator
 function switchCostMode(mode) {
     const slider = document.querySelector('.cost-mode-slider');
@@ -19,6 +36,17 @@ function switchCostMode(mode) {
 
     // Hide results
     document.getElementById('costResults').style.display = 'none';
+}
+
+// Function to scroll to results
+function scrollToResults() {
+    const resultsElement = document.getElementById('costResults');
+    if (resultsElement) {
+        resultsElement.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
 }
 
 // Function to get the selected currency
@@ -220,6 +248,11 @@ function enforceDaysLimits(input) {
 
 // Cost calculation functions
 function calculateNormalCost() {
+    // Check rate limit first
+    if (!checkRateLimit()) {
+        return;
+    }
+    
     const dailyCalories = parseFloat(document.getElementById('dailyCalories').value);
     const cost1 = parseFloat(document.getElementById('cost100kcal1').value);
     const cost2 = parseFloat(document.getElementById('cost100kcal2').value);
@@ -281,9 +314,22 @@ function calculateNormalCost() {
 
     document.getElementById('costComparison').innerHTML = html;
     document.getElementById('costResults').style.display = 'block';
+    
+    // Update last calculation time
+    lastCalculationTime = Date.now();
+    
+    // Scroll to results after showing them
+    setTimeout(() => {
+        scrollToResults();
+    }, 100);
 }
 
 function calculateDTDNTCost() {
+    // Check rate limit first
+    if (!checkRateLimit()) {
+        return;
+    }
+    
     const trainingCalories = parseFloat(document.getElementById('trainingDayCalories').value);
     const nonTrainingCalories = parseFloat(document.getElementById('nonTrainingDayCalories').value);
     const trainingDays = parseInt(document.getElementById('trainingDaysPerWeek').value);
@@ -356,6 +402,14 @@ function calculateDTDNTCost() {
 
     document.getElementById('costComparison').innerHTML = html;
     document.getElementById('costResults').style.display = 'block';
+    
+    // Update last calculation time
+    lastCalculationTime = Date.now();
+    
+    // Scroll to results after showing them
+    setTimeout(() => {
+        scrollToResults();
+    }, 100);
 }
 
 // Applying validations to fields

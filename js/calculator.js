@@ -8,10 +8,7 @@ let sortDirection = 'asc';
 // Currency support variables
 let currentCurrency = { code: 'USD', name: 'US Dollar', symbol: '$' }; // Default currency
 
-// Security limits
-const MAX_PRODUCTS = 500;
-let lastProductAddTime = 0;
-const ADD_PRODUCT_COOLDOWN = 1000; // 1 second in milliseconds
+
 
 // Update input labels with current currency symbol
 function updateCurrencyLabelsAndPlaceholders() {
@@ -136,6 +133,11 @@ function updateFloatingLabels() {
         }
     });
 }
+
+// Security limits
+const MAX_PRODUCTS = 500;
+let lastProductAddTime = 0;
+const ADD_PRODUCT_COOLDOWN = 1000; // 1 second in milliseconds
 
 function checkRateLimit() {
     const currentTime = Date.now();

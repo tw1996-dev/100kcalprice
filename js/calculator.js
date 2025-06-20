@@ -375,7 +375,7 @@ function renderTable() {
             <td>${formatPrice(product.price)}</td>
             <td class="cost-cell">${formatPrice(product.costPer100Kcal)}</td>
             <td>
-                <button class="delete-btn" onclick="deleteProduct(${product.id})">
+                <button class="delete-btn" data-product-id="${product.id}">
                     🗑️
                 </button>
             </td>
@@ -475,4 +475,34 @@ window.onload = function () {
             sortTable(column);
         });
     });
+
+    // Event listeners for mode switching
+    document.querySelectorAll('.mode-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const mode = parseInt(this.getAttribute('data-mode'));
+            switchMode(mode);
+        });
+    });
+
+    // Event listeners for add product buttons
+    const addKgBtn = document.getElementById('addProductKgBtn');
+    if (addKgBtn) {
+        addKgBtn.addEventListener('click', addProductKg);
+    }
+
+    const addPieceBtn = document.getElementById('addProductPieceBtn');
+    if (addPieceBtn) {
+        addPieceBtn.addEventListener('click', addProductPiece);
+    }
+
+    // Make deleteProduct globally accessible for dynamic buttons
+    window.deleteProduct = deleteProduct;
 };
+
+// Add event delegation for delete buttons
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('delete-btn')) {
+        const productId = parseInt(e.target.getAttribute('data-product-id'));
+        deleteProduct(productId);
+    }
+});

@@ -22,6 +22,12 @@ function initializeLanguageSelector() {
         updateCurrentFlag();
     }
     
+    // Set up language toggle click handler - TO BYŁO BRAKUJĄCE!
+    const languageToggle = document.getElementById('language-toggle');
+    if (languageToggle) {
+        languageToggle.addEventListener('click', toggleLanguageDropdown);
+    }
+    
     // Set up search input
     const searchInput = document.getElementById('language-search-input');
     if (searchInput) {
@@ -57,7 +63,6 @@ function renderLanguageList(languagesToShow) {
 
     languageList.innerHTML = languagesToShow.map(lang => `
         <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
-             onclick="changeLanguage('${lang.code}')"
              data-code="${lang.code}">
             <img src="flags/${lang.flag}.svg" 
                  alt="${lang.name} flag">
@@ -67,6 +72,15 @@ function renderLanguageList(languagesToShow) {
             </div>
         </div>
     `).join('');
+    
+    // Add click handlers for language options
+    const languageOptions = languageList.querySelectorAll('.language-option');
+    languageOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const langCode = this.getAttribute('data-code');
+            changeLanguage(langCode);
+        });
+    });
 }
 
 // Handle language search

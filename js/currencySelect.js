@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCurrencySelector();
 });
 
-// ========== CURRENCY STORAGE FUNCTIONS - START ==========
+// ========== CURRENCY STORAGE FUNCTIONS  ==========
 function loadSavedCurrency() {
     try {
         const saved = localStorage.getItem('selectedCurrency');
@@ -177,10 +177,10 @@ function updateSelectedCurrencyDisplay() {
     
     if (selectedCurrency && selectedDisplay && selectedText) {
         selectedText.innerHTML = `<strong>${selectedCurrency.code}</strong> - ${selectedCurrency.name} (${selectedCurrency.symbol})`;
-        selectedDisplay.style.display = 'block';
+        selectedDisplay.classList.add('show');
     }
 }
-// ========== CURRENCY STORAGE FUNCTIONS - END ==========
+
 
 function initializeCurrencySelector() {
     const searchInput = document.getElementById('currency-search');
@@ -223,13 +223,13 @@ function initializeCurrencySelector() {
 
 function displayCurrencyResults(currenciesToShow, container) {
     if (currenciesToShow.length === 0) {
-        container.innerHTML = '<div class="currency-option" style="text-align: center; color: #BB86FC;">No currencies found</div>';
+        container.innerHTML = '<div class="currency-option currency-option-empty">No currencies found</div>';
         container.classList.add('show');
         return;
     }
 
     container.innerHTML = currenciesToShow.map(currency => `
-        <div class="currency-option" onclick="selectCurrency('${currency.code}', '${currency.name}', '${currency.symbol}')">
+        <div class="currency-option" data-code="${currency.code}" data-name="${currency.name}" data-symbol="${currency.symbol}">
             <span class="currency-code">${currency.code}</span>
             <span class="currency-name">${currency.name}</span>
             <span class="currency-symbol">${currency.symbol}</span>
@@ -238,6 +238,19 @@ function displayCurrencyResults(currenciesToShow, container) {
     
     container.classList.add('show');
 }
+
+// Event delegation for currency options
+document.addEventListener('click', function(e) {
+    const option = e.target.closest('.currency-option');
+    if (option && !option.classList.contains('currency-option-empty')) {
+        const code = option.getAttribute('data-code');
+        const name = option.getAttribute('data-name');
+        const symbol = option.getAttribute('data-symbol');
+        if (code && name && symbol) {
+            selectCurrency(code, name, symbol);
+        }
+    }
+});
 
 function selectCurrency(code, name, symbol) {
     const currency = { code, name, symbol };
@@ -252,20 +265,7 @@ function selectCurrency(code, name, symbol) {
     
     // Show success message
     const tempMessage = document.createElement('div');
-    tempMessage.style.cssText = `
-        position: fixed;
-        top: 80px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: linear-gradient(135deg, rgba(187, 134, 252, 0.9), rgba(124, 77, 255, 0.9));
-        color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        font-weight: 600;
-        z-index: 1000;
-        box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4);
-        animation: slideDown 0.3s ease;
-    `;
+    tempMessage.className = 'currency-success-message';
     tempMessage.textContent = `✅ Currency set to ${code} (${symbol})`;
     
     document.body.appendChild(tempMessage);
@@ -275,21 +275,6 @@ function selectCurrency(code, name, symbol) {
     }, 3000);
 }
 
-// CSS for slide down animation
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideDown {
-        from {
-            opacity: 0;
-            transform: translateX(-50%) translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
 
 // ========== FUNCTION TO GET SELECTED CURRENCY FOR CALCULATOR  ==========
 // This function can be called from the calculator page to get the selected currency

@@ -269,7 +269,7 @@ function calculateNormalCost() {
         const isFirstCheaper = dailyCost1 < dailyCost2;
 
         html += `
-            <div class="cost-item" style="grid-column: 1 / -1; background: #1A1A2E;; border-color: rgba(187, 134, 252, 0.3);">
+            <div class="cost-item cost-item-difference">
                 <h4>💰 Cost Difference ${isFirstCheaper ? '(first cheaper)' : '(second cheaper)'}</h4>
                 <div class="cost-value">Daily: <span>${dailyDiff.toFixed(2)} ${currency.symbol}</span></div>
                 <div class="cost-value">Weekly: <span>${weeklyDiff.toFixed(2)} ${currency.symbol}</span></div>
@@ -344,7 +344,7 @@ function calculateDTDNTCost() {
         const isFirstCheaper = dailyCost1 < dailyCost2;
 
         html += `
-            <div class="cost-item" style="grid-column: 1 / -1;     background: #1A1A2E; border-color: #3A3A3A;">
+            <div class="cost-item cost-item-difference">
                 <h4>💰 Cost Difference ${isFirstCheaper ? '(first cheaper)' : '(second cheaper)'}</h4>
                 <div class="cost-value">Daily: <span>${dailyDiff.toFixed(2)} ${currency.symbol}</span></div>
                 <div class="cost-value">Weekly: <span>${weeklyDiff.toFixed(2)} ${currency.symbol}</span></div>
@@ -419,4 +419,26 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCurrencyLabels();
         }
     });
+});
+
+// Event listeners initialization
+document.addEventListener('DOMContentLoaded', function() {
+    // Cost mode switching
+    document.querySelectorAll('.cost-mode-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const mode = parseInt(this.getAttribute('data-cost-mode'));
+            switchCostMode(mode);
+        });
+    });
+
+    // Calculate buttons
+    const calcNormalBtn = document.getElementById('calculateNormalBtn');
+    if (calcNormalBtn) {
+        calcNormalBtn.addEventListener('click', calculateNormalCost);
+    }
+
+    const calcDTDNTBtn = document.getElementById('calculateDTDNTBtn');
+    if (calcDTDNTBtn) {
+        calcDTDNTBtn.addEventListener('click', calculateDTDNTCost);
+    }
 });

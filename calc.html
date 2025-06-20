@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>100 kcal Cost Calculator</title>
 
-    <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none';">
+<!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+
 
     <!---- Metadata for search engines and social sharing ---->
     <meta name="description"
@@ -47,10 +48,10 @@
 
         <div class="mode-switcher">
             <div class="mode-slider"></div>
-            <button class="mode-btn active" onclick="switchMode(0)">
+            <button class="mode-btn active" data-mode="0">
                 Per Kilogram
             </button>
-            <button class="mode-btn" onclick="switchMode(1)">
+            <button class="mode-btn" data-mode="1">
                 Per Piece
             </button>
         </div>
@@ -73,7 +74,7 @@
                         <label for="pricePerKg">Price per kg </label>
                     </div>
                 </div>
-                <button class="btn" onclick="addProductKg()">➕ Add Product</button>
+                <button class="btn" id="addProductKgBtn">➕ Add Product</button>
             </div>
 
             <div class="input-section" id="mode-piece">
@@ -104,7 +105,7 @@
                         <label for="pricePerKg2">Price per kg</label>
                     </div>
                 </div>
-                <button class="btn" onclick="addProductPiece()">➕ Add Product</button>
+                <button class="btn" id="addProductPieceBtn">➕ Add Product</button>
             </div>
         </div>
 
@@ -112,10 +113,10 @@
             <table id="productTable">
                 <thead>
                     <tr>
-                        <th data-sort="name" style="cursor: pointer;">🍎 Product</th>
-                        <th data-sort="calories" style="cursor: pointer;">🔥 Kcal/100g</th>
-                        <th data-sort="price" style="cursor: pointer;">💵 Price per kg</th>
-                        <th data-sort="cost" style="cursor: pointer;">💰 Cost of 100 kcal</th>
+                        <th data-sort="name">🍎 Product</th>
+                        <th data-sort="calories">🔥 Kcal/100g</th>
+                        <th data-sort="price">💵 Price per kg</th>
+                        <th data-sort="cost">💰 Cost of 100 kcal</th>
                         <th>🗑️</th>
                     </tr>
                 </thead>
@@ -137,10 +138,10 @@
 
     <div class="cost-mode-switcher">
         <div class="cost-mode-slider"></div>
-        <button class="cost-mode-btn active" onclick="switchCostMode(0)">
+       <button class="cost-mode-btn active" data-cost-mode="0">
             Normal
         </button>
-        <button class="cost-mode-btn" onclick="switchCostMode(1)">
+        <button class="cost-mode-btn" data-cost-mode="1">
             Training/Rest
         </button>
     </div>
@@ -163,7 +164,7 @@
             </div>
         </div>
 
-        <button class="cost-calculate-btn" onclick="calculateNormalCost()">
+        <button class="cost-calculate-btn" id="calculateNormalBtn">
             🧮 Calculate Costs
         </button>
     </div>
@@ -203,7 +204,7 @@
             </div>
         </div>
 
-        <button class="cost-calculate-btn" onclick="calculateDTDNTCost()">
+        <button class="cost-calculate-btn" id="calculateDTDNTBtn">
             🧮 Calculate Costs
         </button>
     </div>

@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>100kcal Cost</title>
 <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-ancestors 'none';">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+
 
  <!---- Metadata for search engines and social sharing ---->
     <meta name="description"
@@ -45,7 +46,7 @@
         <div id="currency-results"></div>
     </div>
     
-    <div class="selected-currency" id="selected-currency" style="display: none;">
+    <div class="selected-currency" id="selected-currency">
         <div class="selected-currency-text">
             Selected: <span id="selected-currency-display"></span>
         </div>
@@ -194,7 +195,7 @@
                 <strong>Compare two different scenarios</strong> to see the <strong>financial difference</strong> between two diets or ingredient choices over various periods (daily, weekly, monthly, yearly). This is super useful for understanding potential savings or increased spending!
             </li>
         </ul>
-        <p>
+        <p id="lastParagraph">
             Whether you're tracking a standard daily calorie intake or managing different calorie targets for training and non-training days, this tool provides a <em>clear breakdown of your costs</em>. It's a <em>fantastic way to visualize the financial impact of your nutrition</em>!
         </p>
     </section>

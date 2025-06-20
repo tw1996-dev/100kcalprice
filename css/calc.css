@@ -796,6 +796,12 @@ input[type="number"] {
     }
 }
 
+.cost-item-difference {
+    grid-column: 1 / -1;
+    background: #1A1A2E;
+    border-color: rgba(187, 134, 252, 0.3);
+}
+
 .cost-item {
     background: #1A1A2E;
     padding: 15px;
@@ -861,3 +867,5 @@ input[type="number"] {
     flex: 1; 
     min-width: 150px; 
 }
+
+

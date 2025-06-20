@@ -56,44 +56,9 @@ function enforcePriceLimits(input) {
             // No blocking here - let user type freely
         }
     });
-    
-    // Handle paste
-    input.addEventListener('paste', (e) => {
-        e.preventDefault();
-        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-        
-        let cleaned = '';
-        let separatorFound = false;
-        
-        for (let char of pastedText) {
-            if (/[0-9]/.test(char)) {
-                cleaned += char;
-            } else if ((char === '.' || char === ',') && !separatorFound) {
-                cleaned += '.';
-                separatorFound = true;
-            }
-        }
-        
-        // Limit decimal places
-        const parts = cleaned.split('.');
-        if (parts.length > 1 && parts[1].length > 2) {
-            cleaned = parts[0] + '.' + parts[1].substring(0, 2);
-        }
-        
-        // Check limits
-        const numValue = parseFloat(cleaned);
-        if (!isNaN(numValue) && numValue > 5000) {
-            cleaned = '5000';
-        }
-        
-        input.value = cleaned;
-        input.dispatchEvent(new Event('input', { bubbles: true }));
-    });
 
-    // Handle input changes (cleanup)
+    // Handle input changes (cleanup) - includes paste cleanup
     input.addEventListener('input', (e) => {
-        if (e.inputType === 'insertFromPaste') return;
-        
         let value = input.value;
         const cursorPos = input.selectionStart;
         
@@ -174,33 +139,9 @@ function enforceWeightLimits(input) {
             return;
         }
     });
-    
-    // Handle paste
-    input.addEventListener('paste', (e) => {
-        e.preventDefault();
-        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-        
-        // Keep only digits
-        let cleaned = pastedText.replace(/[^0-9]/g, '');
-        
-        // Check limits
-        const numValue = parseInt(cleaned);
-        if (!isNaN(numValue)) {
-            if (numValue > 10000) {
-                cleaned = '10000';
-            } else if (numValue < 1) {
-                cleaned = '';
-            }
-        }
-        
-        input.value = cleaned;
-        input.dispatchEvent(new Event('input', { bubbles: true }));
-    });
 
-    // Handle input changes (cleanup)
+    // Handle input changes (cleanup) - includes paste cleanup
     input.addEventListener('input', (e) => {
-        if (e.inputType === 'insertFromPaste') return;
-        
         let value = input.value;
         const cursorPos = input.selectionStart;
         
@@ -282,48 +223,9 @@ function enforceCalorieLimits(input) {
             // No blocking here - let user type freely
         }
     });
-    
-    // Handle paste
-    input.addEventListener('paste', (e) => {
-        e.preventDefault();
-        const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-        
-        let cleaned = '';
-        let separatorFound = false;
-        
-        for (let char of pastedText) {
-            if (/[0-9]/.test(char)) {
-                cleaned += char;
-            } else if ((char === '.' || char === ',') && !separatorFound) {
-                cleaned += '.';
-                separatorFound = true;
-            }
-        }
-        
-        // Limit decimal places
-        const parts = cleaned.split('.');
-        if (parts.length > 1 && parts[1].length > 2) {
-            cleaned = parts[0] + '.' + parts[1].substring(0, 2);
-        }
-        
-        // Check limits
-        const numValue = parseFloat(cleaned);
-        if (!isNaN(numValue)) {
-            if (numValue > 900) {
-                cleaned = '900';
-            } else if (numValue < 1) {
-                cleaned = '';
-            }
-        }
-        
-        input.value = cleaned;
-        input.dispatchEvent(new Event('input', { bubbles: true }));
-    });
 
-    // Handle input changes (cleanup)
+    // Handle input changes (cleanup) - includes paste cleanup
     input.addEventListener('input', (e) => {
-        if (e.inputType === 'insertFromPaste') return;
-        
         let value = input.value;
         const cursorPos = input.selectionStart;
         
@@ -380,6 +282,7 @@ function enforceCalorieLimits(input) {
         }
     });
 }
+
 // Apply validations to respective fields
 const priceInputs = [
     document.getElementById('pricePerKg'),

@@ -344,7 +344,7 @@ function calculateDTDNTCost() {
         const isFirstCheaper = dailyCost1 < dailyCost2;
 
         html += `
-            <div class="cost-item" style="grid-column: 1 / -1; background: rgba(0, 255, 127, 0.1); border-color: rgba(0, 255, 127, 0.3);">
+            <div class="cost-item" style="grid-column: 1 / -1;     background: #1A1A2E; border-color: #3A3A3A;">
                 <h4>💰 Cost Difference ${isFirstCheaper ? '(first cheaper)' : '(second cheaper)'}</h4>
                 <div class="cost-value">Daily: <span>${dailyDiff.toFixed(2)} ${currency.symbol}</span></div>
                 <div class="cost-value">Weekly: <span>${weeklyDiff.toFixed(2)} ${currency.symbol}</span></div>

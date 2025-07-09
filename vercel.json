@@ -1,0 +1,36 @@
+{
+  "rewrites": [
+    {
+      "source": "/pl",
+      "destination": "/pl/index.html"
+    },
+    {
+      "source": "/pl/",
+      "destination": "/pl/index.html"
+    },
+    {
+      "source": "/pl/calc",
+      "destination": "/pl/calc.html"
+    },
+    {
+      "source": "/pl/instruction",
+      "destination": "/pl/instruction.html"
+    },
+    {
+      "source": "/no",
+      "destination": "/no/index.html"
+    },
+    {
+      "source": "/no/",
+      "destination": "/no/index.html"
+    },
+    {
+      "source": "/no/calc",
+      "destination": "/no/calc.html"
+    },
+    {
+      "source": "/no/instruction",
+      "destination": "/no/instruction.html"
+    }
+  ]
+}

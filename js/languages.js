@@ -195,8 +195,8 @@ function toggleLanguageDropdown() {
     isDropdownOpen = !isDropdownOpen;
     
     if (isDropdownOpen) {
-        dropdown.classList.add('show');
-        toggle.classList.add('active');
+        if (dropdown) dropdown.classList.add('show');
+        if (toggle) toggle.classList.add('active');
         
         // Reset search and focus
         if (searchInput) {
@@ -207,8 +207,8 @@ function toggleLanguageDropdown() {
         // Reset language list to show all
         renderLanguageList(languages);
     } else {
-        dropdown.classList.remove('show');
-        toggle.classList.remove('active');
+        if (dropdown) dropdown.classList.remove('show');
+        if (toggle) toggle.classList.remove('active');
     }
 }
 
@@ -228,8 +228,8 @@ function changeLanguage(selectedLang) {
     // Close dropdown
     const dropdown = document.getElementById('language-dropdown');
     const toggle = document.getElementById('language-toggle');
-    dropdown.classList.remove('show');
-    toggle.classList.remove('active');
+    if (dropdown) dropdown.classList.remove('show');
+    if (toggle) toggle.classList.remove('active');
     isDropdownOpen = false;
     
     // Get the correct path for navigation
@@ -272,8 +272,8 @@ document.addEventListener('click', function(event) {
     
     if (!selector || !selector.contains(event.target)) {
         if (isDropdownOpen) {
-            dropdown.classList.remove('show');
-            toggle.classList.remove('active');
+            if (dropdown) dropdown.classList.remove('show');
+            if (toggle) toggle.classList.remove('active');
             isDropdownOpen = false;
         }
     }

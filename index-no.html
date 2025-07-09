@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 kcal Kostnad</title>
+
+  <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+
+
+    <!---- Metadata for search engines and social sharing ---->
+    <meta name="description"
+        content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
+    <meta name="keywords"
+        content="kalori kostnad, mat kalkulator, kalori kalkulator, kostnad per kalori, mat sammenligning, budsjett mat, sunt kosthold kostnad">
+    <meta name="author" content="tw1996-dev">
+
+       <!---- Open Graph ---->
+    <meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/index-no.html" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" /> 
+    <meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt." />
+
+    <!---- CSS ---->
+    <link rel="stylesheet" href="css/styles.css">
+
+
+    <!-- Favicons and icons -->
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+
+
+
+
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "100 kcal Kostnadskalkulator",
+  "url": "https://www.100kcalcost.com/index-no.html",
+  "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt. Gratis online verktøy for kalorianalyse.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Chrome, Firefox, Safari, Edge",
+  "permissions": "localStorage",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Beregn kostnad per 100 kalorier",
+    "Sammenlign matprodukter etter kalori kostnad",
+    "Støtte for flere valutaer",
+    "Per kilogram og per stykke beregninger",
+    "Data persistens med localStorage",
+    "Responsiv design for mobil og desktop",
+    "Sorterbar produktsammenligningstabell",
+    "Rediger og slett produktoppføringer",
+    "Ingen registrering nødvendig"
+  ],
+  "softwareVersion": "1.0",
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "inLanguage": "no",
+  "isAccessibleForFree": true,
+  "usageInfo": "Gratis å bruke for personlige og kommersielle formål",
+  "applicationSubCategory": "Mat Kalkulator",
+  "serviceType": "Online Kalkulator"
+}
+</script>
+
+<!-- WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "100 kcal Kostnadskalkulator",
+  "url": "https://www.100kcalcost.com/index-no.html",
+  "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter",
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.100kcalcost.com/calc-no.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+
+<body>
+    <nav id="main-nav" aria-label="Hovednavigasjon">
+        <ul>
+            <li><a class="navigation-link" href="index-no.html">Hjem</a></li>
+            <li><a class="navigation-link" href="calc-no.html">Kalkulator🧮</a></li>
+            <li><a class="navigation-link" href="instruction-no.html">Hvordan bruke?</a></li>
+        </ul>
+    </nav>
+
+<!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="flags/no.svg" alt="Nåværende språk">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input 
+                    type="text" 
+                    id="language-search-input" 
+                    placeholder="Søk språk..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <header id="mainPageHeader">
+        <h1>Hvor mye koster 100 kalorier?</h1>
+    </header>
+
+    <main id="mainPageMain">
+
+        <p>Du er i butikken. Du ser på hyller fulle av produkter. Priser per kilogram er synlige, etiketter angir tydelig
+            <em>energiverdien</em>... men vet du egentlig <strong>hvor kostnadseffektivt et gitt produkt
+                er?</strong></p>
+        
+        <p>Er du klar over at <strong>noen produkter faktisk er flere ganger dyrere enn andre</strong>?</p>
+
+        <div class="home-highlight-box">
+            <p>Denne siden ble opprettet for å svare på akkurat det spørsmålet. Med denne <em>enkle kalkulatoren</em>, vil du
+                beregne på <em>bare noen få sekunder</em> hvor mye 100 kalorier av et gitt produkt koster deg – det er en
+                <strong>rask og praktisk måte å sammenligne kostnadseffektiviteten til forskjellige matalternativer</strong>.</p>
+        </div>
+
+        <h2>Denne kalkulatoren vil være nyttig for alle som:</h2>
+        <ul id="mainPageul">
+            <li>kontrollerer <strong>daglig kaloriinntak</strong></li>
+            <li>ønsker å ta <strong>informerte kjøpsbeslutninger</strong></li>
+            <li>ser etter måter å <strong>spare penger</strong>, <em>uten å gå på kompromiss med kvalitet</em></li>
+        </ul>
+
+        <div class="home-cta-text">
+            <p>Den beste delen er at du kan ha denne kalkulatoren <strong>alltid for hånden</strong> – alt du trenger er en telefon
+                og tilgang til nettsiden. <strong>Å beregne kostnaden for 100 kcal</strong> tar deg bokstavelig talt <em>10
+                    sekunder</em>, selv <em>mens du står ved butikkhyllen</em>.</p>
+        </div>
+
+        <h2>Hvorfor er det verdt å beregne kalori kostnad?</h2>
+
+        <p>I en verden der <strong>mat blir dyrere</strong>, er det verdt å vite ikke bare <strong>hvor
+                mye 1 kg av et gitt produkt koster</strong>, men også <strong>hvor mye du betaler for energiverdien</strong>. Spesielt hvis du <em>teller kalorier</em>, <em>går ned i vekt</em>,
+            <em>trener</em>, eller bare ønsker å ha <strong>større bevissthet</strong> om det du kjøper.</p>
+
+        <div class="home-highlight-box">
+            <p>Husk – kaloritelling er ikke bare en <em>måte å diette på</em>, men også <strong>reell kontroll over
+                    utgifter</strong> og en bedre <strong>forståelse av verdien av det vi spiser</strong>. Og mens
+                <strong>pris betyr noe</strong>, la oss ikke glemme: <strong>produktkvalitet</strong> <em>forblir alltid
+                    nøkkelen</em>.</p>
+        </div>
+
+    </main>
+    <script src="js/lazyLoader.js"></script>
+    <script src="js/mobilehover.js" defer></script>
+    <script src="js/languages.js"></script>
+</body>
+
+</html>

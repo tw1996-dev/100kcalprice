@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.100kcalcost.com/sitemap.xml
+
+# Optional: Crawl delay (uncomment if needed)
+# Crawl-delay: 1
+
+# Block specific directories if needed (uncomment and modify as needed)
+# Disallow: /admin/
+# Disallow: /temp/
+# Disallow: /test/

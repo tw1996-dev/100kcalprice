@@ -45,8 +45,8 @@ body {
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
-    width: 40px;
-    height: 33px;
+    width: 45px;
+    height: 45px;
     padding: 4px;
     background: rgba(20, 20, 20, 0.8);
     border: 1px solid rgba(187, 134, 252, 0.3);
@@ -909,8 +909,8 @@ top:50px;
 }
 
 #current-flag {
-    width: 32px;
-    height: 24px;
+    width: 36px;
+    height: 32px;
     margin-right: 8px;
     border-radius: 4px;
     object-fit: cover;

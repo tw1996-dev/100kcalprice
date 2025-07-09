@@ -12,6 +12,19 @@ const englishTranslations = {
         sumSeven: 'The sum of training and non-training days must be 7!',
     },
 
+    // ========== TABLE CONTENT ==========
+table: {
+    noProducts: 'Add your first product to see cost comparison! 🚀',
+    deleteAllBtn: '🗑️ Delete All',
+    
+    // Table headers
+    headerProduct: '🍎 Product',
+    headerCalories: '🔥 Kcal/100g',
+    headerPrice: '💵 Price per kg',
+    headerCost: '💰 Cost of 100 kcal',
+    headerActions: '🗑️'
+},
+
     // ========== COST CALCULATION RESULTS ==========
     costResults: {
         // Cost types

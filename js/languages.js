@@ -241,20 +241,20 @@ function changeLanguage(selectedLang) {
             // Redirect to Polish version
             if (window.location.pathname.includes('/no/')) {
                 // If we're in Norwegian folder, go to Polish folder
-                window.location.href = '../pl/index-pl.html';
+                window.location.href = '../pl/index.html';
             } else {
                 // If we're in root, go to Polish folder
-                window.location.href = 'pl/index-pl.html';
+                window.location.href = 'pl/index.html';
             }
             break;
         case 'no':
             // Redirect to Norwegian version
             if (window.location.pathname.includes('/pl/')) {
                 // If we're in Polish folder, go to Norwegian folder
-                window.location.href = '../no/index-no.html';
+                window.location.href = '../no/index.html';
             } else {
                 // If we're in root, go to Norwegian folder
-                window.location.href = 'no/index-no.html';
+                window.location.href = 'no/index.html';
             }
             break;
         case 'en':

@@ -24,6 +24,11 @@
     <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" /> 
     <meta property="og:description" content="Calculate and compare the cost of 100 calories for various food products to make informed shopping decisions and manage your budget." />
 
+<!-- Preload critical resources for faster loading -->
+<link rel="preload" href="css/calc.css" as="style">
+<link rel="preload" href="js/lazyLoader.js" as="script">
+<link rel="preload" href="js/i18n-base.js" as="script">
+
     <!---- CSS ---->
     <link rel="stylesheet" href="css/calc.css">
 
@@ -378,14 +383,17 @@ if ('serviceWorker' in navigator) {
     </div>
 </section>
 
-<script src="js/lazyLoader.js"></script>
-<script src="js/mobilehover.js" defer></script>
-<script src="js/calculator.js" defer></script>
-<script src="js/validations.js" defer></script>
-<script src="js/extracounting.js" defer></script>
-<script src="js/languages.js"></script>
-<script src="js/i18n-base.js" defer></script>
-<script src="js/i18n-en.js" defer></script>
+<!-- Critical scripts -->
+<script type="text/javascript" src="js/lazyLoader.js"></script>
+<script type="text/javascript" src="js/i18n-base.js"></script>
+
+<!-- Non-critical scripts (defer) -->
+<script type="text/javascript" src="js/mobilehover.js" defer></script>
+<script type="text/javascript" src="js/calculator.js" defer></script>
+<script type="text/javascript" src="js/validations.js" defer></script>
+<script type="text/javascript" src="js/extracounting.js" defer></script>
+<script type="text/javascript" src="js/languages.js" defer></script>
+<script type="text/javascript" src="js/i18n-en.js" defer></script>
 </body>
 
 </html>

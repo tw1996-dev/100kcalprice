@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
                    this.classList.remove('mobile-hover-active');
                }, 1000); // 1000 milliseconds = 1 second
            }
-       });
+       }, { passive: true }); // Added passive: true for better performance
    });
 });
 
@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
        hamburger.addEventListener('click', function(e) {
            e.preventDefault();
            toggleMenu();
-       });
+       }, { passive: false }); // preventDefault needed, so not passive
        
        backdrop.addEventListener('click', function(e) {
            e.preventDefault();
            toggleMenu();
-       });
+       }, { passive: false }); // preventDefault needed, so not passive
        
        // Close menu when clicking on links
        const mobileLinks = mobileMenu.querySelectorAll('.navigation-link');
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
                        toggleMenu();
                    }
                }, 100);
-           });
+           }, { passive: true }); // Passive for better performance
        });
        
        // Close menu on Escape key
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                toggleMenu();
            }
-       });
+       }, { passive: true }); // Passive for better performance
        
        // Close menu on window resize to desktop
        window.addEventListener('resize', function() {
@@ -79,6 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
                backdrop.classList.remove('active');
                body.classList.remove('menu-open');
            }
-       });
+       }, { passive: true }); // Passive for better performance
    }
 });

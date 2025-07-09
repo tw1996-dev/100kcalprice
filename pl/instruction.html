@@ -24,6 +24,11 @@
     <meta property="og:description"
         content="Oblicz i porównaj koszt 100 kalorii dla różnych produktów spożywczych, aby podejmować świadome decyzje zakupowe i zarządzać budżetem." />
 
+
+        <!-- Preload critical resources for faster loading -->
+<link rel="preload" href="../css/styles.css" as="style">
+<link rel="preload" href="../js/lazyLoader.js" as="script">
+
     <!---- CSS ---->
     <link rel="stylesheet" href="../css/styles.css">
 
@@ -483,12 +488,15 @@ if ('serviceWorker' in navigator) {
    </main>
 
 
-   <script src="../js/lazyLoader.js"></script>
-   <script src="../js/mobilehover.js" defer></script>
-   <script src="../js/currencySelect.js" defer></script>
-   <script src="../js/i18n-base.js" defer></script>
-   <script src="../js/i18n-pl.js" defer></script>
-   <script src="../js/languages.js"></script>
+<!-- Critical scripts -->
+<script type="text/javascript" src="../js/lazyLoader.js"></script>
+<script type="text/javascript" src="../js/i18n-base.js"></script>
+
+<!-- Non-critical scripts (defer) -->
+<script type="text/javascript" src="../js/mobilehover.js" defer></script>
+<script type="text/javascript" src="../js/currencySelect.js" defer></script>
+<script type="text/javascript" src="../js/languages.js" defer></script>
+<script type="text/javascript" src="../js/i18n-pl.js" defer></script>
 </body>
 
 </html>

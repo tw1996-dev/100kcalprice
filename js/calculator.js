@@ -619,3 +619,5 @@ document.addEventListener('click', function(e) {
         deleteProduct(productId);
     }
 });
+
+

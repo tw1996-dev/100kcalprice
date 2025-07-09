@@ -6,8 +6,6 @@ let sortColumn = null;
 let sortDirection = 'asc';
 
 
-let isEditing = false;
-let editingId = null;
 
 // Currency support variables
 let currentCurrency = { code: 'USD', name: 'US Dollar', symbol: '$' }; // Default currency
@@ -219,13 +217,7 @@ function switchMode(mode) {
     }, 300);
 }
 
-
 function addProductKg() {
-    if (isEditing) {
-        updateProductKg();
-        return;
-    }
-
     // Check security limits
     if (!checkProductLimit() || !checkRateLimit()) {
         return;
@@ -260,11 +252,6 @@ function addProductKg() {
 }
 
 function addProductPiece() {
-    if (isEditing) {
-        updateProductPiece();
-        return;
-    }
-
     // Check security limits
     if (!checkProductLimit() || !checkRateLimit()) {
         return;
@@ -315,112 +302,6 @@ function addProductPiece() {
 }
 
 
-function updateProductKg() {
-    const originalProductName = document.getElementById('productName1').value;
-    const calories = parseFloat(document.getElementById('calories1').value);
-    const pricePerKg = parseFloat(document.getElementById('pricePerKg').value);
-
-    if (!validateInputs(null, calories, pricePerKg, null, null)) return;
-
-    const productName = generateUniqueProductName(originalProductName);
-    const costPer100Kcal = calculateCostPer100Kcal(calories, pricePerKg);
-
-    const productIndex = products.findIndex(p => p.id === editingId);
-    if (productIndex !== -1) {
-        products[productIndex] = {
-            id: editingId,
-            name: productName,
-            calories: calories,
-            price: pricePerKg,
-            priceUnit: 'kg',
-            costPer100Kcal: costPer100Kcal
-        };
-    }
-
-    // Reset editing state
-    isEditing = false;
-    editingId = null;
-    document.getElementById('addProductKgBtn').textContent = '➕ Add Product';
-    
-    saveToLocalStorage();
-    renderTable();
-    clearInputsKg();
-}
-
-function updateProductPiece() {
-    const originalProductName = document.getElementById('productName2').value;
-    const pieceWeight = parseFloat(document.getElementById('pieceWeight').value);
-    const calories = parseFloat(document.getElementById('calories2').value);
-    const pricePerPiece = parseFloat(document.getElementById('pricePerPiece').value);
-    const pricePerKg2 = parseFloat(document.getElementById('pricePerKg2').value);
-
-    if (!validateInputs(null, calories, null, pieceWeight, pricePerPiece, pricePerKg2)) return;
-
-    const productName = generateUniqueProductName(originalProductName);
-    let costPer100Kcal;
-    let pricePerKg;
-
-    if (pricePerPiece && pricePerPiece > 0) {
-        costPer100Kcal = calculateCostPer100KcalFromPiece(pieceWeight, calories, pricePerPiece);
-        pricePerKg = (pricePerPiece / pieceWeight) * 1000;
-    } else if (pricePerKg2 && pricePerKg2 > 0) {
-        costPer100Kcal = calculateCostPer100Kcal(calories, pricePerKg2);
-        pricePerKg = pricePerKg2;
-    } else {
-        alert('❌ Enter a price per piece OR per kilogram!');
-        return;
-    }
-
-    const productIndex = products.findIndex(p => p.id === editingId);
-    if (productIndex !== -1) {
-        products[productIndex] = {
-            id: editingId,
-            name: productName,
-            calories: calories,
-            price: pricePerKg,
-            priceUnit: 'kg',
-            costPer100Kcal: costPer100Kcal
-        };
-    }
-
-    // Reset editing state
-    isEditing = false;
-    editingId = null;
-    document.getElementById('addProductPieceBtn').textContent = '➕ Add Product';
-    
-    saveToLocalStorage();
-    renderTable();
-    clearInputsPiece();
-}
-
-
-function editProduct(productId) {
-    const product = products.find(p => p.id === productId);
-    if (!product) return;
-
-    // Set editing state
-    isEditing = true;
-    editingId = productId;
-
-    // Fill form based on current mode
-    if (currentMode === 0) {
-        // Per Kilogram mode
-        document.getElementById('productName1').value = product.name;
-        document.getElementById('calories1').value = product.calories;
-        document.getElementById('pricePerKg').value = product.price;
-        document.getElementById('addProductKgBtn').textContent = '✏️ Update Product';
-    } else {
-        // Per Piece mode - we need to reconstruct piece data
-        // This is tricky since we store normalized data
-        document.getElementById('productName2').value = product.name;
-        document.getElementById('calories2').value = product.calories;
-        document.getElementById('pricePerKg2').value = product.price;
-        document.getElementById('addProductPieceBtn').textContent = '✏️ Update Product';
-    }
-
-    // Update floating labels
-    updateFloatingLabels();
-}
 
 function validateInputs(productName, calories, pricePerKg, pieceWeight, pricePerPiece, pricePerKg2) {
     // Product name is not required
@@ -511,7 +392,7 @@ function deleteProduct(productId) {
     if (productIndex !== -1) {
         products.splice(productIndex, 1);
         
-      
+
         saveToLocalStorage();
         renderTable();
     }
@@ -534,13 +415,10 @@ function deleteAllProducts() {
         sortDirection = 'asc';
         
         // Reset editing state if active
-        if (isEditing) {
-            isEditing = false;
-            editingId = null;
-            document.getElementById('addProductKgBtn').textContent = '➕ Add Product';
-            document.getElementById('addProductPieceBtn').textContent = '➕ Add Product';
-            clearInputsKg();
-            clearInputsPiece();
+        if (products.length === 0) {
+            // Reset other states when no products
+            sortColumn = null;
+            sortDirection = 'asc';
         }
         
         saveToLocalStorage();
@@ -587,7 +465,7 @@ function renderTable() {
 
     tbody.innerHTML = products.map((product, index) => `
         <tr>
-            <td class="name-cell" onclick="editProduct(${product.id})" style="cursor: pointer;" title="Click to edit">
+            <td>
                 <strong>${product.name}</strong>
             </td>
             <td>${formatNumber(product.calories)} kcal</td>
@@ -724,7 +602,6 @@ window.onload = function () {
 
     // Make functions globally accessible for dynamic buttons
     window.deleteProduct = deleteProduct;
-    window.editProduct = editProduct;
     window.deleteAllProducts = deleteAllProducts;
 };
 

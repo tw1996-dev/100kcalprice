@@ -1,13 +1,15 @@
 User-agent: *
 Allow: /
 
+# Allow specific search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
 # Sitemap location
 Sitemap: https://www.100kcalcost.com/sitemap.xml
 
-# Optional: Crawl delay (uncomment if needed)
-# Crawl-delay: 1
-
-# Block specific directories if needed (uncomment and modify as needed)
-# Disallow: /admin/
-# Disallow: /temp/
-# Disallow: /test/
+# Crawl delay for politeness
+Crawl-delay: 1

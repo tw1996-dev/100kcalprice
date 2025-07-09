@@ -1172,3 +1172,98 @@ input[type="number"] {
     color: rgba(224, 224, 240, 0.5);
     font-style: italic;
 }
+
+/* ========== FAQ SECTION STYLES ========== */
+#faq-section {
+    max-width: 500px;
+    margin: 40px auto 20px auto;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(187, 134, 252, 0.05) 100%);
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.1);
+}
+
+#faq-section h2 {
+    color: #BB86FC;
+    text-align: center;
+    margin: 0 0 25px 0;
+    font-size: 1.4em;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(26, 26, 46, 0.6) 100%);
+    border: 1px solid rgba(187, 134, 252, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #BB86FC, #6200EE);
+    border-radius: 0 2px 2px 0;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 20px rgba(187, 134, 252, 0.2);
+    border-color: #BB86FC;
+}
+
+.faq-item h3 {
+    color: #BB86FC;
+    margin: 0 0 12px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.4;
+    padding-left: 8px;
+}
+
+.faq-item p {
+    color: #EAEAEA;
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.6;
+    padding-left: 8px;
+    font-weight: 400;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    #faq-section {
+        margin: 30px 15px 20px 15px;
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+    
+    #faq-section h2 {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .faq-item {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    .faq-item p {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+}
+

@@ -212,32 +212,56 @@ function toggleLanguageDropdown() {
     }
 }
 
-// Redirect based on selected language
-switch(selectedLang) {
-    case 'pl':
-        // Redirect to Polish version
-        if (window.location.pathname.includes('/no/')) {
-            // If we're in Norwegian folder, go to Polish folder
-            window.location.href = '../pl/';
-        } else {
-            // If we're in root, go to Polish folder
-            window.location.href = 'pl/';
-        }
-        break;
-    case 'no':
-        // Redirect to Norwegian version
-        if (window.location.pathname.includes('/pl/')) {
-            // If we're in Polish folder, go to Norwegian folder
-            window.location.href = '../no/';
-        } else {
-            // If we're in root, go to Norwegian folder
-            window.location.href = 'no/';
-        }
-        break;
-    case 'en':
-        // Redirect to English version (root)
-        window.location.href = mainPagePath + 'index.html';
-        break;
+// Change language function
+function changeLanguage(selectedLang) {
+    const langData = languages.find(lang => lang.code === selectedLang);
+    if (!langData) return;
+    
+    currentLanguage = selectedLang;
+    
+    // Save language preference
+    localStorage.setItem('selectedLanguage', selectedLang);
+    
+    // Update current flag
+    updateCurrentFlag();
+    
+    // Close dropdown
+    const dropdown = document.getElementById('language-dropdown');
+    const toggle = document.getElementById('language-toggle');
+    dropdown.classList.remove('show');
+    toggle.classList.remove('active');
+    isDropdownOpen = false;
+    
+    // Get the correct path for navigation
+    const mainPagePath = getMainPagePath();
+    
+    // Redirect based on selected language
+    switch(selectedLang) {
+        case 'pl':
+            // Redirect to Polish version
+            if (window.location.pathname.includes('/no/')) {
+                // If we're in Norwegian folder, go to Polish folder
+                window.location.href = '../pl/';
+            } else {
+                // If we're in root, go to Polish folder
+                window.location.href = 'pl/';
+            }
+            break;
+        case 'no':
+            // Redirect to Norwegian version
+            if (window.location.pathname.includes('/pl/')) {
+                // If we're in Polish folder, go to Norwegian folder
+                window.location.href = '../no/';
+            } else {
+                // If we're in root, go to Norwegian folder
+                window.location.href = 'no/';
+            }
+            break;
+        case 'en':
+            // Redirect to English version (root)
+            window.location.href = mainPagePath + 'index.html';
+            break;
+    }
 }
 
 // Close dropdown when clicking outside

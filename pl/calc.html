@@ -144,7 +144,26 @@ if ('serviceWorker' in navigator) {
             <li><a class="navigation-link" href="/pl/instruction">Jak używać?</a></li>
         </ul>
     </nav>
-
+<!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="flags/gb.svg" alt="Current language">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input 
+                    type="text" 
+                    id="language-search-input" 
+                    placeholder="Search languages..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
     <div class="container">
         <header>
             <h1>💰 Kalkulator Kosztu 100 kcal</h1>
@@ -330,6 +349,7 @@ if ('serviceWorker' in navigator) {
 <script src="../js/calculator.js" defer></script>
 <script src="../js/validations.js" defer></script>
 <script src="../js/extracounting.js" defer></script>
+<script src="../js/languages.js" defer></script>
 <script src="../js/i18n-base.js" defer></script>
 <script src="../js/i18n-pl.js" defer></script>
 </body>

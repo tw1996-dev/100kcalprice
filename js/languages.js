@@ -72,6 +72,19 @@ function detectCurrentLanguage() {
     return 'en';
 }
 
+// Function to detect current page type
+function detectCurrentPage() {
+    const pathname = window.location.pathname;
+    
+    if (pathname.includes('/calc') || pathname.includes('calc.html')) {
+        return 'calc';
+    } else if (pathname.includes('/instruction') || pathname.includes('instruction.html')) {
+        return 'instruction';
+    } else {
+        return 'index';
+    }
+}
+
 // Initialize language selector on DOM load
 document.addEventListener('DOMContentLoaded', function() {
     initializeLanguageSelector();
@@ -232,35 +245,48 @@ function changeLanguage(selectedLang) {
     if (toggle) toggle.classList.remove('active');
     isDropdownOpen = false;
     
-    // Get the correct path for navigation
+    // Detect current page and current language location
+    const currentPage = detectCurrentPage();
+    const currentLangInUrl = detectCurrentLanguage();
     const mainPagePath = getMainPagePath();
     
-    // Redirect based on selected language
+    // Build target URL based on current page and selected language
+    let targetUrl = '';
+    
     switch(selectedLang) {
         case 'pl':
-            // Redirect to Polish version
-            if (window.location.pathname.includes('/no/')) {
-                // If we're in Norwegian folder, go to Polish folder
-                window.location.href = '../pl/';
+            if (currentLangInUrl === 'no') {
+                // From Norwegian folder to Polish folder
+                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
             } else {
-                // If we're in root, go to Polish folder
-                window.location.href = 'pl/';
+                // From root to Polish folder
+                targetUrl = currentPage === 'index' ? 'pl/' : `pl/${currentPage}`;
             }
             break;
+            
         case 'no':
-            // Redirect to Norwegian version
-            if (window.location.pathname.includes('/pl/')) {
-                // If we're in Polish folder, go to Norwegian folder
-                window.location.href = '../no/';
+            if (currentLangInUrl === 'pl') {
+                // From Polish folder to Norwegian folder
+                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
             } else {
-                // If we're in root, go to Norwegian folder
-                window.location.href = 'no/';
+                // From root to Norwegian folder
+                targetUrl = currentPage === 'index' ? 'no/' : `no/${currentPage}`;
             }
             break;
+            
         case 'en':
-            // Redirect to English version (root)
-            window.location.href = mainPagePath + 'index.html';
+            // To English (root)
+            if (currentPage === 'index') {
+                targetUrl = mainPagePath + 'index.html';
+            } else {
+                targetUrl = mainPagePath + currentPage + '.html';
+            }
             break;
+    }
+    
+    // Redirect to target URL
+    if (targetUrl) {
+        window.location.href = targetUrl;
     }
 }
 

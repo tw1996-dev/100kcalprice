@@ -231,7 +231,27 @@ if ('serviceWorker' in navigator) {
             <li><a class="navigation-link" href="/no/instruction">Hvordan bruke?</a></li>
         </ul>
     </nav>
-
+<!-- Language Selector -->
+<div id="language-selector">
+    <div id="language-toggle">
+        <img id="current-flag" src="../flags/no.svg" alt="Nåværende språk">
+        <div id="dropdown-arrow"></div>
+    </div>
+    <div id="language-dropdown">
+        <div class="language-search-container">
+            <input 
+                type="text" 
+                id="language-search-input" 
+                placeholder="Søk språk..."
+                autocomplete="off"
+            >
+        </div>
+        <div class="language-list" id="language-list">
+            <!-- Languages will be dynamically generated -->
+        </div>
+    </div>
+</div>
+        
 
     <section id="currency-selector">
         <p id="selectorFirstP">💰 Velg Din Valuta</p>
@@ -413,6 +433,7 @@ if ('serviceWorker' in navigator) {
     <script src="../js/lazyLoader.js"></script>
     <script src="../js/mobilehover.js" defer></script>
     <script src="../js/currencySelect.js" defer></script>
+    <script src="../js/languages.js"></script>
     <script src="../js/i18n-base.js" defer></script>
     <script src="../js/i18n-no.js" defer></script>
 </body>

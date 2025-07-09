@@ -32,6 +32,142 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
 
+
+<!-- HowTo Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Use 100 kcal Cost Calculator",
+  "description": "Step-by-step guide on how to use the 100 kcal cost calculator to compare food prices by calorie content",
+  "totalTime": "PT2M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "@id": "food-product",
+      "name": "Food product with calorie information"
+    },
+    {
+      "@type": "HowToSupply", 
+      "@id": "price-information",
+      "name": "Price information (per kg or per piece)"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "@id": "web-browser",
+      "name": "Web browser (Chrome, Firefox, Safari, Edge)"
+    },
+    {
+      "@type": "HowToTool",
+      "@id": "calculator-app",
+      "name": "100 kcal Cost Calculator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Choose calculation mode",
+      "text": "Select either 'Per Kilogram' mode for most store products or 'Per Piece' mode for individually sold items like yogurts or rolls."
+    },
+    {
+      "@type": "HowToStep", 
+      "name": "Enter product information",
+      "text": "Fill in the product name (optional), calories per 100g (found on product label), and price information."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Add product to comparison",
+      "text": "Click the 'Add Product' button to add your product to the comparison table."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Compare results",
+      "text": "View the calculated cost per 100 kcal in the table and sort by different columns to find the most cost-effective options."
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "inLanguage": "en"
+}
+</script>
+
+<!-- FAQ Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 100 kcal cost calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 100 kcal cost calculator is a free online tool that helps you calculate and compare how much 100 calories cost from different food products. This helps you make informed purchasing decisions and find the most cost-effective food options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use the calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simply enter the product name (optional), calories per 100g (found on food labels), and the price information. The calculator will automatically compute the cost per 100 calories and add it to a comparison table."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between 'Per Kilogram' and 'Per Piece' modes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 'Per Kilogram' mode for most store products sold by weight. Use 'Per Piece' mode for individually sold items like yogurts, rolls, or packaged snacks where you know the weight per piece."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the calculator save my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the calculator uses your browser's local storage to save your product comparisons. Your data will remain available when you revisit the site, but it's stored only on your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use different currencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the calculator supports multiple currencies. You can select your preferred currency from the currency selector, and all calculations will be displayed in your chosen currency."
+      }
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "inLanguage": "en"
+}
+</script>
 </head>
 <body>
 <!----------------- NAVIGATION-------------------->
@@ -139,7 +275,7 @@
             <h3>Deleting Products</h3>
             <ul>
                 <li><strong>Single product</strong>: Click 🗑️ next to the product</li>
-                <li><strong>All products</strong>: Refresh the page (pull down or F5)</li>
+                <li><strong>All products</strong>: Click delete all button</li>
             </ul>
         </article>
     </section>

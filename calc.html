@@ -34,6 +34,56 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 <link rel="manifest" href="/favicon/site.webmanifest" />
 
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "100 kcal Cost Calculator",
+  "url": "https://www.100kcalcost.com/calc.html",
+  "description": "Interactive calculator to determine the cost of 100 calories for different food products. Compare prices and make informed purchasing decisions.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Chrome, Firefox, Safari, Edge",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Real-time calorie cost calculations",
+    "Multiple currency support",
+    "Per kilogram and per piece input modes",
+    "Sortable comparison table",
+    "Local data storage",
+    "Edit existing entries",
+    "Delete all functionality",
+    "Input validation",
+    "Mobile responsive interface"
+  ],
+  "softwareVersion": "1.0",
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "mainEntity": {
+    "@type": "SoftwareApplication",
+    "name": "Calorie Cost Calculator Engine",
+    "applicationCategory": "CalculatorApplication",
+    "operatingSystem": "Web Browser"
+  }
+}
+</script>
 </head>
 
 <body>
@@ -71,7 +121,7 @@
 
                 <div class="forms-wrapper">
                     <div class="form-group">
-                        <input type="number" id="calories1" placeholder=" " step="0.01" min="1" inputmode="numeric">
+                        <input type="number" id="calories1" placeholder=" "  inputmode="numeric">
                         <label for="calories1">Kcal/100g</label>
                     </div>
 

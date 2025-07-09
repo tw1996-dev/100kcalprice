@@ -58,6 +58,8 @@ body {
     box-shadow: 0 0 8px rgba(187, 134, 252, 0.6);
 }
 
+
+
 /* NAVIGATION */
 #main-nav {
     position: fixed;
@@ -323,7 +325,7 @@ header p {
 
 @media (max-width: 768px) {
     header {
-        margin-top: 65px;
+        margin-top: 72px;
     }
 }
 

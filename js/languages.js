@@ -8,6 +8,70 @@ const languages = [
 let currentLanguage = 'en';
 let isDropdownOpen = false;
 
+// Function to dynamically detect the correct path prefix
+function getPathPrefix() {
+    const pathname = window.location.pathname;
+    
+    // Check if we're in a language subfolder
+    if (pathname.includes('/no/') || pathname.includes('/pl/') || pathname.includes('/de/') || pathname.includes('/fr/') || pathname.includes('/es/')) {
+        return '../';
+    }
+    
+    // Check if current page filename suggests we're in a subfolder
+    const currentFile = pathname.split('/').pop();
+    if (currentFile.includes('-no') || currentFile.includes('-pl') || currentFile.includes('-de') || currentFile.includes('-fr') || currentFile.includes('-es')) {
+        return '../';
+    }
+    
+    // Default to root level
+    return '';
+}
+
+// Function to get the correct flags path
+function getFlagsPath() {
+    return getPathPrefix() + 'flags/';
+}
+
+// Function to get the correct path for main pages
+function getMainPagePath() {
+    return getPathPrefix();
+}
+
+// Function to determine current language based on URL
+function detectCurrentLanguage() {
+    const pathname = window.location.pathname;
+    const currentFile = pathname.split('/').pop();
+    
+    // Check if we're in a language subfolder
+    if (pathname.includes('/no/')) {
+        return 'no';
+    } else if (pathname.includes('/pl/')) {
+        return 'pl';
+    } else if (pathname.includes('/de/')) {
+        return 'de';
+    } else if (pathname.includes('/fr/')) {
+        return 'fr';
+    } else if (pathname.includes('/es/')) {
+        return 'es';
+    }
+    
+    // Check filename patterns
+    if (currentFile.includes('-no')) {
+        return 'no';
+    } else if (currentFile.includes('-pl')) {
+        return 'pl';
+    } else if (currentFile.includes('-de')) {
+        return 'de';
+    } else if (currentFile.includes('-fr')) {
+        return 'fr';
+    } else if (currentFile.includes('-es')) {
+        return 'es';
+    }
+    
+    // Default to English
+    return 'en';
+}
+
 // Initialize language selector on DOM load
 document.addEventListener('DOMContentLoaded', function() {
     initializeLanguageSelector();
@@ -15,14 +79,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Initialize language selector
 function initializeLanguageSelector() {
-    // Load saved language preference
+    // Auto-detect current language
+    const detectedLang = detectCurrentLanguage();
+    
+    // Load saved language preference, but prefer detected language
     const savedLang = localStorage.getItem('selectedLanguage');
     if (savedLang && languages.find(lang => lang.code === savedLang)) {
         currentLanguage = savedLang;
-        updateCurrentFlag();
+    } else {
+        currentLanguage = detectedLang;
     }
     
-    // Set up language toggle click handler - TO BYŁO BRAKUJĄCE!
+    // If detected language differs from saved, update current
+    if (detectedLang !== currentLanguage) {
+        currentLanguage = detectedLang;
+        localStorage.setItem('selectedLanguage', detectedLang);
+    }
+    
+    updateCurrentFlag();
+    
+    // Set up language toggle click handler
     const languageToggle = document.getElementById('language-toggle');
     if (languageToggle) {
         languageToggle.addEventListener('click', toggleLanguageDropdown);
@@ -56,6 +132,8 @@ function renderLanguageList(languagesToShow) {
     const languageList = document.getElementById('language-list');
     if (!languageList) return;
     
+    const flagsPath = getFlagsPath();
+    
     if (languagesToShow.length === 0) {
         languageList.innerHTML = '<div class="no-results">No languages found</div>';
         return;
@@ -64,7 +142,7 @@ function renderLanguageList(languagesToShow) {
     languageList.innerHTML = languagesToShow.map(lang => `
         <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
              data-code="${lang.code}">
-            <img src="flags/${lang.flag}.svg" 
+            <img src="${flagsPath}${lang.flag}.svg" 
                  alt="${lang.name} flag">
             <div class="language-info">
                 <span class="language-name">${lang.name}</span>
@@ -102,7 +180,8 @@ function updateCurrentFlag() {
     const currentLang = languages.find(lang => lang.code === currentLanguage);
     
     if (currentFlag && currentLang) {
-        currentFlag.src = `flags/${currentLang.flag}.svg`;
+        const flagsPath = getFlagsPath();
+        currentFlag.src = `${flagsPath}${currentLang.flag}.svg`;
         currentFlag.alt = currentLang.name;
     }
 }
@@ -153,18 +232,34 @@ function changeLanguage(selectedLang) {
     toggle.classList.remove('active');
     isDropdownOpen = false;
     
-    // Show alert (as per original implementation)
+    // Get the correct path for navigation
+    const mainPagePath = getMainPagePath();
+    
+    // Redirect based on selected language
     switch(selectedLang) {
         case 'pl':
-            alert('Przekierowanie do polskiej wersji strony...');
-            // window.location.href = 'index-pl.html';
+            // Redirect to Polish version
+            if (window.location.pathname.includes('/no/')) {
+                // If we're in Norwegian folder, go to Polish folder
+                window.location.href = '../pl/index-pl.html';
+            } else {
+                // If we're in root, go to Polish folder
+                window.location.href = 'pl/index-pl.html';
+            }
             break;
         case 'no':
-            alert('Omdirigering til norsk versjon av siden...');
-            // window.location.href = 'index-no.html';
+            // Redirect to Norwegian version
+            if (window.location.pathname.includes('/pl/')) {
+                // If we're in Polish folder, go to Norwegian folder
+                window.location.href = '../no/index-no.html';
+            } else {
+                // If we're in root, go to Norwegian folder
+                window.location.href = 'no/index-no.html';
+            }
             break;
         case 'en':
-            window.location.href = 'index.html';
+            // Redirect to English version (root)
+            window.location.href = mainPagePath + 'index.html';
             break;
     }
 }

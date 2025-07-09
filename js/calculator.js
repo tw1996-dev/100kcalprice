@@ -1,9 +1,9 @@
-let products = [];
-let productIdCounter = 1;
-let autoProductCounter = 1;
-let currentMode = 0; // 0 = kg, 1 = piece
-let sortColumn = null;
-let sortDirection = 'asc';
+window.products = [];
+window.productIdCounter = 1;
+window.autoProductCounter = 1;
+window.currentMode = 0; // 0 = kg, 1 = piece
+window.sortColumn = null;
+window.sortDirection = 'asc';
 
 
 
@@ -167,7 +167,8 @@ const MAX_PRODUCTS = 500;
 let lastProductAddTime = 0;
 const ADD_PRODUCT_COOLDOWN = 1000; // 1 second in milliseconds
 
-function checkRateLimit() {
+// Renamed function to avoid conflict with extracounting.js
+function checkProductRateLimit() {
     const currentTime = Date.now();
     const timeSinceLastAdd = currentTime - lastProductAddTime;
     
@@ -219,7 +220,7 @@ function switchMode(mode) {
 
 function addProductKg() {
     // Check security limits
-    if (!checkProductLimit() || !checkRateLimit()) {
+    if (!checkProductLimit() || !checkProductRateLimit()) {
         return;
     }
 
@@ -253,7 +254,7 @@ function addProductKg() {
 
 function addProductPiece() {
     // Check security limits
-    if (!checkProductLimit() || !checkRateLimit()) {
+    if (!checkProductLimit() || !checkProductRateLimit()) {
         return;
     }
 
@@ -401,11 +402,15 @@ function deleteProduct(productId) {
 
 function deleteAllProducts() {
     if (products.length === 0) {
-        alert('No products to delete!');
-        return;
+        alert((window.i18nManager && window.i18nManager.t) 
+        ? window.i18nManager.t('alerts.noProducts') 
+        : 'No products to delete!');
+    return;
     }
     
-    if (confirm('Are you sure you want to delete all products? This action cannot be undone.')) {
+    if (confirm((window.i18nManager && window.i18nManager.t) 
+    ? window.i18nManager.t('alerts.confirmDeleteAll') 
+    : 'Are you sure you want to delete all products? This action cannot be undone.')) {
         products = [];
         productIdCounter = 1;
         autoProductCounter = 1;
@@ -433,7 +438,9 @@ function showDeleteAllButton() {
         deleteAllBtn = document.createElement('button');
         deleteAllBtn.id = 'deleteAllBtn';
         deleteAllBtn.className = 'btn delete-all-btn';
-        deleteAllBtn.textContent = '🗑️ Delete All';
+        deleteAllBtn.textContent = (window.i18nManager && window.i18nManager.t) 
+        ? window.i18nManager.t('table.deleteAllBtn') 
+        : '🗑️ Delete All';
         deleteAllBtn.style.background = 'linear-gradient(135deg, #EF4444, #DC2626)';
         deleteAllBtn.style.marginTop = '20px';
         deleteAllBtn.onclick = deleteAllProducts;
@@ -455,10 +462,10 @@ function renderTable() {
 
     if (products.length === 0) {
         tbody.innerHTML = `
-            <tr class="no-products">
-                <td colspan="5">Add your first product to see cost comparison! 🚀</td>
-            </tr>
-        `;
+        <tr class="no-products">
+            <td colspan="5">${(window.i18nManager && window.i18nManager.t) 
+                ? window.i18nManager.t('table.noProducts') 
+                : 'Add your first product to see cost comparison! 🚀'}</td></tr>`;
         hideDeleteAllButton();
         return;
     }

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 kcal Koszt</title>
+
+<!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:;">
+
+
+    <!---- Metadata for search engines and social sharing ---->
+    <meta name="description"
+        content="Oblicz i porównaj koszt 100 kalorii dla różnych produktów spożywczych, aby podejmować świadome decyzje zakupowe i zarządzać budżetem.">
+    <meta name="keywords"
+        content="koszt kalorii, kalkulator żywności, kalkulator kalorii, koszt za kalorię, porównanie żywności, budżet żywności, koszt zdrowego odżywiania">
+    <meta name="author" content="tw1996-dev">
+
+       <!---- Open Graph ---->
+    <meta property="og:title" content="Kalkulator Kosztu 100 kcal - Porównaj Ceny Żywności według Wartości Energetycznej" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/pl/index-pl.html" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" /> 
+    <meta property="og:description" content="Oblicz i porównaj koszt 100 kalorii dla różnych produktów spożywczych, aby podejmować świadome decyzje zakupowe i zarządzać budżetem." />
+
+    <!---- CSS ---->
+    <link rel="stylesheet" href="../css/styles.css">
+
+
+    <!-- Favicons and icons -->
+<link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+<link rel="shortcut icon" href="../favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+<link rel="manifest" href="../favicon/site.webmanifest" />
+
+
+
+
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Kalkulator Kosztu 100 kcal",
+  "url": "https://www.100kcalcost.com/pl/index-pl.html",
+  "description": "Oblicz i porównaj koszt 100 kalorii dla różnych produktów spożywczych, aby podejmować świadome decyzje zakupowe i zarządzać budżetem. Darmowe narzędzie online do analizy kosztów kalorii.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Chrome, Firefox, Safari, Edge",
+  "permissions": "localStorage",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Oblicz koszt za 100 kalorii",
+    "Porównaj produkty spożywcze według kosztu kalorii",
+    "Obsługa wielu walut",
+    "Obliczenia za kilogram i za sztukę",
+    "Trwałość danych z localStorage",
+    "Responsywny design na urządzenia mobilne i desktop",
+    "Sortowalna tabela porównań produktów",
+    "Edytuj i usuń wpisy produktów",
+    "Bez wymaganej rejestracji"
+  ],
+  "softwareVersion": "1.0",
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "inLanguage": "pl",
+  "isAccessibleForFree": true,
+  "usageInfo": "Darmowe do użytku osobistego i komercyjnego",
+  "applicationSubCategory": "Kalkulator Żywności",
+  "serviceType": "Kalkulator Online"
+}
+</script>
+
+<!-- WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Kalkulator Kosztu 100 kcal",
+  "url": "https://www.100kcalcost.com/pl/index-pl.html",
+  "description": "Oblicz i porównaj koszt 100 kalorii dla różnych produktów spożywczych",
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.100kcalcost.com/pl/calc-pl.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+
+<body>
+    <nav id="main-nav" aria-label="Nawigacja główna">
+        <ul>
+            <li><a class="navigation-link" href="index-pl.html">Strona główna</a></li>
+            <li><a class="navigation-link" href="calc-pl.html">Kalkulator🧮</a></li>
+            <li><a class="navigation-link" href="instruction-pl.html">Jak używać?</a></li>
+        </ul>
+    </nav>
+
+<!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="../flags/pl.svg" alt="Aktualny język">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input 
+                    type="text" 
+                    id="language-search-input" 
+                    placeholder="Szukaj języków..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <header id="mainPageHeader">
+        <h1>Ile kosztuje 100 kalorii?</h1>
+    </header>
+
+    <main id="mainPageMain">
+
+        <p>Jesteś w sklepie. Patrzysz na półki pełne produktów. Ceny za kilogram są widoczne, etykiety wyraźnie
+            wskazują <em>wartość energetyczną</em>... ale czy naprawdę wiesz <strong>jak opłacalny jest dany produkt?</strong></p>
+        
+        <p>Czy zdajesz sobie sprawę, że <strong>niektóre produkty są rzeczywiście kilka razy droższe od innych</strong>?</p>
+
+        <div class="home-highlight-box">
+            <p>Ta strona została stworzona, aby odpowiedzieć właśnie na to pytanie. Dzięki temu <em>prostemu kalkulatorowi</em> obliczysz w <em>zaledwie kilka sekund</em> ile kosztuje Cię 100 kalorii z danego produktu – to
+                <strong>szybki i praktyczny sposób porównania opłacalności różnych opcji żywieniowych</strong>.</p>
+        </div>
+
+        <h2>Ten kalkulator będzie przydatny dla każdego, kto:</h2>
+        <ul id="mainPageul">
+            <li>kontroluje <strong>dzienne spożycie kalorii</strong></li>
+            <li>chce podejmować <strong>świadome decyzje zakupowe</strong></li>
+            <li>szuka sposobów na <strong>oszczędzanie pieniędzy</strong>, <em>bez kompromisów w jakości</em></li>
+        </ul>
+
+        <div class="home-cta-text">
+            <p>Najlepsza część jest taka, że możesz mieć ten kalkulator <strong>zawsze pod ręką</strong> – wszystko czego potrzebujesz to telefon
+                i dostęp do strony internetowej. <strong>Obliczenie kosztu 100 kcal</strong> zajmie Ci dosłownie <em>10
+                    sekund</em>, nawet <em>stojąc przy sklepowej półce</em>.</p>
+        </div>
+
+        <h2>Dlaczego warto obliczać koszt kalorii?</h2>
+
+        <p>W świecie, gdzie <strong>żywność drożeje</strong>, warto wiedzieć nie tylko <strong>ile
+                kosztuje 1 kg danego produktu</strong>, ale także <strong>ile zapłacisz za jego wartość
+                energetyczną</strong>. Szczególnie jeśli <em>liczysz kalorie</em>, <em>chudniesz</em>,
+            <em>trenujesz</em>, lub po prostu chcesz mieć <strong>większą świadomość</strong> tego, co kupujesz.</p>
+
+        <div class="home-highlight-box">
+            <p>Pamiętaj – liczenie kalorii to nie tylko <em>sposób na dietę</em>, ale także <strong>realna kontrola nad
+                    wydatkami</strong> i lepsze <strong>zrozumienie wartości tego, co jemy</strong>. A chociaż
+                <strong>cena ma znaczenie</strong>, nie zapominajmy: <strong>jakość produktu</strong> <em>zawsze pozostaje
+                    kluczowa</em>.</p>
+        </div>
+
+    </main>
+    <script src="../js/lazyLoader.js"></script>
+    <script src="../js/mobilehover.js" defer></script>
+    <script src="../js/languages.js"></script>
+    <script src="../js/i18n-base.js" defer></script>
+    <script src="../js/i18n-pl.js" defer></script>
+</body>
+
+</html>

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>100 kcal Kostnad</title>
 
-  <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+<!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:;">
 
 
     <!---- Metadata for search engines and social sharing ---->
@@ -20,20 +20,20 @@
        <!---- Open Graph ---->
     <meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.100kcalcost.com/index-no.html" />
+    <meta property="og:url" content="https://www.100kcalcost.com/no/index-no.html" />
     <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" /> 
     <meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt." />
 
     <!---- CSS ---->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 
 
     <!-- Favicons and icons -->
-<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<link rel="manifest" href="/favicon/site.webmanifest" />
+<link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+<link rel="shortcut icon" href="../favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+<link rel="manifest" href="../favicon/site.webmanifest" />
 
 
 
@@ -45,7 +45,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "100 kcal Kostnadskalkulator",
-  "url": "https://www.100kcalcost.com/index-no.html",
+  "url": "https://www.100kcalcost.com/no/index-no.html",
   "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt. Gratis online verktøy for kalorianalyse.",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
@@ -93,7 +93,7 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "100 kcal Kostnadskalkulator",
-  "url": "https://www.100kcalcost.com/index-no.html",
+  "url": "https://www.100kcalcost.com/no/index-no.html",
   "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter",
   "publisher": {
     "@type": "Organization",
@@ -104,7 +104,7 @@
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://www.100kcalcost.com/calc-no.html?q={search_term_string}"
+      "urlTemplate": "https://www.100kcalcost.com/no/calc-no.html?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -124,7 +124,7 @@
 <!-- Language Selector -->
     <div id="language-selector">
         <div id="language-toggle">
-            <img id="current-flag" src="flags/no.svg" alt="Nåværende språk">
+            <img id="current-flag" src="../flags/no.svg" alt="Nåværende språk">
             <div id="dropdown-arrow"></div>
         </div>
         <div id="language-dropdown">
@@ -187,9 +187,11 @@
         </div>
 
     </main>
-    <script src="js/lazyLoader.js"></script>
-    <script src="js/mobilehover.js" defer></script>
-    <script src="js/languages.js"></script>
+    <script src="../js/lazyLoader.js"></script>
+    <script src="../js/mobilehover.js" defer></script>
+    <script src="../js/languages.js"></script>
+    <script src="../js/i18n-base.js" defer></script>
+    <script src="../js/i18n-no.js" defer></script>
 </body>
 
 </html>

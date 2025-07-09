@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100kcal Kostnad</title>
+<!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:;">
+
+
+    <!---- Metadata for search engines and social sharing ---->
+    <meta name="description"
+        content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
+    <meta name="keywords"
+        content="kalori kostnad, mat kalkulator, kalori kalkulator, kostnad per kalori, mat sammenligning, budsjett mat, sunt kosthold kostnad">
+    <meta name="author" content="tw1996-dev">
+
+    <!---- Open Graph ---->
+    <meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/no/instruction-no.html" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
+    <meta property="og:description"
+        content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt." />
+
+    <!---- CSS ---->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Favicons and icons -->
+    <link rel="icon" type="image/png" href="../favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../favicon/site.webmanifest" />
+
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Hvordan bruke 100 kcal Kostnadskalkulator",
+  "description": "Steg-for-steg guide om hvordan bruke 100 kcal kostnadskalkulator for å sammenligne matpriser etter kaloriinnhold",
+  "totalTime": "PT2M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "@id": "food-product",
+      "name": "Matprodukt med kaloriinformasjon"
+    },
+    {
+      "@type": "HowToSupply", 
+      "@id": "price-information",
+      "name": "Prisinformasjon (per kg eller per stykke)"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "@id": "web-browser",
+      "name": "Nettleser (Chrome, Firefox, Safari, Edge)"
+    },
+    {
+      "@type": "HowToTool",
+      "@id": "calculator-app",
+      "name": "100 kcal Kostnadskalkulator"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Velg beregningsmodus",
+      "text": "Velg enten 'Per Kilogram' modus for de fleste butikkprodukter eller 'Per Stykke' modus for individuelt solgte varer som yoghurt eller rundstykker."
+    },
+    {
+      "@type": "HowToStep", 
+      "name": "Skriv inn produktinformasjon",
+      "text": "Fyll inn produktnavn (valgfritt), kalorier per 100g (finnes på produktetiketten), og prisinformasjon."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Legg til produkt i sammenligningen",
+      "text": "Klikk 'Legg til Produkt' knappen for å legge til produktet ditt i sammenligningstabell."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Sammenlign resultater",
+      "text": "Se den beregnede kostnaden per 100 kcal i tabellen og sorter etter forskjellige kolonner for å finne de mest kostnadseffektive alternativene."
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "inLanguage": "no"
+}
+</script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva er 100 kcal kostnadskalkulator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "100 kcal kostnadskalkulator er et gratis online verktøy som hjelper deg med å beregne og sammenligne hvor mye 100 kalorier koster fra forskjellige matprodukter. Dette hjelper deg å ta informerte kjøpsbeslutninger og finne de mest kostnadseffektive matalternativene."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvordan bruker jeg kalkulatoren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Skriv inn produktnavn (valgfritt), kalorier per 100g (finnes på matetikett), og prisinformasjon. Kalkulatoren vil automatisk beregne kostnaden per 100 kalorier og legge den til i en sammenligningstabell."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva er forskjellen mellom 'Per Kilogram' og 'Per Stykke' modus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bruk 'Per Kilogram' modus for de fleste butikkprodukter som selges etter vekt. Bruk 'Per Stykke' modus for individuelt solgte varer som yoghurt, rundstykker eller pakket snacks der du vet vekten per stykke."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lagrer kalkulatoren mine data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, kalkulatoren bruker din nettlesers lokale lagring for å lagre dine produktsammenligninger. Dataene dine vil forbli tilgjengelige når du besøker siden igjen, men de lagres bare på din enhet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg bruke forskjellige valutaer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, kalkulatoren støtter flere valutaer. Du kan velge din foretrukne valuta fra valutavelgeren, og alle beregninger vil vises i din valgte valuta."
+      }
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "inLanguage": "no"
+}
+</script>
+</head>
+
+<body>
+    <!----------------- NAVIGATION-------------------->
+    <nav id="main-nav" aria-label="Hovednavigasjon">
+        <ul>
+            <li><a class="navigation-link" href="index-no.html">Hjem</a></li>
+            <li><a class="navigation-link" href="calc-no.html">Kalkulator🧮</a></li>
+            <li><a class="navigation-link" href="instruction-no.html">Hvordan bruke?</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="currency-selector">
+        <p id="selectorFirstP">💰 Velg Din Valuta</p>
+        <p>Velg din foretrukne valuta for prisberegninger. Denne innstillingen vil bli husket og brukt i
+            kalkulatoren.</p>
+
+        <div class="currency-dropdown-container">
+            <input type="text" id="currency-search" placeholder="Skriv for å søke valutaer " autocomplete="off">
+            <div id="currency-results"></div>
+        </div>
+
+        <div class="selected-currency" id="selected-currency">
+            <div class="selected-currency-text">
+                Valgt: <span id="selected-currency-display"></span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <main id="instructions">
+        <h1>📱 100 kcal Kostnadskalkulator Brukerveiledning</h1>
+
+
+
+        <section>
+            <h2>🚀 Første Oppstart</h2>
+            <p><strong>For mobilbrukere</strong>:</p>
+            <ol>
+                <li>Gå til "Kalkulator" fanen i applikasjonen.</li>
+                <li>Legg til en snarvei på hjemskjermen til telefonen:
+                    <ul>
+                        <li><strong class="strong">På Android:</strong> Trykk meny (⋮) → "Legg til på hjemskjerm".</li>
+                        <li><strong class="strong">På iPhone:</strong> Trykk del-knappen (□↗) → "Legg til på hjemskjerm".</li>
+                    </ul>
+                </li>
+                <li>På denne måten kan du starte kalkulatoren med ett trykk fra hjemskjermen!</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>🎯 Hvordan Bruke Kalkulatoren</h2>
+
+            <article>
+                <h3>Standard Modus: "Per Kilogram"</h3>
+                <div class="highlight">
+                    <p>For de fleste produkter i butikker</p>
+                </div>
+                <ol>
+                    <li><strong class="strong">Produktnavn</strong> - valgfritt (du kan hoppe over dette for rask sammenligning)
+                    </li>
+                    <li><strong class="strong">Kcal/100g</strong> - finner du på produktetiketten</li>
+                    <li><strong class="strong">Pris per kg</strong> - konverter prisen til per kilogram (f.eks. 500g for 50 kr = 100 kr/kg)</li>
+                    <li><strong class="strong">Klikk</strong> <strong>"➕ Legg til Produkt"</strong></li>
+                </ol>
+            </article>
+
+            <article>
+                <h3>Alternativ Modus: "Per Stykke"</h3>
+                <div class="highlight">
+                    <p><strong>Bruk for produkter som selges individuelt</strong> (f.eks. yoghurt, rundstykker)</p>
+                </div>
+                <ol>
+                    <li><strong class="strong">Produktnavn</strong> - valgfritt</li>
+                    <li><strong class="strong">Vekt per stykke (g)</strong> - hvor mye ett stykke veier</li>
+                    <li><strong class="strong">Kcal/100g</strong> - fra etiketten</li>
+                    <li><strong class="strong">Pris</strong>: Velg ÉN metode:
+                        <ul>
+                            <li><strong>Pris per stykke</strong> - hvor mye ett stykke koster</li>
+                            <li><strong>ELLER Pris per kg</strong> - den konverterte prisen per kilogram</li>
+                        </ul>
+                    </li>
+                    <li><strong class="strong">Klikk </strong><strong>"➕ Legg til Produkt"</strong></li>
+                </ol>
+            </article>
+        </section>
+
+        <section>
+            <h2>📊 Håndtering av Resultater</h2>
+
+            <article>
+                <h3>Sortering av Tabellen</h3>
+                <ul>
+                    <li><strong>Klikk en kolonne-overskrift</strong> for å sortere etter:
+                        <ul>
+                            <li>🍎 Produkt (alfabetisk)</li>
+                            <li>🔥 Kalorier (stigende/synkende)</li>
+                            <li>💵 Pris per kg (stigende/synkende)</li>
+                            <li>💰 <strong>Kostnad for 100 kcal</strong> (stigende/synkende)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Sletting av Produkter</h3>
+                <ul>
+                    <li><strong>Enkelt produkt</strong>: Klikk 🗑️ ved siden av produktet</li>
+                    <li><strong>Alle produkter</strong>: Klikk slett alle knappen</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>💡 Praktiske Tips</h2>
+
+            <article>
+                <h3>Rask sammenligning av to produkter</h3>
+                <ol>
+                    <li>Ikke skriv inn produktnavn - gå direkte til kalorier og pris.</li>
+                    <li>Legg til det første produktet.</li>
+                    <li>Legg til det andre produktet.</li>
+                    <li>Sammenlign <strong>"Kostnad for 100 kcal"</strong> kolonnen - en lavere verdi betyr et bedre
+                        pris-til-næringsverdi-forhold.</li>
+                </ol>
+            </article>
+
+            <article>
+                <h3>Brukseksempler</h3>
+                <div class="examples">
+                    <ul>
+                        <li><strong class="strong">Frokostblanding</strong>: "Per Kilogram" modus (350 kcal/100g, 80 kr/kg)
+                        </li>
+                        <li><strong class="strong">Yoghurt</strong>: "Per Stykke" modus (150g, 80 kcal/100g, 25 kr/stykke)
+                        </li>
+                        <li><strong class="strong">Nøtter</strong>: "Per Kilogram" modus (580 kcal/100g, 250 kr/kg)</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <h2>ℹ️ Teknisk Informasjon</h2>
+            <ul>
+                <li>Kalkulatoren <strong>runder resultater til 2 desimaler</strong> for bedre lesbarhet.</li>
+                <li>Det er en nedkjølingsperiode på 1 sekund mellom å legge til produkter for å forhindre spamming.</li>
+                <li>Du kan legge til maksimalt 500 produkter.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Mål med Kalkulatoren</h2>
+            <div class="important">
+                <p>Kalkulatoren viser deg <strong>hvor mye 100 kcal koster</strong> fra et gitt produkt. Jo lavere verdi,
+                    jo bedre pris-til-energiverdi-forhold har produktet.</p>
+            </div>
+
+            <div class="highlight">
+                <p>Husk: Kalorier og pris er ikke alt – vurder også næringsverdier, vitaminer og
+                    mineraler når du velger produkter! 🥗</p>
+            </div>
+        </section>
+
+        <section id="fun-fact-section">
+            <h3>Morsomt Faktum: Lås opp dine Matkostnad Innsikter!</h3>
+            <p>Har du noen gang lurt på den virkelige kostnaden for ditt daglige kosthold?</p>
+
+
+            <ul>
+                <li>
+                    <strong>Beregn din totale matkostnad</strong> basert på et spesifikt daglig kaloriinntak og
+                    <strong>kostnaden per 100 kcal</strong>.
+                </li>
+                <li>
+                    <strong>Sammenlign to forskjellige scenarier</strong> for å se den <strong>økonomiske forskjellen</strong>
+                    mellom to dietter eller ingrediensvalg over forskjellige perioder (daglig, ukentlig, månedlig, årlig). Dette
+                    er superanyttig for å forstå potensielle besparelser eller økte utgifter!
+                </li>
+            </ul>
+            <p id="lastParagraph">
+                Enten du sporer et standard daglig kaloriinntak eller håndterer forskjellige kalorimål for
+                trenings- og hviledager, gir dette verktøyet en <em>klar oversikt over kostnadene dine</em>. Det er en
+                <em>fantastisk måte å visualisere den økonomiske påvirkningen av ernæringen din</em>!
+            </p>
+        </section>
+    </main>
+
+
+    <script src="../js/lazyLoader.js"></script>
+    <script src="../js/mobilehover.js" defer></script>
+    <script src="../js/currencySelect.js" defer></script>
+    <script src="../js/i18n-base.js" defer></script>
+    <script src="../js/i18n-no.js" defer></script>
+</body>
+
+</html>

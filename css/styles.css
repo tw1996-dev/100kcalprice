@@ -180,19 +180,14 @@ body {
     }
     
     #main-nav .navigation-link {
-        display: block;
         color: #BB86FC;
-        font-size: 1.2em;
         font-weight: 600;
         padding: 15px 20px;
         text-decoration: none;
         border-radius: 8px;
-        background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(187, 134, 252, 0.05) 100%);
-        border: 1px solid rgba(187, 134, 252, 0.3);
-        transition: all 0.3s ease;
-        text-align: center;
         height: auto;
-        white-space: normal;
+        background-color: ;
+        
     }
     
     #main-nav .navigation-link:hover,

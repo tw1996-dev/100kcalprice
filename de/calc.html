@@ -265,7 +265,7 @@ if ('serviceWorker' in navigator) {
             </div>
         </div>
 
-        <div class="results" id="resultsContainer" style="display: none;">
+        <div class="results" id="resultsContainer" >
             <div class="table-container">
                 <table id="resultsTable">
                     <thead>
@@ -286,13 +286,13 @@ if ('serviceWorker' in navigator) {
                 </div>
 
                 <div class="table-actions">
-                    <button id="deleteAllBtn" class="delete-all-btn" style="display: none;">🗑️ Alle löschen</button>
+                    <button id="deleteAllBtn" class="delete-all-btn" >🗑️ Alle löschen</button>
                 </div>
             </div>
         </div>
 
         <!-- Cost Calculation Section -->
-        <section id="cost-section" style="display: none;">
+        <section id="cost-section">
             <h2>💰 Ihre Lebensmittelausgaben</h2>
 
             <!-- Mode Switcher for Cost Calculation -->
@@ -344,11 +344,11 @@ if ('serviceWorker' in navigator) {
                     <label for="avg-cost-100kcal">Durchschnittliche Kosten für 100 kcal</label>
                     <input type="number" id="avg-cost-100kcal" step="0.01" min="0.01" max="99" placeholder="Aus der Tabelle oben">
                 </div>
-                <div class="cost-form-group cost-comparison-group" style="display: none;">
+                <div class="cost-form-group cost-comparison-group">
                     <label for="first-cost-100kcal">Erste Kosten für 100 kcal</label>
                     <input type="number" id="first-cost-100kcal" step="0.01" min="0.01" max="99" placeholder="Erste Option">
                 </div>
-                <div class="cost-form-group cost-comparison-group" style="display: none;">
+                <div class="cost-form-group cost-comparison-group" >
                     <label for="second-cost-100kcal">Zweite Kosten für 100 kcal (optional)</label>
                     <input type="number" id="second-cost-100kcal" step="0.01" min="0.01" max="99" placeholder="Zweite Option zum Vergleich">
                 </div>
@@ -357,7 +357,7 @@ if ('serviceWorker' in navigator) {
             <button id="calculate-costs" class="calculate-btn">🧮 Kosten berechnen</button>
 
             <!-- Results Container -->
-            <div id="cost-results" style="display: none;">
+            <div id="cost-results" >
             </div>
         </section>
     </div>

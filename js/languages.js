@@ -1,8 +1,9 @@
-// Language data - only 3 languages as in original
+// Language data - with Spanish added
 const languages = [
     { code: 'en', name: 'English', native: 'English', flag: 'gb' },
     { code: 'pl', name: 'Polish', native: 'Polski', flag: 'pl' },
-    { code: 'no', name: 'Norwegian', native: 'Norsk', flag: 'no' }
+    { code: 'no', name: 'Norwegian', native: 'Norsk', flag: 'no' },
+    { code: 'es', name: 'Spanish', native: 'Español', flag: 'es' }
 ];
 
 let currentLanguage = 'en';
@@ -258,6 +259,9 @@ function changeLanguage(selectedLang) {
             if (currentLangInUrl === 'no') {
                 // From Norwegian folder to Polish folder
                 targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
+            } else if (currentLangInUrl === 'es') {
+                // From Spanish folder to Polish folder
+                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
             } else {
                 // From root to Polish folder
                 targetUrl = currentPage === 'index' ? 'pl/' : `pl/${currentPage}`;
@@ -268,9 +272,25 @@ function changeLanguage(selectedLang) {
             if (currentLangInUrl === 'pl') {
                 // From Polish folder to Norwegian folder
                 targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
+            } else if (currentLangInUrl === 'es') {
+                // From Spanish folder to Norwegian folder
+                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
             } else {
                 // From root to Norwegian folder
                 targetUrl = currentPage === 'index' ? 'no/' : `no/${currentPage}`;
+            }
+            break;
+            
+        case 'es':
+            if (currentLangInUrl === 'no') {
+                // From Norwegian folder to Spanish folder
+                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
+            } else if (currentLangInUrl === 'pl') {
+                // From Polish folder to Spanish folder
+                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
+            } else {
+                // From root to Spanish folder
+                targetUrl = currentPage === 'index' ? 'es/' : `es/${currentPage}`;
             }
             break;
             

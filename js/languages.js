@@ -5,7 +5,8 @@ const languages = [
     { code: 'no', name: 'Norwegian', native: 'Norsk', flag: 'no' },
     { code: 'fr', name: 'French', native: 'Français', flag: 'fr' },
     { code: 'es', name: 'Spanish', native: 'Español', flag: 'es' },
-    { code: 'de', name: 'German', native: 'Deutsch', flag: 'de' }
+    { code: 'de', name: 'German', native: 'Deutsch', flag: 'de' },
+    { code: 'it', name: 'Italian', native: 'Italiano', flag: 'it' }
 ];
 
 let currentLanguage = 'en';
@@ -16,13 +17,13 @@ function getPathPrefix() {
     const pathname = window.location.pathname;
     
     // Check if we're in a language subfolder
-    if (pathname.includes('/no/') || pathname.includes('/pl/') || pathname.includes('/de/') || pathname.includes('/fr/') || pathname.includes('/es/')) {
+    if (pathname.includes('/no/') || pathname.includes('/pl/') || pathname.includes('/de/') || pathname.includes('/fr/') || pathname.includes('/es/') || pathname.includes('/it/')) {
         return '../';
     }
     
     // Check if current page filename suggests we're in a subfolder
     const currentFile = pathname.split('/').pop();
-    if (currentFile.includes('-no') || currentFile.includes('-pl') || currentFile.includes('-de') || currentFile.includes('-fr') || currentFile.includes('-es')) {
+    if (currentFile.includes('-no') || currentFile.includes('-pl') || currentFile.includes('-de') || currentFile.includes('-fr') || currentFile.includes('-es') || currentFile.includes('-it')) {
         return '../';
     }
     
@@ -56,6 +57,8 @@ function detectCurrentLanguage() {
         return 'fr';
     } else if (pathname.includes('/es/')) {
         return 'es';
+    } else if (pathname.includes('/it/')) {
+        return 'it';
     }
     
     // Check filename patterns
@@ -69,6 +72,8 @@ function detectCurrentLanguage() {
         return 'fr';
     } else if (currentFile.includes('-es')) {
         return 'es';
+    } else if (currentFile.includes('-it')) {
+        return 'it';
     }
     
     // Default to English
@@ -270,6 +275,9 @@ function changeLanguage(selectedLang) {
             } else if (currentLangInUrl === 'de') {
                 // From German folder to Polish folder
                 targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
+            } else if (currentLangInUrl === 'it') {
+                // From Italian folder to Polish folder
+                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
             } else {
                 // From root to Polish folder
                 targetUrl = currentPage === 'index' ? 'pl/' : `pl/${currentPage}`;
@@ -288,6 +296,9 @@ function changeLanguage(selectedLang) {
                 targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
             } else if (currentLangInUrl === 'de') {
                 // From German folder to Norwegian folder
+                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
+            } else if (currentLangInUrl === 'it') {
+                // From Italian folder to Norwegian folder
                 targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
             } else {
                 // From root to Norwegian folder
@@ -308,6 +319,9 @@ function changeLanguage(selectedLang) {
             } else if (currentLangInUrl === 'de') {
                 // From German folder to French folder
                 targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
+            } else if (currentLangInUrl === 'it') {
+                // From Italian folder to French folder
+                targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
             } else {
                 // From root to French folder
                 targetUrl = currentPage === 'index' ? 'fr/' : `fr/${currentPage}`;
@@ -326,6 +340,9 @@ function changeLanguage(selectedLang) {
                 targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
             } else if (currentLangInUrl === 'de') {
                 // From German folder to Spanish folder
+                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
+            } else if (currentLangInUrl === 'it') {
+                // From Italian folder to Spanish folder
                 targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
             } else {
                 // From root to Spanish folder
@@ -346,9 +363,34 @@ function changeLanguage(selectedLang) {
             } else if (currentLangInUrl === 'es') {
                 // From Spanish folder to German folder
                 targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
+            } else if (currentLangInUrl === 'it') {
+                // From Italian folder to German folder
+                targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
             } else {
                 // From root to German folder
                 targetUrl = currentPage === 'index' ? 'de/' : `de/${currentPage}`;
+            }
+            break;
+
+        case 'it':
+            if (currentLangInUrl === 'no') {
+                // From Norwegian folder to Italian folder
+                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
+            } else if (currentLangInUrl === 'pl') {
+                // From Polish folder to Italian folder
+                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
+            } else if (currentLangInUrl === 'fr') {
+                // From French folder to Italian folder
+                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
+            } else if (currentLangInUrl === 'es') {
+                // From Spanish folder to Italian folder
+                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
+            } else if (currentLangInUrl === 'de') {
+                // From German folder to Italian folder
+                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
+            } else {
+                // From root to Italian folder
+                targetUrl = currentPage === 'index' ? 'it/' : `it/${currentPage}`;
             }
             break;
             

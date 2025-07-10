@@ -79,6 +79,22 @@
     {
       "source": "/de/instruction",
       "destination": "/de/instruction.html"
+    },
+    {
+      "source": "/it",
+      "destination": "/it/index.html"
+    },
+    {
+      "source": "/it/",
+      "destination": "/it/index.html"
+    },
+    {
+      "source": "/it/calc",
+      "destination": "/it/calc.html"
+    },
+    {
+      "source": "/it/instruction",
+      "destination": "/it/instruction.html"
     }
   ]
 }

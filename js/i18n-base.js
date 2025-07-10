@@ -1,6 +1,8 @@
 // i18n-base.js - Base internationalization system
 // This file provides the foundation for multi-language support
 
+console.log('i18n-base.js loaded');
+
 class I18nManager {
     constructor() {
         this.currentLanguage = 'en';
@@ -563,6 +565,30 @@ class I18nManager {
                 setTimeout(() => {
                     tempMessage.remove();
                 }, 3000);
+            };
+        }
+
+        // NEW: Override updateCurrencyLabelsAndPlaceholders
+        if (typeof window.updateCurrencyLabelsAndPlaceholders === 'function') {
+            this.backupFunction('updateCurrencyLabelsAndPlaceholders', window.updateCurrencyLabelsAndPlaceholders);
+            const self = this; // Zachowaj referencję do this
+            window.updateCurrencyLabelsAndPlaceholders = function() {
+                const currencySymbol = typeof window.getCurrencySymbol === 'function' ? window.getCurrencySymbol() : '$';
+                
+                // Update labels for price inputs using translations
+                const priceLabels = [
+                    { id: 'pricePerKg', translationKey: 'currency.pricePerKg' },
+                    { id: 'pricePerPiece', translationKey: 'currency.pricePerPiece' },
+                    { id: 'pricePerKg2', translationKey: 'currency.pricePerKg' }
+                ];
+                
+                priceLabels.forEach(labelInfo => {
+                    const label = document.querySelector(`label[for="${labelInfo.id}"]`);
+                    if (label) {
+                        const translatedText = self.t(labelInfo.translationKey); // Użyj self zamiast this
+                        label.textContent = `${translatedText} (${currencySymbol})`;
+                    }
+                });
             };
         }
     }

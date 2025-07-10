@@ -38,21 +38,19 @@ function loadFromLocalStorage() {
     }
 }
 
-// Update input labels with current currency symbol
-function updateCurrencyLabelsAndPlaceholders() {
+// Add currency symbol to existing labels without overwriting translations
+function addCurrencySymbolToLabels() {
     const currencySymbol = currentCurrency.symbol;
+    const priceInputIds = ['pricePerKg', 'pricePerPiece', 'pricePerKg2'];
     
-    // Update labels for price inputs
-    const priceLabels = [
-        { id: 'pricePerKg', text: `Price per kg (${currencySymbol})` },
-        { id: 'pricePerPiece', text: `Price per piece (${currencySymbol})` },
-        { id: 'pricePerKg2', text: `Price per kg (${currencySymbol})` }
-    ];
-    
-    priceLabels.forEach(labelInfo => {
-        const label = document.querySelector(`label[for="${labelInfo.id}"]`);
+    priceInputIds.forEach(id => {
+        const label = document.querySelector(`label[for="${id}"]`);
         if (label) {
-            label.textContent = labelInfo.text;
+            if (!label.textContent.includes('(')) {
+                label.textContent += ` (${currencySymbol})`;
+            } else {
+                label.textContent = label.textContent.replace(/\([^)]*\)$/, `(${currencySymbol})`);
+            }
         }
     });
 }
@@ -81,8 +79,8 @@ function updateCurrencyDisplay() {
         element.textContent = currentCurrency.symbol;
     });
     
-    // Update input labels and placeholders with currency symbol
-    updateCurrencyLabelsAndPlaceholders();
+    // Add currency symbol to price labels
+    addCurrencySymbolToLabels();
     
     // Update any existing product displays
     renderTable();
@@ -174,7 +172,9 @@ function checkProductRateLimit() {
     
     if (timeSinceLastAdd < ADD_PRODUCT_COOLDOWN) {
         const remainingTime = Math.ceil((ADD_PRODUCT_COOLDOWN - timeSinceLastAdd) / 1000);
-        alert(`⏱️ Please wait ${remainingTime} seconds before adding another product!`);
+        alert((window.i18nManager && window.i18nManager.t) 
+            ? window.i18nManager.t('alerts.rateLimitProduct', remainingTime) 
+            : `⏱️ Please wait ${remainingTime} seconds before adding another product!`);
         return false;
     }
     
@@ -183,7 +183,9 @@ function checkProductRateLimit() {
 
 function checkProductLimit() {
     if (products.length >= MAX_PRODUCTS) {
-        alert(`⚠️ Maximum number of products (${MAX_PRODUCTS}) reached. Delete some products to add new ones.`);
+        alert((window.i18nManager && window.i18nManager.t) 
+            ? window.i18nManager.t('alerts.productLimit', MAX_PRODUCTS) 
+            : `⚠️ Maximum number of products (${MAX_PRODUCTS}) reached. Delete some products to add new ones.`);
         return false;
     }
     return true;
@@ -279,7 +281,9 @@ function addProductPiece() {
         costPer100Kcal = calculateCostPer100Kcal(calories, pricePerKg2);
         pricePerKg = pricePerKg2;
     } else {
-        alert('❌ Enter a price per piece OR per kilogram!');
+        alert((window.i18nManager && window.i18nManager.t) 
+            ? '❌ ' + window.i18nManager.t('alerts.priceRequired') 
+            : '❌ Enter a price per piece OR per kilogram!');
         return;
     }
 
@@ -308,22 +312,30 @@ function validateInputs(productName, calories, pricePerKg, pieceWeight, pricePer
     // Product name is not required
 
     if (!calories || calories <= 0) {
-        alert('❌ Enter a valid calorie value (greater than 0)!');
+        alert((window.i18nManager && window.i18nManager.t) 
+            ? '❌ ' + window.i18nManager.t('alerts.validCalories') 
+            : '❌ Enter a valid calorie value (greater than 0)!');
         return false;
     }
 
     if (currentMode === 0) {
         if (!pricePerKg || pricePerKg <= 0) {
-            alert('❌ Enter a valid price per kg (greater than 0)!');
+            alert((window.i18nManager && window.i18nManager.t) 
+                ? '❌ ' + window.i18nManager.t('alerts.validPrice') 
+                : '❌ Enter a valid price per kg (greater than 0)!');
             return false;
         }
     } else {
         if (!pieceWeight || pieceWeight <= 0) {
-            alert('❌ Enter a valid piece weight (greater than 0)!');
+            alert((window.i18nManager && window.i18nManager.t) 
+                ? '❌ ' + window.i18nManager.t('alerts.validWeight') 
+                : '❌ Enter a valid piece weight (greater than 0)!');
             return false;
         }
         if ((!pricePerPiece || pricePerPiece <= 0) && (!pricePerKg2 || pricePerKg2 <= 0)) {
-            alert('❌ Enter a price per piece OR per kilogram!');
+            alert((window.i18nManager && window.i18nManager.t) 
+                ? '❌ ' + window.i18nManager.t('alerts.priceRequired') 
+                : '❌ Enter a price per piece OR per kilogram!');
             return false;
         }
     }
@@ -619,5 +631,3 @@ document.addEventListener('click', function(e) {
         deleteProduct(productId);
     }
 });
-
-

@@ -47,6 +47,38 @@
     {
       "source": "/fr/instruction",
       "destination": "/fr/instruction.html"
+    },
+    {
+      "source": "/es",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/",
+      "destination": "/es/index.html"
+    },
+    {
+      "source": "/es/calc",
+      "destination": "/es/calc.html"
+    },
+    {
+      "source": "/es/instruction",
+      "destination": "/es/instruction.html"
+    },
+    {
+      "source": "/de",
+      "destination": "/de/index.html"
+    },
+    {
+      "source": "/de/",
+      "destination": "/de/index.html"
+    },
+    {
+      "source": "/de/calc",
+      "destination": "/de/calc.html"
+    },
+    {
+      "source": "/de/instruction",
+      "destination": "/de/instruction.html"
     }
   ]
 }

@@ -4,15 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100 kcal Kostenrechner</title>
+    <title>Calculadora de Costo de 100 kcal</title>
 
  <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
-<meta http-equiv="Content-Security-Policy" content="
-  default-src 'self';
-  script-src 'self' 'unsafe-inline' https:;
-  connect-src 'self' https:;
-  style-src 'self' 'unsafe-inline';
-  img-src 'self' data: https:;">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
 
 <!-- Google Analytics - 3 Second Delay -->
 <script>
@@ -51,9 +46,6 @@
     <meta property="og:url" content="https://www.100kcalcost.com/de/calc.html" />
     <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" /> 
     <meta property="og:description" content="Interaktiver Rechner zur Bestimmung der Kosten von 100 Kalorien für verschiedene Lebensmittel. Vergleichen Sie Preise und treffen Sie fundierte Kaufentscheidungen." />
-    
-
-
 
     <!---- CSS ---->
     <link rel="stylesheet" href="../css/calc.css">
@@ -173,24 +165,6 @@ if ('serviceWorker' in navigator) {
             <li><a class="navigation-link" href="/de/instruction">Anleitung</a></li>
         </ul>
     </nav>
-
-    <section id="currency-selector">
-        <p id="selectorFirstP">💰 Wählen Sie Ihre Währung</p>
-        <p>Wählen Sie Ihre bevorzugte Währung für Preisberechnungen. Diese Einstellung wird gespeichert und im
-            Rechner verwendet.</p>
-
-        <div class="currency-dropdown-container">
-            <input type="text" id="currency-search" placeholder="Tippen Sie, um Währungen zu suchen " autocomplete="off">
-            <div id="currency-results"></div>
-        </div>
-
-        <div class="selected-currency" id="selected-currency">
-            <div class="selected-currency-text">
-                Ausgewählt: <span id="selected-currency-display"></span>
-            </div>
-        </div>
-    </section>
-
 <!-- Language Selector -->
     <div id="language-selector">
         <div id="language-toggle">
@@ -231,149 +205,210 @@ if ('serviceWorker' in navigator) {
         <div class="controls">
             <div class="input-section active" id="mode-kg">
                 <div class="form-group">
-                    <input type="text" id="productName1" maxlength="30" placeholder="Produktname (optional)" aria-label="Produktname">
+                    <input type="text" id="productName1" maxlength="30" placeholder=" ">
+                    <label for="productName1">Produktname (optional)</label>
                 </div>
-                <div class="form-group">
-                    <input type="number" id="calories1" placeholder="Kcal/100g" aria-label="Kalorien pro 100 Gramm" required>
+
+                <div class="forms-wrapper">
+                    <div class="form-group">
+                        <input type="number" id="calories1" placeholder=" " inputmode="numeric">
+                        <label for="calories1">Kcal/100g</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" id="pricePerKg" placeholder=" " step="0.01" min="0.1" inputmode="decimal">
+                        <label for="pricePerKg">Preis pro kg</label>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="number" id="pricePerKg1"  placeholder="Preis pro kg" aria-label="Preis pro Kilogramm" required>
-                </div>
-                <button id="addProductBtn1" class="add-btn">➕ Produkt hinzufügen</button>
+                <button class="btn" id="addProductKgBtn">➕ Produkt hinzufügen</button>
             </div>
 
             <div class="input-section" id="mode-piece">
                 <div class="form-group">
-                    <input type="text" id="productName2" maxlength="30" placeholder="Produktname (optional)" aria-label="Produktname">
+                    <input type="text" id="productName2" maxlength="30" placeholder=" ">
+                    <label for="productName2">Produktname (optional)</label>
                 </div>
-                <div class="form-group">
-                    <input type="number" id="weightPerPiece"  placeholder="Gewicht pro Stück (g)" aria-label="Gewicht pro Stück in Gramm" required>
-                </div>
-                <div class="form-group">
-                    <input type="number" id="calories2"  placeholder="Kcal/100g" aria-label="Kalorien pro 100 Gramm" required>
-                </div>
-                <div class="price-input-group">
+
+                <div class="forms-wrapper">
                     <div class="form-group">
-                        <input type="number" id="pricePerPiece"  placeholder="Preis pro Stück" aria-label="Preis pro Stück">
+                        <input type="number" id="pieceWeight" placeholder=" " min="1" inputmode="numeric">
+                        <label for="pieceWeight">Gewicht pro Stück (g)</label>
                     </div>
-                    <div class="or-divider">ODER</div>
+
                     <div class="form-group">
-                        <input type="number" id="pricePerKg2"  placeholder="Preis pro kg" aria-label="Preis pro Kilogramm">
+                        <input type="number" id="calories2" placeholder=" " min="1" inputmode="numeric">
+                        <label for="calories2">Kcal/100g</label>
                     </div>
                 </div>
-                <button id="addProductBtn2" class="add-btn">➕ Produkt hinzufügen</button>
+
+                <div class="forms-wrapper">
+                    <div class="price-input-group">
+                        <input type="number" id="pricePerPiece" placeholder=" " step="0.01" min="0" inputmode="numeric">
+                        <label for="pricePerPiece">Preis pro Stück</label>
+                    </div>
+                    <div class="price-input-group">
+                        <input type="number" id="pricePerKg2" placeholder=" " step="0.01" min="0" inputmode="numeric">
+                        <label for="pricePerKg2">Preis pro kg</label>
+                    </div>
+                </div>
+                <button class="btn" id="addProductPieceBtn">➕ Produkt hinzufügen</button>
             </div>
         </div>
 
-        <div class="results" id="resultsContainer" >
-            <div class="table-container">
-                <table id="resultsTable">
-                    <thead>
-                        <tr>
-                            <th class="sortable" data-column="name">🍎 Produkt <span class="sort-indicator"></span></th>
-                            <th class="sortable" data-column="calories">🔥 Kcal/100g <span class="sort-indicator"></span></th>
-                            <th class="sortable" data-column="price">💵 Preis pro kg <span class="sort-indicator"></span></th>
-                            <th class="sortable" data-column="cost">💰 Kosten 100 kcal <span class="sort-indicator"></span></th>
-                            <th>🗑️</th>
-                        </tr>
-                    </thead>
-                    <tbody id="resultsBody">
-                    </tbody>
-                </table>
-
-                <div id="emptyStateContainer" class="empty-state">
-                    <p>Fügen Sie Ihr erstes Produkt hinzu, um den Kostenvergleich zu sehen! 🚀</p>
-                </div>
-
-                <div class="table-actions">
-                    <button id="deleteAllBtn" class="delete-all-btn" >🗑️ Alle löschen</button>
-                </div>
-            </div>
+        <div class="table-container">
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th data-sort="name">🍎 Produkt</th>
+                        <th data-sort="calories">🔥 Kcal/100g</th>
+                        <th data-sort="price">💵 Preis pro kg</th>
+                        <th data-sort="cost">💰 Kosten 100 kcal</th>
+                        <th>🗑️</th>
+                    </tr>
+                </thead>
+                <tbody id="productTableBody">
+                    <tr class="no-products">
+                        <td colspan="5">Fügen Sie Ihr erstes Produkt hinzu, um den Kostenvergleich zu sehen! 🚀</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-
-        <!-- Cost Calculation Section -->
-        <section id="cost-section">
-            <h2>💰 Ihre Lebensmittelausgaben</h2>
-
-            <!-- Mode Switcher for Cost Calculation -->
-            <div class="cost-mode-switcher">
-                <div class="cost-mode-slider"></div>
-                <button class="cost-mode-btn active" data-mode="standard">
-                    Standard
-                </button>
-                <button class="cost-mode-btn" data-mode="training">
-                    Training/Ruhe
-                </button>
-            </div>
-
-            <!-- Standard Mode -->
-            <div class="cost-input-section active" id="cost-mode-standard">
-                <div class="cost-form-group">
-                    <label for="daily-calories">Wie viele Kalorien essen Sie täglich</label>
-                    <input type="number" id="daily-calories" step="1" min="800" max="6000" placeholder="z.B. 2000">
-                </div>
-            </div>
-
-            <!-- Training/Rest Mode -->
-            <div class="cost-input-section" id="cost-mode-training">
-                <div class="cost-form-row">
-                    <div class="cost-form-group">
-                        <label for="training-calories">Kalorien am Trainingstag</label>
-                        <input type="number" id="training-calories" step="1" min="800" max="6000" placeholder="z.B. 2500">
-                    </div>
-                    <div class="cost-form-group">
-                        <label for="rest-calories">Kalorien am Ruhetag</label>
-                        <input type="number" id="rest-calories" step="1" min="800" max="6000" placeholder="z.B. 1800">
-                    </div>
-                </div>
-                <div class="cost-form-row">
-                    <div class="cost-form-group">
-                        <label for="training-days">Trainingstage pro Woche</label>
-                        <input type="number" id="training-days" step="1" min="0" max="7" placeholder="z.B. 4">
-                    </div>
-                    <div class="cost-form-group">
-                        <label for="rest-days">Ruhetage pro Woche</label>
-                        <input type="number" id="rest-days" step="1" min="0" max="7" placeholder="z.B. 3">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cost Input -->
-            <div class="cost-input-section">
-                <div class="cost-form-group">
-                    <label for="avg-cost-100kcal">Durchschnittliche Kosten für 100 kcal</label>
-                    <input type="number" id="avg-cost-100kcal" step="0.01" min="0.01" max="99" placeholder="Aus der Tabelle oben">
-                </div>
-                <div class="cost-form-group cost-comparison-group">
-                    <label for="first-cost-100kcal">Erste Kosten für 100 kcal</label>
-                    <input type="number" id="first-cost-100kcal" step="0.01" min="0.01" max="99" placeholder="Erste Option">
-                </div>
-                <div class="cost-form-group cost-comparison-group" >
-                    <label for="second-cost-100kcal">Zweite Kosten für 100 kcal (optional)</label>
-                    <input type="number" id="second-cost-100kcal" step="0.01" min="0.01" max="99" placeholder="Zweite Option zum Vergleich">
-                </div>
-            </div>
-
-            <button id="calculate-costs" class="calculate-btn">🧮 Kosten berechnen</button>
-
-            <!-- Results Container -->
-            <div id="cost-results" >
-            </div>
-        </section>
     </div>
 
-    <!-- Critical scripts -->
-    <script type="text/javascript" src="../js/lazyLoader.js"></script>
-    <script type="text/javascript" src="../js/i18n-base.js"></script>
-    <script type="text/javascript" src="../js/languages.js"></script>
+<!-- Food Cost Calculator Section -->
+<div class="food-cost-section">
+    <div class="food-cost-section-header">
+        <h2>🤔 Wissenswertes</h2>
+        <p>Sie können berechnen, wie viel Sie für Lebensmittel bei bestimmten Kosten pro 100 kcal ausgeben werden</p>
+    </div>
 
-    <!-- Non-critical scripts (defer) -->
-    <script type="text/javascript" src="../js/calculator.js" defer></script>
-    <script type="text/javascript" src="../js/mobilehover.js" defer></script>
-    <script type="text/javascript" src="../js/currencySelect.js" defer></script>
-    <script type="text/javascript" src="../js/extracounting.js" defer></script>
-    <script type="text/javascript" src="../js/i18n-de.js" defer></script>
+    <div class="cost-mode-switcher">
+        <div class="cost-mode-slider"></div>
+       <button class="cost-mode-btn active" data-cost-mode="0">
+            Standard
+        </button>
+        <button class="cost-mode-btn" data-cost-mode="1">
+            Training/Ruhe
+        </button>
+    </div>
 
+    <!-- Normal Mode -->
+    <div class="cost-input-section active" id="cost-mode-normal">
+        <div class="cost-form-group">
+            <input type="number" id="dailyCalories" placeholder=" " inputmode="numeric">
+            <label for="dailyCalories">Wie viele Kalorien essen Sie täglich?</label>
+        </div>
+
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="cost100kcal1" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="cost100kcal1">Durchschnittliche Kosten pro 100 kcal</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="cost100kcal2" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="cost100kcal2">Zweite Kosten pro 100 kcal (optional)</label>
+            </div>
+        </div>
+
+        <button class="cost-calculate-btn" id="calculateNormalBtn">
+            🧮 Kosten berechnen
+        </button>
+    </div>
+
+    <!-- Training/Rest Mode -->
+    <div class="cost-input-section" id="cost-mode-dtdnt">
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="trainingDayCalories" placeholder=" " inputmode="numeric">
+                <label for="trainingDayCalories">Kalorien am Trainingstag</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="nonTrainingDayCalories" placeholder=" " inputmode="numeric">
+                <label for="nonTrainingDayCalories">Kalorien am Ruhetag</label>
+            </div>
+        </div>
+
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="trainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
+                <label for="trainingDaysPerWeek">Trainingstage pro Woche</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="nonTrainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
+                <label for="nonTrainingDaysPerWeek">Ruhetage pro Woche</label>
+            </div>
+        </div>
+
+        <div class="cost-forms-wrapper">
+            <div class="cost-form-group">
+                <input type="number" id="dtCost100kcal1" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="dtCost100kcal1">Durchschnittliche Kosten pro 100 kcal</label>
+            </div>
+            <div class="cost-form-group">
+                <input type="number" id="dtCost100kcal2" placeholder=" " step="0.01" inputmode="decimal">
+                <label for="dtCost100kcal2">Zweite Kosten pro 100 kcal (optional)</label>
+            </div>
+        </div>
+
+        <button class="cost-calculate-btn" id="calculateDTDNTBtn">
+            🧮 Kosten berechnen
+        </button>
+    </div>
+
+    <!-- Results -->
+    <div class="cost-results" id="costResults" style="display: none;">
+        <h3>💰 Ihre Lebensmittelausgaben</h3>
+        <div class="cost-comparison" id="costComparison">
+            <!-- Results will be inserted here by JavaScript -->
+        </div>
+    </div>
+</div>
+
+<section id="faq-section">
+    <h2>🧮 Rechner-Tipps und FAQ</h2>
+    
+    <div class="faq-item">
+        <h3>Welche Lebensmittel bieten typischerweise die günstigsten Kalorien?</h3>
+        <p>Generell bieten Getreide (Reis, Pasta, Brot), Hülsenfrüchte (Bohnen, Linsen), Pflanzenöle, Nüsse und Kartoffeln die günstigsten Kalorien. Verarbeitete Lebensmittel und frische Produkte kosten normalerweise mehr pro Kalorie, obwohl sie andere ernährungsphysiologische Vorteile bieten können.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Wie kann dieser Rechner mir helfen, Geld bei Lebensmitteln zu sparen?</h3>
+        <p>Indem Sie identifizieren, welche Lebensmittel Ihnen die meiste Energie für Ihr Geld geben, können Sie Mahlzeiten um kostengünstige Kalorienquellen aufbauen und teure Zutaten als Geschmacksverstärker anstatt als Hauptzutaten verwenden. Dieser Ansatz kann die Lebensmittelrechnungen um 20-30% reduzieren.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Sollte ich immer die günstigste Kalorieoption wählen?</h3>
+        <p>Nein. Obwohl die Kosten pro Kalorie für die Budgetierung wichtig sind, berücksichtigen Sie auch Nährwert, Sättigung, Geschmack und Mahlzeitvariation. Die günstigsten Kalorien stammen oft von raffiniertem Zucker und Ölen, die Ihre Ernährung nicht dominieren sollten. Verwenden Sie dieses Tool als einen Faktor bei Lebensmittelentscheidungen.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Wie berechne ich meine täglichen Lebensmittelkosten mit den Ergebnissen?</h3>
+        <p>Verwenden Sie den Bereich "Wissenswertes" unter dem Rechner! Geben Sie Ihre tägliche Kalorienaufnahme und die durchschnittlichen Kosten pro 100 kcal aus Ihren Produktvergleichen ein. Das Tool zeigt Ihre täglichen, wöchentlichen, monatlichen und jährlichen Lebensmittelausgaben basierend auf Kalorienkosten.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Was sind gute Kosten pro 100 kcal, die ich anstreben sollte?</h3>
+        <p>Dies variiert je nach Standort und Währung, aber allgemein: unter 0,50€ pro 100 kcal ist sehr wirtschaftlich, 0,50€-1,00€ ist moderat, und über 1,00€ ist teuer. Verwenden Sie den Rechner, um Ihre lokale Baseline zu etablieren, indem Sie Grundnahrungsmittel in Ihrer Gegend vergleichen.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Kann ich dies für Mahlzeitenplanung verwenden?</h3>
+        <p>Absolut! Berechnen Sie die Kosten pro 100 kcal für Ihre Lieblingszutaten, dann bauen Sie Mahlzeiten mit kostengünstigen Basen (wie Reis oder Pasta) ergänzt durch teurere aber nahrhafte Zusätze (wie Gemüse oder mageres Protein) auf, um Kosten und Ernährung auszubalancieren.</p>
+    </div>
+</section>
+
+<!-- Critical scripts -->
+<script type="text/javascript" src="../js/lazyLoader.js"></script>
+<script type="text/javascript" src="../js/i18n-base.js"></script>
+<script type="text/javascript" src="../js/languages.js"></script>
+
+<!-- Non-critical scripts (defer) -->
+<script type="text/javascript" src="../js/mobilehover.js" defer></script>
+<script type="text/javascript" src="../js/calculator.js" defer></script>
+<script type="text/javascript" src="../js/validations.js" defer></script>
+<script type="text/javascript" src="../js/extracounting.js" defer></script>
+<script type="text/javascript" src="../js/i18n-de.js" defer></script>
 </body>
 
 </html>

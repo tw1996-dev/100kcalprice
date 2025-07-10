@@ -7,7 +7,12 @@
     <title>100 kcal Kostenrechner</title>
 
  <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'unsafe-inline' https:;
+  connect-src 'self' https:;
+  style-src 'self' 'unsafe-inline';
+  img-src 'self' data: https:;">
 
 <!-- Google Analytics - 3 Second Delay -->
 <script>
@@ -229,10 +234,10 @@ if ('serviceWorker' in navigator) {
                     <input type="text" id="productName1" maxlength="30" placeholder="Produktname (optional)" aria-label="Produktname">
                 </div>
                 <div class="form-group">
-                    <input type="number" id="calories1" step="1" min="1" max="9999" placeholder="Kcal/100g" aria-label="Kalorien pro 100 Gramm" required>
+                    <input type="number" id="calories1" placeholder="Kcal/100g" aria-label="Kalorien pro 100 Gramm" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" id="pricePerKg1" step="0.01" min="0.01" max="999999" placeholder="Preis pro kg" aria-label="Preis pro Kilogramm" required>
+                    <input type="number" id="pricePerKg1"  placeholder="Preis pro kg" aria-label="Preis pro Kilogramm" required>
                 </div>
                 <button id="addProductBtn1" class="add-btn">➕ Produkt hinzufügen</button>
             </div>
@@ -242,18 +247,18 @@ if ('serviceWorker' in navigator) {
                     <input type="text" id="productName2" maxlength="30" placeholder="Produktname (optional)" aria-label="Produktname">
                 </div>
                 <div class="form-group">
-                    <input type="number" id="weightPerPiece" step="1" min="1" max="9999" placeholder="Gewicht pro Stück (g)" aria-label="Gewicht pro Stück in Gramm" required>
+                    <input type="number" id="weightPerPiece"  placeholder="Gewicht pro Stück (g)" aria-label="Gewicht pro Stück in Gramm" required>
                 </div>
                 <div class="form-group">
-                    <input type="number" id="calories2" step="1" min="1" max="9999" placeholder="Kcal/100g" aria-label="Kalorien pro 100 Gramm" required>
+                    <input type="number" id="calories2"  placeholder="Kcal/100g" aria-label="Kalorien pro 100 Gramm" required>
                 </div>
                 <div class="price-input-group">
                     <div class="form-group">
-                        <input type="number" id="pricePerPiece" step="0.01" min="0.01" max="999999" placeholder="Preis pro Stück" aria-label="Preis pro Stück">
+                        <input type="number" id="pricePerPiece"  placeholder="Preis pro Stück" aria-label="Preis pro Stück">
                     </div>
                     <div class="or-divider">ODER</div>
                     <div class="form-group">
-                        <input type="number" id="pricePerKg2" step="0.01" min="0.01" max="999999" placeholder="Preis pro kg" aria-label="Preis pro Kilogramm">
+                        <input type="number" id="pricePerKg2"  placeholder="Preis pro kg" aria-label="Preis pro Kilogramm">
                     </div>
                 </div>
                 <button id="addProductBtn2" class="add-btn">➕ Produkt hinzufügen</button>

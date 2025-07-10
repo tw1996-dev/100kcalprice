@@ -33,20 +33,20 @@
       "destination": "/no/instruction.html"
     },
     {
-      "source": "/es",
-      "destination": "/es/index.html"
+      "source": "/fr",
+      "destination": "/fr/index.html"
     },
     {
-      "source": "/es/",
-      "destination": "/es/index.html"
+      "source": "/fr/",
+      "destination": "/fr/index.html"
     },
     {
-      "source": "/es/calc",
-      "destination": "/es/calc.html"
+      "source": "/fr/calc",
+      "destination": "/fr/calc.html"
     },
     {
-      "source": "/es/instruction",
-      "destination": "/es/instruction.html"
+      "source": "/fr/instruction",
+      "destination": "/fr/instruction.html"
     }
   ]
 }

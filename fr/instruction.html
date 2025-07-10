@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coût 100kcal</title>
+ <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
+
+<!-- Google Analytics - 3 Second Delay -->
+<script>
+(function() {
+  // Load GA after page is fully loaded + 3 seconds
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      // Load GA script dynamically
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X258W69QDT';
+      document.head.appendChild(script);
+      
+      // Initialize GA when script loads
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X258W69QDT');
+      };
+    }, 3000); // 3 second delay
+  });
+})();
+</script>
+
+    <!---- Metadata for search engines and social sharing ---->
+    <meta name="description"
+        content="Calculez et comparez le coût de 100 calories pour divers produits alimentaires afin de prendre des décisions d'achat éclairées et gérer votre budget.">
+    <meta name="keywords"
+        content="coût des calories, calculatrice alimentaire, calculatrice de calories, coût par calorie, comparaison alimentaire, budget alimentaire, coût alimentation saine">
+    <meta name="author" content="tw1996-dev">
+
+    <!---- Open Graph ---->
+    <meta property="og:title" content="Calculatrice de Coût de 100 kcal - Comparez les Prix des Aliments par Contenu Énergétique" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/fr/instruction.html" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
+    <meta property="og:description"
+        content="Calculez et comparez le coût de 100 calories pour divers produits alimentaires afin de prendre des décisions d'achat éclairées et gérer votre budget." />
+
+    <!---- CSS ---->
+    <link rel="stylesheet" href="../css/styles.css">
+
+ <!-- Favicons and icons -->
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<script>
+// Dynamically set start_url based on current page
+if ('serviceWorker' in navigator) {
+    // Get current path
+    const currentPath = window.location.pathname;
+    
+    // Create dynamic manifest
+    const manifestContent = {
+        "name": "100 kcal Cost Calculator",
+        "short_name": "100kcal Cost",
+        "description": "Calculate and compare the cost of 100 calories for various food products",
+        "icons": [
+            {
+                "src": "/favicon/web-app-manifest-192x192.png",
+                "sizes": "192x192",
+                "type": "image/png",
+                "purpose": "any"
+            },
+            {
+                "src": "/favicon/web-app-manifest-512x512.png", 
+                "sizes": "512x512",
+                "type": "image/png",
+                "purpose": "any"
+            }
+        ],
+        "theme_color": "#BB86FC",
+        "background_color": "#1A1A2E",
+        "display": "minimal-ui",
+        "start_url": currentPath,
+        "scope": "/",
+        "orientation": "portrait-primary",
+        "categories": ["utilities", "productivity", "food"]
+    };
+    
+    // Create blob and update manifest link
+    const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(manifestBlob);
+    
+    // Update manifest link
+    const manifestLink = document.querySelector('link[rel="manifest"]');
+    if (manifestLink) {
+        manifestLink.href = manifestURL;
+    }
+}
+</script>
+
+    <!-- HowTo Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Comment utiliser la Calculatrice de Coût de 100 kcal",
+  "description": "Guide étape par étape sur l'utilisation de la calculatrice de coût de 100 kcal pour comparer les prix des aliments par contenu calorique",
+  "totalTime": "PT2M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "@id": "food-product",
+      "name": "Produit alimentaire avec informations caloriques"
+    },
+    {
+      "@type": "HowToSupply", 
+      "@id": "price-information",
+      "name": "Informations de prix (par kg ou par pièce)"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "@id": "web-browser",
+      "name": "Navigateur web (Chrome, Firefox, Safari, Edge)"
+    },
+    {
+      "@type": "HowToTool",
+      "@id": "calculator-app",
+      "name": "Calculatrice de Coût de 100 kcal"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Choisir le mode de calcul",
+      "text": "Sélectionnez le mode 'Par Kilogramme' pour la plupart des produits de magasin ou le mode 'Par Pièce' pour les articles vendus individuellement comme les yaourts ou les petits pains."
+    },
+    {
+      "@type": "HowToStep", 
+      "name": "Entrer les informations du produit",
+      "text": "Remplissez le nom du produit (optionnel), les calories par 100g (trouvées sur l'étiquette du produit) et les informations de prix."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Ajouter le produit à la comparaison",
+      "text": "Cliquez sur le bouton 'Ajouter Produit' pour ajouter votre produit au tableau de comparaison."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Comparer les résultats",
+      "text": "Visualisez le coût calculé par 100 kcal dans le tableau et triez par différentes colonnes pour trouver les options les plus rentables."
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "inLanguage": "fr"
+}
+</script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que la calculatrice de coût de 100 kcal ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La calculatrice de coût de 100 kcal est un outil en ligne gratuit qui vous aide à calculer et comparer combien coûtent 100 calories de différents produits alimentaires. Cela vous aide à prendre des décisions d'achat éclairées et à trouver les options alimentaires les plus rentables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment utiliser la calculatrice ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entrez simplement le nom du produit (optionnel), les calories par 100g (trouvées sur les étiquettes alimentaires) et les informations de prix. La calculatrice calculera automatiquement le coût par 100 calories et l'ajoutera à un tableau de comparaison."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle est la différence entre les modes 'Par Kilogramme' et 'Par Pièce' ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Utilisez le mode 'Par Kilogramme' pour la plupart des produits de magasin vendus au poids. Utilisez le mode 'Par Pièce' pour les articles vendus individuellement comme les yaourts, petits pains ou snacks emballés où vous connaissez le poids par pièce."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "La calculatrice sauvegarde-t-elle mes données ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, la calculatrice utilise le stockage local de votre navigateur pour sauvegarder vos comparaisons de produits. Vos données resteront disponibles lors de votre prochaine visite du site, mais elles ne sont stockées que sur votre appareil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je utiliser différentes devises ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, la calculatrice prend en charge plusieurs devises. Vous pouvez sélectionner votre devise préférée dans le sélecteur de devises, et tous les calculs s'afficheront dans votre devise choisie."
+      }
+    }
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "inLanguage": "fr"
+}
+</script>
+</head>
+
+<body>
+    <!----------------- NAVIGATION-------------------->
+        <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <nav class="mobile-nav-menu"  id="main-nav" aria-label="Navigation principale">
+        <ul>
+            <li><a class="navigation-link" href="/fr/">Accueil</a></li>
+            <li><a class="navigation-link" href="/fr/calc">Calculatrice🧮</a></li>
+            <li><a class="navigation-link" href="/fr/instruction">Comment utiliser ?</a></li>
+        </ul>
+    </nav>
+
+    <!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="../flags/fr.svg" alt="Langue actuelle">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input 
+                    type="text" 
+                    id="language-search-input" 
+                    placeholder="Rechercher des langues..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <section id="currency-selector">
+        <p id="selectorFirstP">💰 Choisissez Votre Devise</p>
+        <p>Sélectionnez votre devise préférée pour les calculs de prix. Ce paramètre sera mémorisé et utilisé dans la
+            calculatrice.</p>
+
+        <div class="currency-dropdown-container">
+            <input type="text" id="currency-search" placeholder="Tapez pour rechercher des devises " autocomplete="off">
+            <div id="currency-results"></div>
+        </div>
+
+        <div class="selected-currency" id="selected-currency">
+            <div class="selected-currency-text">
+                Sélectionnée : <span id="selected-currency-display"></span>
+            </div>
+        </div>
+    </section>
+
+    <main id="instructions">
+        <h1>📱 Guide Utilisateur de la Calculatrice de Coût de 100 kcal</h1>
+
+        <section>
+            <h2>🚀 Premier Lancement</h2>
+            <p><strong>Pour les utilisateurs de téléphone</strong> :</p>
+            <ol>
+                <li>Allez à l'onglet "Calculatrice" dans l'application.</li>
+                <li>Ajoutez un raccourci à l'écran d'accueil de votre téléphone :
+                    <ul>
+                        <li><strong class="strong">Sur Android :</strong> Appuyez sur menu (⋮) → "Ajouter à l'écran d'accueil".</li>
+                        <li><strong class="strong">Sur iPhone :</strong> Appuyez sur le bouton partage (□↗) → "Ajouter à l'écran d'accueil".</li>
+                    </ul>
+                </li>
+                <li>De cette façon, vous pouvez lancer la calculatrice d'un seul appui depuis votre écran d'accueil !</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>🎯 Comment Utiliser la Calculatrice</h2>
+
+            <article>
+                <h3>Mode Par Défaut : "Par Kilogramme"</h3>
+                <div class="highlight">
+                    <p>Pour la plupart des produits en magasins</p>
+                </div>
+                <ol>
+                    <li><strong class="strong">Nom du Produit</strong> - optionnel (vous pouvez l'ignorer pour une comparaison rapide)
+                    </li>
+                    <li><strong class="strong">Kcal/100g</strong> - vous le trouverez sur l'étiquette du produit</li>
+                    <li><strong class="strong">Prix par kg</strong> - convertissez le prix au kilogramme (ex. 500g pour 5€ = 10€/kg)</li>
+                    <li><strong class="strong">Cliquez</strong> <strong>"➕ Ajouter Produit"</strong></li>
+                </ol>
+            </article>
+
+            <article>
+                <h3>Mode Alternatif : "Par Pièce"</h3>
+                <div class="highlight">
+                    <p><strong>Utilisez pour les produits vendus individuellement</strong> (ex. yaourts, petits pains)</p>
+                </div>
+                <ol>
+                    <li><strong class="strong">Nom du Produit</strong> - optionnel</li>
+                    <li><strong class="strong">Poids par pièce (g)</strong> - combien pèse un article</li>
+                    <li><strong class="strong">Kcal/100g</strong> - de l'étiquette</li>
+                    <li><strong class="strong">Prix</strong> : Choisissez UNE méthode :
+                        <ul>
+                            <li><strong>Prix par pièce</strong> - combien coûte un article</li>
+                            <li><strong>OU Prix par kg</strong> - le prix converti par kilogramme</li>
+                        </ul>
+                    </li>
+                    <li><strong class="strong">Cliquez </strong><strong>"➕ Ajouter Produit"</strong></li>
+                </ol>
+            </article>
+        </section>
+
+        <section>
+            <h2>📊 Gestion des Résultats</h2>
+
+            <article>
+                <h3>Tri du Tableau</h3>
+                <ul>
+                    <li><strong>Cliquez sur un en-tête de colonne</strong> pour trier par :
+                        <ul>
+                            <li>🍎 Produit (alphabétiquement)</li>
+                            <li>🔥 Calories (croissant/décroissant)</li>
+                            <li>💵 Prix par kg (croissant/décroissant)</li>
+                            <li>💰 <strong>Coût de 100 kcal</strong> (croissant/décroissant)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Suppression de Produits</h3>
+                <ul>
+                    <li><strong>Produit unique</strong> : Cliquez 🗑️ à côté du produit</li>
+                    <li><strong>Tous les produits</strong> : Cliquez sur le bouton supprimer tout</li>
+                </ul>
+            </article>
+        </section>
+
+        <section>
+            <h2>💡 Conseils Pratiques</h2>
+
+            <article>
+                <h3>Comparaison rapide de deux produits</h3>
+                <ol>
+                    <li>N'entrez pas de noms de produits - allez directement aux calories et au prix.</li>
+                    <li>Ajoutez le premier produit.</li>
+                    <li>Ajoutez le deuxième produit.</li>
+                    <li>Comparez la colonne <strong>"Coût de 100 kcal"</strong> - une valeur plus faible signifie un meilleur
+                        rapport prix-valeur nutritionnelle.</li>
+                </ol>
+            </article>
+
+            <article>
+                <h3>Exemples d'Utilisation</h3>
+                <div class="examples">
+                    <ul>
+                        <li><strong class="strong">Céréales de Petit-déjeuner</strong> : Mode "Par Kilogramme" (350 kcal/100g, 8€/kg)
+                        </li>
+                        <li><strong class="strong">Yaourt</strong> : Mode "Par Pièce" (150g, 80 kcal/100g, 2,50€/pièce)
+                        </li>
+                        <li><strong class="strong">Cacahuètes</strong> : Mode "Par Kilogramme" (580 kcal/100g, 25€/kg)</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+
+        <section>
+            <h2>ℹ️ Informations Techniques</h2>
+            <ul>
+                <li>La calculatrice <strong>arrondit les résultats à 2 décimales</strong> pour une meilleure lisibilité.</li>
+                <li>Il y a une période de refroidissement d'1 seconde entre l'ajout de produits pour éviter le spam.</li>
+                <li>Vous pouvez ajouter un maximum de 500 produits.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Objectif de la Calculatrice</h2>
+            <div class="important">
+                <p>La calculatrice vous montre <strong>combien coûtent 100 kcal</strong> d'un produit donné. Plus la valeur est faible,
+                    meilleur est le rapport prix-valeur énergétique du produit.</p>
+            </div>
+
+            <div class="highlight">
+                <p>Rappelez-vous : Les calories et le prix ne font pas tout – considérez aussi les valeurs nutritionnelles, vitamines et
+                    minéraux lors du choix des produits ! 🥗</p>
+            </div>
+        </section>
+
+        <section id="fun-fact-section">
+            <h3>Fait Amusant : Découvrez vos Insights de Coût Alimentaire !</h3>
+            <p>Vous êtes-vous déjà demandé le coût réel de votre alimentation quotidienne ?</p>
+
+            <ul>
+                <li>
+                    <strong>Calculez votre coût alimentaire total</strong> basé sur un apport calorique quotidien spécifique et le
+                    <strong>coût par 100 kcal</strong>.
+                </li>
+                <li>
+                    <strong>Comparez deux scénarios différents</strong> pour voir la <strong>différence financière</strong>
+                    entre deux régimes ou choix d'ingrédients sur différentes périodes (quotidien, hebdomadaire, mensuel, annuel). C'est
+                    super utile pour comprendre les économies potentielles ou les dépenses accrues !
+                </li>
+            </ul>
+            <p id="lastParagraph">
+                Que vous suiviez un apport calorique quotidien standard ou gériez différents objectifs caloriques pour
+                les jours d'entraînement et de non-entraînement, cet outil fournit une <em>répartition claire de vos coûts</em>. C'est une
+                <em>façon fantastique de visualiser l'impact financier de votre nutrition</em> !
+            </p>
+        </section>
+
+        <section id="faq-section">
+            <h2>❓ Questions Fréquemment Posées</h2>
+            
+            <div class="faq-item">
+                <h3>Comment utiliser la calculatrice étape par étape ?</h3>
+                <p>Entrez simplement les calories par 100g (que vous trouverez sur l'étiquette alimentaire), les informations de prix et optionnellement le nom du produit. Choisissez le mode "Par Kilogramme" pour la plupart des produits de magasin ou "Par Pièce" pour les produits vendus individuellement. Cliquez sur "Ajouter Produit" et comparez le coût par 100 kcal dans le tableau des résultats.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Quelle est la différence entre les modes "Par Kilogramme" et "Par Pièce" ?</h3>
+                <p>Le mode "Par Kilogramme" est pour les produits vendus au poids (riz, viande, légumes). Le mode "Par Pièce" est pour les produits emballés individuellement où vous connaissez le poids par pièce (pots de yaourt, barres protéinées, plats surgelés). Le choix du mode dépend de la façon dont le produit est vendu en magasin.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Où puis-je trouver les informations sur les calories par 100g ?</h3>
+                <p>Vérifiez l'étiquette des valeurs nutritionnelles sur tout produit emballé. C'est généralement indiqué comme "Énergie" ou "Calories" par 100g. Pour les produits frais, vous pouvez trouver ces informations en ligne dans les bases de données nutritionnelles ou les applications de suivi alimentaire comme MyFitnessPal.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Puis-je utiliser cette calculatrice sur mon téléphone pendant les courses ?</h3>
+                <p>Absolument ! La calculatrice est conçue pour être mobile-friendly. Vous pouvez l'ajouter à l'écran d'accueil de votre téléphone pour un accès rapide pendant vos courses. Appuyez simplement sur le bouton de partage dans votre navigateur et sélectionnez "Ajouter à l'écran d'accueil".</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>La calculatrice sauvegarde-t-elle mes comparaisons de produits ?</h3>
+                <p>Oui, toutes les données de produits sont sauvegardées localement dans votre navigateur. Lorsque vous revenez sur le site, vos comparaisons précédentes seront toujours là. Cependant, ces données ne sont stockées que sur votre appareil et ne sont partagées avec personne.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Comment convertir les prix si les produits sont vendus dans différentes unités ?</h3>
+                <p>Pour les produits vendus au poids mais pas au kilogramme, divisez le prix par le poids et multipliez par 1000. Par exemple : 500g pour 15€ = 15€ ÷ 0,5kg = 30€/kg. La calculatrice gère cela automatiquement en mode "Par Pièce" lorsque vous entrez le poids par pièce.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Que faire quand deux produits ont un coût très similaire par 100 kcal ?</h3>
+                <p>Lorsque les coûts sont similaires, considérez d'autres facteurs comme la qualité nutritionnelle, la satiété, la durabilité et les préférences personnelles. Une petite différence dans le coût calorique peut ne pas valoir le sacrifice des produits que vous aimez ou qui fournissent une meilleure nutrition.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Puis-je comparer des produits de différents magasins ?</h3>
+                <p>Oui ! La calculatrice est idéale pour comparer les mêmes produits dans différents magasins ou comparer différentes marques. Entrez simplement chaque produit séparément avec son prix de magasin respectif pour voir lequel offre la meilleure valeur par calorie.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Pourquoi certains aliments sains montrent-ils un coût plus élevé par calorie ?</h3>
+                <p>Les produits riches en eau (comme les légumes) ou à faible densité énergétique coûtent naturellement plus cher par calorie. Cela ne signifie pas qu'ils ont une mauvaise valeur - ils fournissent des nutriments essentiels, des fibres et de la satiété. Utilisez la calculatrice en conjonction avec des considérations nutritionnelles, pas comme seul facteur.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h3>Y a-t-il une limite au nombre de produits que je peux comparer ?</h3>
+                <p>Vous pouvez ajouter jusqu'à 500 produits pour éviter les problèmes de performance. Pour la plupart des utilisateurs, comparer 10-20 produits est suffisant pour prendre des décisions éclairées. Vous pouvez toujours supprimer les produits que vous n'avez plus besoin de comparer.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Critical scripts -->
+    <script type="text/javascript" src="../js/lazyLoader.js"></script>
+    <script type="text/javascript" src="../js/i18n-base.js"></script>
+    <script type="text/javascript" src="../js/languages.js"></script>
+
+    <!-- Non-critical scripts (defer) -->
+    <script type="text/javascript" src="../js/mobilehover.js" defer></script>
+    <script type="text/javascript" src="../js/currencySelect.js" defer></script>
+    <script type="text/javascript" src="../js/i18n-fr.js" defer></script>
+</body>
+
+</html>

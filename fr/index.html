@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coût 100 kcal</title>
+
+ <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
+
+<!-- Google Analytics - 3 Second Delay -->
+<script>
+(function() {
+  // Load GA after page is fully loaded + 3 seconds
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      // Load GA script dynamically
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X258W69QDT';
+      document.head.appendChild(script);
+      
+      // Initialize GA when script loads
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-X258W69QDT');
+      };
+    }, 3000); // 3 second delay
+  });
+})();
+</script>
+
+    <!---- Metadata for search engines and social sharing ---->
+    <meta name="description"
+        content="Calculez et comparez le coût de 100 calories pour divers produits alimentaires afin de prendre des décisions d'achat éclairées et gérer votre budget.">
+    <meta name="keywords"
+        content="coût des calories, calculatrice alimentaire, calculatrice de calories, coût par calorie, comparaison alimentaire, budget alimentaire, coût alimentation saine">
+    <meta name="author" content="tw1996-dev">
+
+       <!---- Open Graph ---->
+    <meta property="og:title" content="Calculatrice de Coût de 100 kcal - Comparez les Prix des Aliments par Contenu Énergétique" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/fr/index.html" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" /> 
+    <meta property="og:description" content="Calculez et comparez le coût de 100 calories pour divers produits alimentaires afin de prendre des décisions d'achat éclairées et gérer votre budget." />
+
+    <!---- CSS ---->
+    <link rel="stylesheet" href="../css/styles.css">
+
+ <!-- Favicons and icons -->
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<script>
+// Dynamically set start_url based on current page
+if ('serviceWorker' in navigator) {
+    // Get current path
+    const currentPath = window.location.pathname;
+    
+    // Create dynamic manifest
+    const manifestContent = {
+        "name": "100 kcal Cost Calculator",
+        "short_name": "100kcal Cost",
+        "description": "Calculate and compare the cost of 100 calories for various food products",
+        "icons": [
+            {
+                "src": "/favicon/web-app-manifest-192x192.png",
+                "sizes": "192x192",
+                "type": "image/png",
+                "purpose": "any"
+            },
+            {
+                "src": "/favicon/web-app-manifest-512x512.png", 
+                "sizes": "512x512",
+                "type": "image/png",
+                "purpose": "any"
+            }
+        ],
+        "theme_color": "#BB86FC",
+        "background_color": "#1A1A2E",
+        "display": "minimal-ui",
+        "start_url": currentPath,
+        "scope": "/",
+        "orientation": "portrait-primary",
+        "categories": ["utilities", "productivity", "food"]
+    };
+    
+    // Create blob and update manifest link
+    const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
+    const manifestURL = URL.createObjectURL(manifestBlob);
+    
+    // Update manifest link
+    const manifestLink = document.querySelector('link[rel="manifest"]');
+    if (manifestLink) {
+        manifestLink.href = manifestURL;
+    }
+}
+</script>
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculatrice de Coût de 100 kcal",
+  "url": "https://www.100kcalcost.com/fr/index.html",
+  "description": "Calculez et comparez le coût de 100 calories pour divers produits alimentaires afin de prendre des décisions d'achat éclairées et gérer votre budget. Outil en ligne gratuit pour l'analyse du coût des calories.",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Chrome, Firefox, Safari, Edge",
+  "permissions": "localStorage",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "featureList": [
+    "Calculer le coût par 100 calories",
+    "Comparer les produits alimentaires par coût calorique",
+    "Support pour plusieurs devises",
+    "Calculs par kilogramme et par unité",
+    "Persistance des données avec localStorage",
+    "Design responsif pour mobile et desktop",
+    "Tableau de comparaison de produits triable",
+    "Modifier et supprimer les entrées de produits",
+    "Aucune inscription requise"
+  ],
+  "softwareVersion": "1.0",
+  "datePublished": "2025-07-09",
+  "dateModified": "2025-07-09",
+  "author": {
+    "@type": "Person",
+    "name": "tw1996-dev"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "inLanguage": "fr",
+  "isAccessibleForFree": true,
+  "usageInfo": "Gratuit pour un usage personnel et commercial",
+  "applicationSubCategory": "Calculatrice Alimentaire",
+  "serviceType": "Calculatrice en Ligne"
+}
+</script>
+
+<!-- WebSite Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Calculatrice de Coût de 100 kcal",
+  "url": "https://www.100kcalcost.com/fr/index.html",
+  "description": "Calculez et comparez le coût de 100 calories pour divers produits alimentaires",
+  "publisher": {
+    "@type": "Organization",
+    "name": "100kcal Cost",
+    "url": "https://www.100kcalcost.com"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.100kcalcost.com/fr/calc.html?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+</head>
+
+<body>
+    <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
+    <nav class="mobile-nav-menu" id="main-nav" aria-label="Navigation principale">
+        <ul>
+            <li><a class="navigation-link" href="/fr/">Accueil</a></li>
+            <li><a class="navigation-link" href="/fr/calc">Calculatrice🧮</a></li>
+            <li><a class="navigation-link" href="/fr/instruction">Comment utiliser ?</a></li>
+        </ul>
+    </nav>
+
+<!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="../flags/fr.svg" alt="Langue actuelle">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input 
+                    type="text" 
+                    id="language-search-input" 
+                    placeholder="Rechercher des langues..."
+                    autocomplete="off"
+                >
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <header id="mainPageHeader">
+        <h1>Combien coûtent 100 calories ?</h1>
+    </header>
+
+    <main id="mainPageMain">
+
+        <p>Vous êtes dans le magasin. Vous regardez des étagères pleines de produits. Les prix au kilogramme sont visibles, les étiquettes indiquent clairement
+            la <em>valeur énergétique</em>... mais savez-vous vraiment <strong>à quel point un produit donné est rentable ?</strong></p>
+        
+        <p>Êtes-vous conscient que <strong>certains produits sont effectivement plusieurs fois plus chers que d'autres</strong> ?</p>
+
+        <div class="home-highlight-box">
+            <p>Cette page a été créée pour répondre précisément à cette question. Avec cette <em>calculatrice simple</em>, vous calculerez
+                en <em>quelques secondes seulement</em> combien vous coûtent 100 calories d'un produit donné – c'est une
+                <strong>façon rapide et pratique de comparer la rentabilité de différentes options alimentaires</strong>.</p>
+        </div>
+
+        <h2>Cette calculatrice sera utile pour quiconque :</h2>
+        <ul id="mainPageul">
+            <li>contrôle l'<strong>apport calorique quotidien</strong></li>
+            <li>veut prendre des <strong>décisions d'achat éclairées</strong></li>
+            <li>cherche des moyens d'<strong>économiser de l'argent</strong>, <em>sans compromettre la qualité</em></li>
+        </ul>
+
+        <div class="home-cta-text">
+            <p>Le meilleur, c'est que vous pouvez avoir cette calculatrice <strong>toujours à portée de main</strong> – tout ce dont vous avez besoin est un téléphone
+                et l'accès au site web. <strong>Calculer le coût de 100 kcal</strong> vous prendra littéralement <em>10
+                    secondes</em>, même <em>en étant debout devant l'étagère du magasin</em>.</p>
+        </div>
+
+        <h2>Pourquoi vaut-il la peine de calculer le coût des calories ?</h2>
+
+        <p>Dans un monde où <strong>la nourriture devient de plus en plus chère</strong>, il vaut la peine de savoir non seulement <strong>combien
+                coûte 1 kg d'un produit donné</strong>, mais aussi <strong>combien vous paierez pour sa valeur
+                énergétique</strong>. Surtout si vous <em>comptez les calories</em>, <em>perdez du poids</em>,
+            <em>vous entraînez</em>, ou voulez simplement avoir une <strong>plus grande conscience</strong> de ce que vous achetez.</p>
+
+        <div class="home-highlight-box">
+            <p>Rappelez-vous – compter les calories n'est pas seulement une <em>façon de faire un régime</em>, mais aussi un <strong>contrôle réel sur
+                    les dépenses</strong> et une meilleure <strong>compréhension de la valeur de ce que nous mangeons</strong>. Et bien que
+                <strong>le prix compte</strong>, n'oublions pas : <strong>la qualité du produit</strong> <em>reste toujours
+                    essentielle</em>.</p>
+        </div>
+
+        <section id="faq-section">
+    <h2>💡 Questions Fréquemment Posées</h2>
+    
+    <div class="faq-item">
+        <h3>Qu'est-ce qu'une calculatrice de coût de 100 kcal ?</h3>
+        <p>Une calculatrice de coût de 100 kcal est un outil qui vous aide à déterminer combien vous payez pour 100 calories de différents produits alimentaires. Au lieu de simplement comparer les prix au kilogramme, elle vous montre le coût énergétique réel, vous aidant à prendre des décisions d'achat plus intelligentes et à trouver les sources de calories les plus économiques.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Pourquoi devrais-je comparer les prix des aliments par contenu calorique ?</h3>
+        <p>Comparer les aliments par coût calorique révèle la vraie valeur de ce que vous achetez. Par exemple, les noix peuvent paraître chères au kilogramme, mais elles sont riches en énergie et peuvent en fait fournir des calories moins chères que certains snacks transformés. C'est particulièrement précieux pour les personnes qui comptent les calories, gèrent des budgets alimentaires, ou essaient de perdre du poids de manière économique.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Combien d'argent puis-je économiser en utilisant cette calculatrice ?</h3>
+        <p>Les utilisateurs économisent généralement 15-30% sur leurs factures d'épicerie en identifiant les sources de calories les plus rentables. En passant d'aliments chers faibles en calories à des alternatives moins chères et riches en énergie quand c'est approprié, vous pouvez considérablement réduire votre coût par calorie tout en maintenant vos objectifs nutritionnels.</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>Cette calculatrice est-elle utile pour perdre du poids ?</h3>
+        <p>Oui ! Lors de la perte de poids, vous avez besoin de moins de calories, donc chaque calorie doit compter à la fois nutritionnellement et financièrement. La calculatrice vous aide à trouver des aliments abordables et rassasiants qui offrent une bonne valeur par calorie, facilitant le maintien de votre régime sans ruiner votre budget.</p>
+    </div>
+</section>
+
+    </main>
+<!-- Critical scripts -->
+<script type="text/javascript" src="../js/lazyLoader.js"></script>
+<script type="text/javascript" src="../js/i18n-base.js"></script>
+<script type="text/javascript" src="../js/languages.js"></script>
+
+<!-- Non-critical scripts (defer) -->
+<script type="text/javascript" src="../js/mobilehover.js" defer></script>
+<script type="text/javascript" src="../js/i18n-fr.js" defer></script>
+</body>
+
+</html>

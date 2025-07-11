@@ -939,4 +939,10 @@ top:50px;
 
 #faq-section h3 {
     color: #BB86FC;
+    text-align: center;
+}
+
+.faq-item p {
+    padding: 0 1rem;
+    line-height: 1.6;
 }

@@ -1,3 +1,5 @@
+// this is old script for languages handling 
+
 // Language data 
 const languages = [
     { code: 'en', name: 'English', native: 'English', flag: 'gb' },

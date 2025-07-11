@@ -942,7 +942,7 @@ top:50px;
     text-align: center;
 }
 
-.faq-item p {
+.faq-item p, #lastParagraph {
     padding: 0 1rem;
     line-height: 1.6;
 }

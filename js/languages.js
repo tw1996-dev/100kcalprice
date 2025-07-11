@@ -1,4 +1,4 @@
-// Language data 
+// Language data
 const languages = [
     { code: 'en', name: 'English', native: 'English', flag: 'gb' },
     { code: 'pl', name: 'Polish', native: 'Polski', flag: 'pl' },
@@ -12,190 +12,48 @@ const languages = [
 let currentLanguage = 'en';
 let isDropdownOpen = false;
 
-// Function to dynamically detect the correct path prefix
-function getPathPrefix() {
-    const pathname = window.location.pathname;
-    
-    // Check if we're in a language subfolder
-    if (pathname.includes('/no/') || pathname.includes('/pl/') || pathname.includes('/de/') || pathname.includes('/fr/') || pathname.includes('/es/') || pathname.includes('/it/')) {
-        return '../';
-    }
-    
-    // Check if current page filename suggests we're in a subfolder
-    const currentFile = pathname.split('/').pop();
-    if (currentFile.includes('-no') || currentFile.includes('-pl') || currentFile.includes('-de') || currentFile.includes('-fr') || currentFile.includes('-es') || currentFile.includes('-it')) {
-        return '../';
-    }
-    
-    // Default to root level
-    return '';
-}
+// Get all supported language codes
+const supportedCodes = languages.map(lang => lang.code);
 
-// Function to get the correct flags path
-function getFlagsPath() {
-    return getPathPrefix() + 'flags/';
-}
-
-// Function to get the correct path for main pages
-function getMainPagePath() {
-    return getPathPrefix();
-}
-
-// Function to determine current language based on URL
+// Detect language from URL or filename
 function detectCurrentLanguage() {
     const pathname = window.location.pathname;
     const currentFile = pathname.split('/').pop();
     
-    // Check if we're in a language subfolder
-    if (pathname.includes('/no/')) {
-        return 'no';
-    } else if (pathname.includes('/pl/')) {
-        return 'pl';
-    } else if (pathname.includes('/de/')) {
-        return 'de';
-    } else if (pathname.includes('/fr/')) {
-        return 'fr';
-    } else if (pathname.includes('/es/')) {
-        return 'es';
-    } else if (pathname.includes('/it/')) {
-        return 'it';
+    for (const code of supportedCodes) {
+        if (pathname.includes(`/${code}/`) || currentFile.includes(`-${code}`)) {
+            return code;
+        }
     }
-    
-    // Check filename patterns
-    if (currentFile.includes('-no')) {
-        return 'no';
-    } else if (currentFile.includes('-pl')) {
-        return 'pl';
-    } else if (currentFile.includes('-de')) {
-        return 'de';
-    } else if (currentFile.includes('-fr')) {
-        return 'fr';
-    } else if (currentFile.includes('-es')) {
-        return 'es';
-    } else if (currentFile.includes('-it')) {
-        return 'it';
-    }
-    
-    // Default to English
     return 'en';
 }
 
-// Function to detect current page type
+// Detect current page type
 function detectCurrentPage() {
     const pathname = window.location.pathname;
-    
-    if (pathname.includes('/calc') || pathname.includes('calc.html')) {
-        return 'calc';
-    } else if (pathname.includes('/instruction') || pathname.includes('instruction.html')) {
-        return 'instruction';
-    } else {
-        return 'index';
-    }
+    if (pathname.includes('/calc') || pathname.includes('calc.html')) return 'calc';
+    if (pathname.includes('/instruction') || pathname.includes('instruction.html')) return 'instruction';
+    return 'index';
 }
 
-// Initialize language selector on DOM load
-document.addEventListener('DOMContentLoaded', function() {
-    initializeLanguageSelector();
-});
-
-// Initialize language selector
-function initializeLanguageSelector() {
-    // Auto-detect current language
-    const detectedLang = detectCurrentLanguage();
+// Get path prefix based on current location
+function getPathPrefix() {
+    const pathname = window.location.pathname;
+    const currentFile = pathname.split('/').pop();
     
-    // Load saved language preference, but prefer detected language
-    const savedLang = localStorage.getItem('selectedLanguage');
-    if (savedLang && languages.find(lang => lang.code === savedLang)) {
-        currentLanguage = savedLang;
-    } else {
-        currentLanguage = detectedLang;
+    for (const code of supportedCodes) {
+        if (pathname.includes(`/${code}/`) || currentFile.includes(`-${code}`)) {
+            return '../';
+        }
     }
-    
-    // If detected language differs from saved, update current
-    if (detectedLang !== currentLanguage) {
-        currentLanguage = detectedLang;
-        localStorage.setItem('selectedLanguage', detectedLang);
-    }
-    
-    updateCurrentFlag();
-    
-    // Set up language toggle click handler
-    const languageToggle = document.getElementById('language-toggle');
-    if (languageToggle) {
-        languageToggle.addEventListener('click', toggleLanguageDropdown);
-    }
-    
-    // Set up search input
-    const searchInput = document.getElementById('language-search-input');
-    if (searchInput) {
-        searchInput.addEventListener('input', handleLanguageSearch);
-        
-        // Prevent dropdown from closing when clicking on search input
-        searchInput.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    }
-    
-    // Prevent dropdown from closing when clicking inside
-    const dropdown = document.getElementById('language-dropdown');
-    if (dropdown) {
-        dropdown.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    }
-    
-    // Initialize language list
-    renderLanguageList(languages);
+    return '';
 }
 
-// Render language list
-function renderLanguageList(languagesToShow) {
-    const languageList = document.getElementById('language-list');
-    if (!languageList) return;
-    
-    const flagsPath = getFlagsPath();
-    
-    if (languagesToShow.length === 0) {
-        languageList.innerHTML = '<div class="no-results">No languages found</div>';
-        return;
-    }
+// Helper functions
+const getFlagsPath = () => getPathPrefix() + 'flags/';
+const getMainPagePath = () => getPathPrefix();
 
-    languageList.innerHTML = languagesToShow.map(lang => `
-        <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
-             data-code="${lang.code}">
-            <img src="${flagsPath}${lang.flag}.svg" 
-                 alt="${lang.name} flag">
-            <div class="language-info">
-                <span class="language-name">${lang.name}</span>
-                <span class="language-native">${lang.native}</span>
-            </div>
-        </div>
-    `).join('');
-    
-    // Add click handlers for language options
-    const languageOptions = languageList.querySelectorAll('.language-option');
-    languageOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            const langCode = this.getAttribute('data-code');
-            changeLanguage(langCode);
-        });
-    });
-}
-
-// Handle language search
-function handleLanguageSearch(e) {
-    const searchTerm = e.target.value.toLowerCase().trim();
-    
-    const filtered = languages.filter(lang => 
-        lang.name.toLowerCase().includes(searchTerm) ||
-        lang.native.toLowerCase().includes(searchTerm) ||
-        lang.code.toLowerCase().includes(searchTerm)
-    );
-    
-    renderLanguageList(filtered);
-}
-
-// Update current flag
+// Update current flag image
 function updateCurrentFlag() {
     const currentFlag = document.getElementById('current-flag');
     const currentLang = languages.find(lang => lang.code === currentLanguage);
@@ -207,6 +65,48 @@ function updateCurrentFlag() {
     }
 }
 
+// Render language list
+function renderLanguageList(languagesToShow) {
+    const languageList = document.getElementById('language-list');
+    if (!languageList) return;
+    
+    if (languagesToShow.length === 0) {
+        languageList.innerHTML = '<div class="no-results">No languages found</div>';
+        return;
+    }
+
+    const flagsPath = getFlagsPath();
+    languageList.innerHTML = languagesToShow.map(lang => `
+        <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
+             data-code="${lang.code}">
+            <img src="${flagsPath}${lang.flag}.svg" alt="${lang.name} flag">
+            <div class="language-info">
+                <span class="language-name">${lang.name}</span>
+                <span class="language-native">${lang.native}</span>
+            </div>
+        </div>
+    `).join('');
+    
+    // Add click handlers
+    languageList.querySelectorAll('.language-option').forEach(option => {
+        option.addEventListener('click', () => {
+            const langCode = option.getAttribute('data-code');
+            changeLanguage(langCode);
+        });
+    });
+}
+
+// Handle language search
+function handleLanguageSearch(e) {
+    const searchTerm = e.target.value.toLowerCase().trim();
+    const filtered = languages.filter(lang => 
+        lang.name.toLowerCase().includes(searchTerm) ||
+        lang.native.toLowerCase().includes(searchTerm) ||
+        lang.code.toLowerCase().includes(searchTerm)
+    );
+    renderLanguageList(filtered);
+}
+
 // Toggle language dropdown
 function toggleLanguageDropdown() {
     const dropdown = document.getElementById('language-dropdown');
@@ -216,217 +116,116 @@ function toggleLanguageDropdown() {
     isDropdownOpen = !isDropdownOpen;
     
     if (isDropdownOpen) {
-        if (dropdown) dropdown.classList.add('show');
-        if (toggle) toggle.classList.add('active');
+        dropdown?.classList.add('show');
+        toggle?.classList.add('active');
         
-        // Reset search and focus
         if (searchInput) {
             searchInput.value = '';
-            setTimeout(() => searchInput.focus(), 100); // Small delay for smooth animation
+            setTimeout(() => searchInput.focus(), 100);
         }
-        
-        // Reset language list to show all
         renderLanguageList(languages);
     } else {
-        if (dropdown) dropdown.classList.remove('show');
-        if (toggle) toggle.classList.remove('active');
+        dropdown?.classList.remove('show');
+        toggle?.classList.remove('active');
     }
 }
 
-// Change language function 
+// Change language - preserves exact original logic in compact form
 function changeLanguage(selectedLang) {
-    const langData = languages.find(lang => lang.code === selectedLang);
-    if (!langData) return;
+    if (!supportedCodes.includes(selectedLang)) return;
+    
+    const currentLangInUrl = detectCurrentLanguage();
+    
+    // Check if user is already on the selected language
+    if (selectedLang === currentLangInUrl) {
+        // Just close dropdown and update UI, no redirect needed
+        const dropdown = document.getElementById('language-dropdown');
+        const toggle = document.getElementById('language-toggle');
+        dropdown?.classList.remove('show');
+        toggle?.classList.remove('active');
+        isDropdownOpen = false;
+        return;
+    }
     
     currentLanguage = selectedLang;
-    
-    // Save language preference
     localStorage.setItem('selectedLanguage', selectedLang);
-    
-    // Update current flag
     updateCurrentFlag();
     
     // Close dropdown
     const dropdown = document.getElementById('language-dropdown');
     const toggle = document.getElementById('language-toggle');
-    if (dropdown) dropdown.classList.remove('show');
-    if (toggle) toggle.classList.remove('active');
+    dropdown?.classList.remove('show');
+    toggle?.classList.remove('active');
     isDropdownOpen = false;
     
-    // Detect current page and current language location
     const currentPage = detectCurrentPage();
-    const currentLangInUrl = detectCurrentLanguage();
     const mainPagePath = getMainPagePath();
     
-    // Build target URL based on current page and selected language
     let targetUrl = '';
     
-    switch(selectedLang) {
-        case 'pl':
-            if (currentLangInUrl === 'no') {
-                // From Norwegian folder to Polish folder
-                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
-            } else if (currentLangInUrl === 'fr') {
-                // From French folder to Polish folder
-                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
-            } else if (currentLangInUrl === 'es') {
-                // From Spanish folder to Polish folder
-                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
-            } else if (currentLangInUrl === 'de') {
-                // From German folder to Polish folder
-                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
-            } else if (currentLangInUrl === 'it') {
-                // From Italian folder to Polish folder
-                targetUrl = currentPage === 'index' ? '../pl/' : `../pl/${currentPage}`;
-            } else {
-                // From root to Polish folder
-                targetUrl = currentPage === 'index' ? 'pl/' : `pl/${currentPage}`;
-            }
-            break;
-            
-        case 'no':
-            if (currentLangInUrl === 'pl') {
-                // From Polish folder to Norwegian folder
-                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
-            } else if (currentLangInUrl === 'fr') {
-                // From French folder to Norwegian folder
-                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
-            } else if (currentLangInUrl === 'es') {
-                // From Spanish folder to Norwegian folder
-                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
-            } else if (currentLangInUrl === 'de') {
-                // From German folder to Norwegian folder
-                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
-            } else if (currentLangInUrl === 'it') {
-                // From Italian folder to Norwegian folder
-                targetUrl = currentPage === 'index' ? '../no/' : `../no/${currentPage}`;
-            } else {
-                // From root to Norwegian folder
-                targetUrl = currentPage === 'index' ? 'no/' : `no/${currentPage}`;
-            }
-            break;
-
-        case 'fr':
-            if (currentLangInUrl === 'no') {
-                // From Norwegian folder to French folder
-                targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
-            } else if (currentLangInUrl === 'pl') {
-                // From Polish folder to French folder
-                targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
-            } else if (currentLangInUrl === 'es') {
-                // From Spanish folder to French folder
-                targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
-            } else if (currentLangInUrl === 'de') {
-                // From German folder to French folder
-                targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
-            } else if (currentLangInUrl === 'it') {
-                // From Italian folder to French folder
-                targetUrl = currentPage === 'index' ? '../fr/' : `../fr/${currentPage}`;
-            } else {
-                // From root to French folder
-                targetUrl = currentPage === 'index' ? 'fr/' : `fr/${currentPage}`;
-            }
-            break;
-
-        case 'es':
-            if (currentLangInUrl === 'no') {
-                // From Norwegian folder to Spanish folder
-                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
-            } else if (currentLangInUrl === 'pl') {
-                // From Polish folder to Spanish folder
-                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
-            } else if (currentLangInUrl === 'fr') {
-                // From French folder to Spanish folder
-                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
-            } else if (currentLangInUrl === 'de') {
-                // From German folder to Spanish folder
-                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
-            } else if (currentLangInUrl === 'it') {
-                // From Italian folder to Spanish folder
-                targetUrl = currentPage === 'index' ? '../es/' : `../es/${currentPage}`;
-            } else {
-                // From root to Spanish folder
-                targetUrl = currentPage === 'index' ? 'es/' : `es/${currentPage}`;
-            }
-            break;
-
-        case 'de':
-            if (currentLangInUrl === 'no') {
-                // From Norwegian folder to German folder
-                targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
-            } else if (currentLangInUrl === 'pl') {
-                // From Polish folder to German folder
-                targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
-            } else if (currentLangInUrl === 'fr') {
-                // From French folder to German folder
-                targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
-            } else if (currentLangInUrl === 'es') {
-                // From Spanish folder to German folder
-                targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
-            } else if (currentLangInUrl === 'it') {
-                // From Italian folder to German folder
-                targetUrl = currentPage === 'index' ? '../de/' : `../de/${currentPage}`;
-            } else {
-                // From root to German folder
-                targetUrl = currentPage === 'index' ? 'de/' : `de/${currentPage}`;
-            }
-            break;
-
-        case 'it':
-            if (currentLangInUrl === 'no') {
-                // From Norwegian folder to Italian folder
-                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
-            } else if (currentLangInUrl === 'pl') {
-                // From Polish folder to Italian folder
-                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
-            } else if (currentLangInUrl === 'fr') {
-                // From French folder to Italian folder
-                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
-            } else if (currentLangInUrl === 'es') {
-                // From Spanish folder to Italian folder
-                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
-            } else if (currentLangInUrl === 'de') {
-                // From German folder to Italian folder
-                targetUrl = currentPage === 'index' ? '../it/' : `../it/${currentPage}`;
-            } else {
-                // From root to Italian folder
-                targetUrl = currentPage === 'index' ? 'it/' : `it/${currentPage}`;
-            }
-            break;
-            
-        case 'en':
-            // To English (root)
-            if (currentPage === 'index') {
-                targetUrl = mainPagePath + 'index.html';
-            } else {
-                targetUrl = mainPagePath + currentPage + '.html';
-            }
-            break;
+    if (selectedLang === 'en') {
+        // To English (root) - exactly as original
+        targetUrl = mainPagePath + (currentPage === 'index' ? 'index.html' : `${currentPage}.html`);
+    } else {
+        // To any non-English language - preserves original navigation logic
+        if (currentLangInUrl === 'en') {
+            // From root to language folder
+            targetUrl = currentPage === 'index' ? `${selectedLang}/` : `${selectedLang}/${currentPage}`;
+        } else {
+            // From any language folder to another language folder
+            targetUrl = currentPage === 'index' ? `../${selectedLang}/` : `../${selectedLang}/${currentPage}`;
+        }
     }
     
-    // Redirect to target URL
     if (targetUrl) {
         window.location.href = targetUrl;
     }
 }
 
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-    const selector = document.getElementById('language-selector');
-    const dropdown = document.getElementById('language-dropdown');
-    const toggle = document.getElementById('language-toggle');
+// Initialize language selector
+function initializeLanguageSelector() {
+    const detectedLang = detectCurrentLanguage();
+    const savedLang = localStorage.getItem('selectedLanguage');
     
-    if (!selector || !selector.contains(event.target)) {
-        if (isDropdownOpen) {
-            if (dropdown) dropdown.classList.remove('show');
-            if (toggle) toggle.classList.remove('active');
-            isDropdownOpen = false;
-        }
+    // Prefer detected language over saved (maintains original behavior)
+    currentLanguage = (savedLang && supportedCodes.includes(savedLang)) ? savedLang : detectedLang;
+    
+    if (detectedLang !== currentLanguage) {
+        currentLanguage = detectedLang;
+        localStorage.setItem('selectedLanguage', detectedLang);
+    }
+    
+    updateCurrentFlag();
+    
+    // Set up event listeners
+    document.getElementById('language-toggle')?.addEventListener('click', toggleLanguageDropdown);
+    
+    const searchInput = document.getElementById('language-search-input');
+    if (searchInput) {
+        searchInput.addEventListener('input', handleLanguageSearch);
+        searchInput.addEventListener('click', e => e.stopPropagation());
+    }
+    
+    document.getElementById('language-dropdown')?.addEventListener('click', e => e.stopPropagation());
+    
+    renderLanguageList(languages);
+}
+
+// Initialize on DOM load
+document.addEventListener('DOMContentLoaded', initializeLanguageSelector);
+
+// Close dropdown on outside click
+document.addEventListener('click', e => {
+    const selector = document.getElementById('language-selector');
+    if (!selector?.contains(e.target) && isDropdownOpen) {
+        document.getElementById('language-dropdown')?.classList.remove('show');
+        document.getElementById('language-toggle')?.classList.remove('active');
+        isDropdownOpen = false;
     }
 });
 
 // Close dropdown on Escape key
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && isDropdownOpen) {
         toggleLanguageDropdown();
     }

@@ -451,59 +451,61 @@ if ('serviceWorker' in navigator) {
             </p>
         </section>
 
-        <section id="faq-section">
-            <h2>❓ Questions Fréquemment Posées</h2>
-            
-            <div class="faq-item">
-                <h3>Comment utiliser la calculatrice étape par étape ?</h3>
-                <p>Entrez simplement les calories par 100g (que vous trouverez sur l'étiquette alimentaire), les informations de prix et optionnellement le nom du produit. Choisissez le mode "Par Kilogramme" pour la plupart des produits de magasin ou "Par Pièce" pour les produits vendus individuellement. Cliquez sur "Ajouter Produit" et comparez le coût par 100 kcal dans le tableau des résultats.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Quelle est la différence entre les modes "Par Kilogramme" et "Par Pièce" ?</h3>
-                <p>Le mode "Par Kilogramme" est pour les produits vendus au poids (riz, viande, légumes). Le mode "Par Pièce" est pour les produits emballés individuellement où vous connaissez le poids par pièce (pots de yaourt, barres protéinées, plats surgelés). Le choix du mode dépend de la façon dont le produit est vendu en magasin.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Où puis-je trouver les informations sur les calories par 100g ?</h3>
-                <p>Vérifiez l'étiquette des valeurs nutritionnelles sur tout produit emballé. C'est généralement indiqué comme "Énergie" ou "Calories" par 100g. Pour les produits frais, vous pouvez trouver ces informations en ligne dans les bases de données nutritionnelles ou les applications de suivi alimentaire comme MyFitnessPal.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Puis-je utiliser cette calculatrice sur mon téléphone pendant les courses ?</h3>
-                <p>Absolument ! La calculatrice est conçue pour être mobile-friendly. Vous pouvez l'ajouter à l'écran d'accueil de votre téléphone pour un accès rapide pendant vos courses. Appuyez simplement sur le bouton de partage dans votre navigateur et sélectionnez "Ajouter à l'écran d'accueil".</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>La calculatrice sauvegarde-t-elle mes comparaisons de produits ?</h3>
-                <p>Oui, toutes les données de produits sont sauvegardées localement dans votre navigateur. Lorsque vous revenez sur le site, vos comparaisons précédentes seront toujours là. Cependant, ces données ne sont stockées que sur votre appareil et ne sont partagées avec personne.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Comment convertir les prix si les produits sont vendus dans différentes unités ?</h3>
-                <p>Pour les produits vendus au poids mais pas au kilogramme, divisez le prix par le poids et multipliez par 1000. Par exemple : 500g pour 15€ = 15€ ÷ 0,5kg = 30€/kg. La calculatrice gère cela automatiquement en mode "Par Pièce" lorsque vous entrez le poids par pièce.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Que faire quand deux produits ont un coût très similaire par 100 kcal ?</h3>
-                <p>Lorsque les coûts sont similaires, considérez d'autres facteurs comme la qualité nutritionnelle, la satiété, la durabilité et les préférences personnelles. Une petite différence dans le coût calorique peut ne pas valoir le sacrifice des produits que vous aimez ou qui fournissent une meilleure nutrition.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Puis-je comparer des produits de différents magasins ?</h3>
-                <p>Oui ! La calculatrice est idéale pour comparer les mêmes produits dans différents magasins ou comparer différentes marques. Entrez simplement chaque produit séparément avec son prix de magasin respectif pour voir lequel offre la meilleure valeur par calorie.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Pourquoi certains aliments sains montrent-ils un coût plus élevé par calorie ?</h3>
-                <p>Les produits riches en eau (comme les légumes) ou à faible densité énergétique coûtent naturellement plus cher par calorie. Cela ne signifie pas qu'ils ont une mauvaise valeur - ils fournissent des nutriments essentiels, des fibres et de la satiété. Utilisez la calculatrice en conjonction avec des considérations nutritionnelles, pas comme seul facteur.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h3>Y a-t-il une limite au nombre de produits que je peux comparer ?</h3>
-                <p>Vous pouvez ajouter jusqu'à 500 produits pour éviter les problèmes de performance. Pour la plupart des utilisateurs, comparer 10-20 produits est suffisant pour prendre des décisions éclairées. Vous pouvez toujours supprimer les produits que vous n'avez plus besoin de comparer.</p>
-            </div>
-        </section>
+       <section id="faq-section">
+    <h2>❓ Questions Fréquemment Posées</h2>
+    
+    <details class="faq-item">
+        <summary>Comment utiliser la calculatrice étape par étape ?</summary>
+        <p>Entrez simplement les calories par 100g (trouvées sur l'étiquette alimentaire), les informations de prix et optionnellement un nom de produit. Choisissez le mode "Par Kilogramme" pour la plupart des produits de magasin ou le mode "Par Pièce" pour les articles vendus individuellement. Cliquez "Ajouter Produit" et comparez le coût par 100 kcal dans le tableau des résultats.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Quelle est la différence entre les modes "Par Kilogramme" et "Par Pièce" ?</summary>
+        <p>Le mode "Par Kilogramme" est pour les produits en vrac vendus au poids (riz, viande, légumes). Le mode "Par Pièce" est pour les articles emballés individuellement où vous connaissez le poids par pièce (pots de yaourt, barres protéinées, repas surgelés). Le choix du mode dépend de la façon dont le produit est vendu en magasin.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Où trouver les informations sur les calories par 100g ?</summary>
+        <p>Regardez l'étiquette des valeurs nutritionnelles sur tout aliment emballé. C'est généralement listé comme "Énergie" ou "Calories" par 100g. Pour les produits frais, vous pouvez trouver ces informations en ligne dans des bases de données nutritionnelles ou des applications de suivi alimentaire comme MyFitnessPal.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Puis-je utiliser cette calculatrice sur mon téléphone pendant que je fais mes courses ?</summary>
+        <p>Absolument ! La calculatrice est conçue pour être compatible mobile. Vous pouvez l'ajouter à l'écran d'accueil de votre téléphone pour un accès rapide pendant vos courses. Touchez simplement le bouton de partage dans votre navigateur et sélectionnez "Ajouter à l'écran d'accueil".</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>La calculatrice sauvegarde-t-elle mes comparaisons de produits ?</summary>
+        <p>Oui, toutes vos données de produits sont sauvegardées localement dans votre navigateur. Quand vous revenez sur le site, vos comparaisons précédentes seront toujours là. Cependant, ces données ne sont stockées que sur votre appareil et ne sont partagées avec personne.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Comment convertir les prix si les produits sont vendus dans différentes unités ?</summary>
+        <p>Pour les produits vendus au poids mais pas par kilogramme, divisez le prix par le poids et multipliez par 1000. Par exemple : 500g pour 3€ = 3€ ÷ 0,5kg = 6€/kg. La calculatrice gère cela automatiquement en mode "Par Pièce" quand vous entrez le poids de la pièce.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Que faire si deux produits ont des coûts très similaires par 100 kcal ?</summary>
+        <p>Quand les coûts sont similaires, considérez d'autres facteurs comme la qualité nutritionnelle, la satiété, la durée de conservation et les préférences personnelles. Une petite différence de coût calorique peut ne pas valoir le sacrifice d'aliments que vous aimez ou qui fournissent une meilleure nutrition.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Puis-je comparer des produits de différents magasins ?</summary>
+        <p>Oui ! La calculatrice est parfaite pour comparer les mêmes produits dans différents magasins, ou comparer différentes marques. Entrez simplement chaque produit séparément avec son prix de magasin respectif pour voir lequel offre la meilleure valeur par calorie.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Pourquoi certains aliments sains montrent-ils des coûts plus élevés par calorie ?</summary>
+        <p>Les aliments riches en eau (comme les légumes) ou à faible densité énergétique coûtent naturellement plus par calorie. Cela ne signifie pas qu'ils ont une mauvaise valeur – ils fournissent des nutriments essentiels, des fibres et de la satiété. Utilisez la calculatrice en conjonction avec des considérations nutritionnelles, pas comme seul facteur.</p>
+    </details>
+    
+    <details class="faq-item">
+        <summary>Y a-t-il une limite au nombre de produits que je peux comparer ?</summary>
+        <p>Vous pouvez ajouter jusqu'à 500 produits pour éviter les problèmes de performance. Pour la plupart des utilisateurs, comparer 10-20 produits est suffisant pour prendre des décisions éclairées. Vous pouvez toujours supprimer les produits que vous n'avez plus besoin de comparer.</p>
+    </details>
+</section>
+
+
     </main>
 
     <!-- Critical scripts -->

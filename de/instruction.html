@@ -2,74 +2,77 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>100kcal Kosten</title>
- <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100kcal Kosten</title>
+  <!-- Content Security Policy (CSP) – restricts which resources can be loaded to improve security -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
 
-<!-- Google Analytics - 3 Second Delay -->
-<script>
-(function() {
-  // Load GA after page is fully loaded + 3 seconds
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      // Load GA script dynamically
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X258W69QDT';
-      document.head.appendChild(script);
-      
-      // Initialize GA when script loads
-      script.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-X258W69QDT');
-      };
-    }, 3000); // 3 second delay
-  });
-})();
-</script>
+  <!-- Google Analytics - 3 Second Delay -->
+  <script>
+    (function () {
+      // Load GA after page is fully loaded + 3 seconds
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          // Load GA script dynamically
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X258W69QDT';
+          document.head.appendChild(script);
 
-    <!---- Metadata for search engines and social sharing ---->
-    <meta name="description"
-        content="Berechnen und vergleichen Sie die Kosten von 100 Kalorien für verschiedene Lebensmittel, um fundierte Kaufentscheidungen zu treffen und Ihr Budget zu verwalten.">
-    <meta name="keywords"
-        content="Kalorien Kosten, Lebensmittelrechner, Kalorienrechner, Kosten pro Kalorie, Lebensmittelvergleich, Lebensmittelbudget, gesunde Ernährung Kosten">
-    <meta name="author" content="tw1996-dev">
+          // Initialize GA when script loads
+          script.onload = function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-X258W69QDT');
+          };
+        }, 3000); // 3 second delay
+      });
+    })();
+  </script>
 
-<!---- Enhanced Open Graph ---->
-<meta property="og:title" content="100 kcal Kostenrechner - Lebensmittelpreise nach Energiegehalt vergleichen" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.100kcalcost.com/de/" />
-<meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Benutzeroberfläche des 100 kcal Kostenrechners mit Lebensmittelkostenvergleich" />
-<meta property="og:description" content="Berechnen und vergleichen Sie die Kosten von 100 Kalorien für verschiedene Lebensmittel, um fundierte Kaufentscheidungen zu treffen und Ihr Budget zu verwalten." />
-<meta property="og:site_name" content="100 kcal Kostenrechner" />
-<meta property="og:locale" content="de_DE" />
+  <!---- Metadata for search engines and social sharing ---->
+  <meta name="description"
+    content="Berechnen und vergleichen Sie die Kosten von 100 Kalorien für verschiedene Lebensmittel, um fundierte Kaufentscheidungen zu treffen und Ihr Budget zu verwalten.">
+  <meta name="keywords"
+    content="Kalorien Kosten, Lebensmittelrechner, Kalorienrechner, Kosten pro Kalorie, Lebensmittelvergleich, Lebensmittelbudget, gesunde Ernährung Kosten">
+  <meta name="author" content="tw1996-dev">
 
-<!---- Themecolor ---->
-<meta name="theme-color" content="#0d0c1d">
-    
+  <!---- Enhanced Open Graph ---->
+  <meta property="og:title" content="100 kcal Kostenrechner - Lebensmittelpreise nach Energiegehalt vergleichen" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.100kcalcost.com/de/" />
+  <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt"
+    content="Benutzeroberfläche des 100 kcal Kostenrechners mit Lebensmittelkostenvergleich" />
+  <meta property="og:description"
+    content="Berechnen und vergleichen Sie die Kosten von 100 Kalorien für verschiedene Lebensmittel, um fundierte Kaufentscheidungen zu treffen und Ihr Budget zu verwalten." />
+  <meta property="og:site_name" content="100 kcal Kostenrechner" />
+  <meta property="og:locale" content="de_DE" />
 
-
-
-    <!---- CSS ---->
-    <link rel="stylesheet" href="../css/styles.css">
-
- <!-- Favicons and icons -->
-<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<link rel="manifest" href="/favicon/site.webmanifest" />
+  <!---- Themecolor ---->
+  <meta name="theme-color" content="#0d0c1d">
 
 
-<!-- HowTo Schema -->
-<script type="application/ld+json">
+
+
+  <!---- CSS ---->
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- Favicons and icons -->
+  <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+
+
+  <!-- HowTo Schema -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
@@ -142,8 +145,8 @@
 }
 </script>
 
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -206,233 +209,261 @@
 </head>
 
 <body>
-   <!----------------- NAVIGATION-------------------->
-       <div class="hamburger-menu">
-   <span></span>
-   <span></span>
-   <span></span>
-   </div>
-   <nav class="mobile-nav-menu"  id="main-nav" aria-label="Hauptnavigation">
-       <ul>
-           <li><a class="navigation-link" href="/de/">Startseite</a></li>
-           <li><a class="navigation-link" href="/de/calc">Rechner🧮</a></li>
-           <li><a class="navigation-link" href="/de/instruction">Anleitung</a></li>
-       </ul>
-   </nav>
+  <!----------------- NAVIGATION-------------------->
+  <div class="hamburger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav class="mobile-nav-menu" id="main-nav" aria-label="Hauptnavigation">
+    <ul>
+      <li><a class="navigation-link" href="/de/">Startseite</a></li>
+      <li><a class="navigation-link" href="/de/calc">Rechner🧮</a></li>
+      <li><a class="navigation-link" href="/de/instruction">Anleitung</a></li>
+    </ul>
+  </nav>
 
-   <!-- Language Selector -->
-   <div id="language-selector">
-       <div id="language-toggle">
-           <img id="current-flag" src="../flags/de.svg" alt="Aktuelle Sprache">
-           <div id="dropdown-arrow"></div>
-       </div>
-       <div id="language-dropdown">
-           <div class="language-search-container">
-               <input 
-                   type="text" 
-                   id="language-search-input" 
-                   placeholder="Sprachen suchen..."
-                   autocomplete="off"
-               >
-           </div>
-           <div class="language-list" id="language-list">
-               <!-- Languages will be dynamically generated -->
-           </div>
-       </div>
-   </div>
+  <!-- Language Selector -->
+  <div id="language-selector">
+    <div id="language-toggle">
+      <img id="current-flag" src="../flags/de.svg" alt="Aktuelle Sprache">
+      <div id="dropdown-arrow"></div>
+    </div>
+    <div id="language-dropdown">
+      <div class="language-search-container">
+        <input type="text" id="language-search-input" placeholder="Sprachen suchen..." autocomplete="off">
+      </div>
+      <div class="language-list" id="language-list">
+        <!-- Languages will be dynamically generated -->
+      </div>
+    </div>
+  </div>
 
-   <section id="currency-selector">
-       <p id="selectorFirstP">💰 Wählen Sie Ihre Währung</p>
-       <p>Wählen Sie Ihre bevorzugte Währung für Preisberechnungen. Diese Einstellung wird gespeichert und im
-           Rechner verwendet.</p>
+  <section id="currency-selector">
+    <p id="selectorFirstP">💰 Wählen Sie Ihre Währung</p>
+    <p>Wählen Sie Ihre bevorzugte Währung für Preisberechnungen. Diese Einstellung wird gespeichert und im
+      Rechner verwendet.</p>
 
-       <div class="currency-dropdown-container">
-           <input type="text" id="currency-search" placeholder="Tippen Sie, um Währungen zu suchen " autocomplete="off">
-           <div id="currency-results"></div>
-       </div>
+    <div class="currency-dropdown-container">
+      <input type="text" id="currency-search" placeholder="Tippen Sie, um Währungen zu suchen " autocomplete="off">
+      <div id="currency-results"></div>
+    </div>
 
-       <div class="selected-currency" id="selected-currency">
-           <div class="selected-currency-text">
-               Ausgewählt: <span id="selected-currency-display"></span>
-           </div>
-       </div>
-   </section>
+    <div class="selected-currency" id="selected-currency">
+      <div class="selected-currency-text">
+        Ausgewählt: <span id="selected-currency-display"></span>
+      </div>
+    </div>
+  </section>
 
-   <main id="instructions">
-       <h1>📱 Benutzerhandbuch für den 100 kcal Kostenrechner</h1>
+  <main id="instructions">
+    <h1>📱 Benutzerhandbuch für den 100 kcal Kostenrechner</h1>
 
-       <section>
-           <h2>🚀 Erste Schritte</h2>
-           <p><strong>Für Smartphone-Nutzer</strong>:</p>
-           <ol>
-               <li>Gehen Sie zum "Rechner"-Tab in der Anwendung.</li>
-               <li>Fügen Sie eine Verknüpfung zum Startbildschirm Ihres Telefons hinzu:
-                   <ul>
-                       <li><strong class="strong">Auf Android:</strong> Tippen Sie auf das Menü (⋮) → "Zum Startbildschirm hinzufügen".</li>
-                       <li><strong class="strong">Auf iPhone:</strong> Tippen Sie auf die Teilen-Schaltfläche (□↗) → "Zum Home-Bildschirm".</li>
-                   </ul>
-               </li>
-               <li>So können Sie den Rechner mit einem Tippen von Ihrem Startbildschirm aus starten!</li>
-           </ol>
-       </section>
+    <section>
+      <h2>🚀 Erste Schritte</h2>
+      <p><strong>Für Smartphone-Nutzer</strong>:</p>
+      <ol>
+        <li>Gehen Sie zum "Rechner"-Tab in der Anwendung.</li>
+        <li>Fügen Sie eine Verknüpfung zum Startbildschirm Ihres Telefons hinzu:
+          <ul>
+            <li><strong class="strong">Auf Android:</strong> Tippen Sie auf das Menü (⋮) → "Zum Startbildschirm
+              hinzufügen".</li>
+            <li><strong class="strong">Auf iPhone:</strong> Tippen Sie auf die Teilen-Schaltfläche (□↗) → "Zum
+              Home-Bildschirm".</li>
+          </ul>
+        </li>
+        <li>So können Sie den Rechner mit einem Tippen von Ihrem Startbildschirm aus starten!</li>
+      </ol>
+    </section>
 
-       <section>
-           <h2>🎯 Verwendung des Rechners</h2>
+    <section>
+      <h2>🎯 Verwendung des Rechners</h2>
 
-           <article>
-               <h3>Standard-Modus: "Pro Kilogramm"</h3>
-               <div class="highlight">
-                   <p>Für die meisten Produkte in Geschäften</p>
-               </div>
-               <ol>
-                   <li><strong class="strong">Produktname</strong> - optional (Sie können es für einen schnellen Vergleich überspringen)
-                   </li>
-                   <li><strong class="strong">Kcal/100g</strong> - finden Sie auf dem Produktetikett</li>
-                   <li><strong class="strong">Preis pro kg</strong> - rechnen Sie den Preis pro Kilogramm um (z.B. 500g für 5€ = 10€/kg)</li>
-                   <li><strong class="strong">Klicken Sie</strong> <strong>"➕ Produkt hinzufügen"</strong></li>
-               </ol>
-           </article>
+      <article>
+        <h3>Standard-Modus: "Pro Kilogramm"</h3>
+        <div class="highlight">
+          <p>Für die meisten Produkte in Geschäften</p>
+        </div>
+        <ol>
+          <li><strong class="strong">Produktname</strong> - optional (Sie können es für einen schnellen Vergleich
+            überspringen)
+          </li>
+          <li><strong class="strong">Kcal/100g</strong> - finden Sie auf dem Produktetikett</li>
+          <li><strong class="strong">Preis pro kg</strong> - rechnen Sie den Preis pro Kilogramm um (z.B. 500g für 5€ =
+            10€/kg)</li>
+          <li><strong class="strong">Klicken Sie</strong> <strong>"➕ Produkt hinzufügen"</strong></li>
+        </ol>
+      </article>
 
-           <article>
-               <h3>Alternativer Modus: "Pro Stück"</h3>
-               <div class="highlight">
-                   <p><strong>Verwenden Sie für einzeln verkaufte Produkte</strong> (z.B. Joghurt, Brötchen)</p>
-               </div>
-               <ol>
-                   <li><strong class="strong">Produktname</strong> - optional</li>
-                   <li><strong class="strong">Gewicht pro Stück (g)</strong> - wie viel wiegt ein Artikel</li>
-                   <li><strong class="strong">Kcal/100g</strong> - vom Etikett</li>
-                   <li><strong class="strong">Preis</strong>: Wählen Sie EINE Methode:
-                       <ul>
-                           <li><strong>Preis pro Stück</strong> - wie viel kostet ein Artikel</li>
-                           <li><strong>ODER Preis pro kg</strong> - der umgerechnete Preis pro Kilogramm</li>
-                       </ul>
-                   </li>
-                   <li><strong class="strong">Klicken Sie </strong><strong>"➕ Produkt hinzufügen"</strong></li>
-               </ol>
-           </article>
-       </section>
+      <article>
+        <h3>Alternativer Modus: "Pro Stück"</h3>
+        <div class="highlight">
+          <p><strong>Verwenden Sie für einzeln verkaufte Produkte</strong> (z.B. Joghurt, Brötchen)</p>
+        </div>
+        <ol>
+          <li><strong class="strong">Produktname</strong> - optional</li>
+          <li><strong class="strong">Gewicht pro Stück (g)</strong> - wie viel wiegt ein Artikel</li>
+          <li><strong class="strong">Kcal/100g</strong> - vom Etikett</li>
+          <li><strong class="strong">Preis</strong>: Wählen Sie EINE Methode:
+            <ul>
+              <li><strong>Preis pro Stück</strong> - wie viel kostet ein Artikel</li>
+              <li><strong>ODER Preis pro kg</strong> - der umgerechnete Preis pro Kilogramm</li>
+            </ul>
+          </li>
+          <li><strong class="strong">Klicken Sie </strong><strong>"➕ Produkt hinzufügen"</strong></li>
+        </ol>
+      </article>
+    </section>
 
-       <section>
-           <h2>📊 Ergebnisse verwalten</h2>
+    <section>
+      <h2>📊 Ergebnisse verwalten</h2>
 
-           <article>
-               <h3>Tabelle sortieren</h3>
-               <ul>
-                   <li><strong>Klicken Sie auf eine Spaltenüberschrift</strong>, um zu sortieren nach:
-                       <ul>
-                           <li>🍎 Produkt (alphabetisch)</li>
-                           <li>🔥 Kalorien (aufsteigend/absteigend)</li>
-                           <li>💵 Preis pro kg (aufsteigend/absteigend)</li>
-                           <li>💰 <strong>Kosten von 100 kcal</strong> (aufsteigend/absteigend)</li>
-                       </ul>
-                   </li>
-               </ul>
-           </article>
+      <article>
+        <h3>Tabelle sortieren</h3>
+        <ul>
+          <li><strong>Klicken Sie auf eine Spaltenüberschrift</strong>, um zu sortieren nach:
+            <ul>
+              <li>🍎 Produkt (alphabetisch)</li>
+              <li>🔥 Kalorien (aufsteigend/absteigend)</li>
+              <li>💵 Preis pro kg (aufsteigend/absteigend)</li>
+              <li>💰 <strong>Kosten von 100 kcal</strong> (aufsteigend/absteigend)</li>
+            </ul>
+          </li>
+        </ul>
+      </article>
 
-           <article>
-               <h3>Produkte löschen</h3>
-               <ul>
-                   <li><strong>Einzelnes Produkt</strong>: Klicken Sie auf 🗑️ neben dem Produkt</li>
-                   <li><strong>Alle Produkte</strong>: Klicken Sie auf die Schaltfläche "Alle löschen"</li>
-               </ul>
-           </article>
-       </section>
+      <article>
+        <h3>Produkte löschen</h3>
+        <ul>
+          <li><strong>Einzelnes Produkt</strong>: Klicken Sie auf 🗑️ neben dem Produkt</li>
+          <li><strong>Alle Produkte</strong>: Klicken Sie auf die Schaltfläche "Alle löschen"</li>
+        </ul>
+      </article>
+    </section>
 
-       <section>
-           <h2>💡 Praktische Tipps</h2>
+    <section>
+      <h2>💡 Praktische Tipps</h2>
 
-           <article>
-               <h3>Schneller Vergleich zweier Produkte</h3>
-               <ol>
-                   <li>Geben Sie keine Produktnamen ein - gehen Sie direkt zu Kalorien und Preis.</li>
-                   <li>Fügen Sie das erste Produkt hinzu.</li>
-                   <li>Fügen Sie das zweite Produkt hinzu.</li>
-                   <li>Vergleichen Sie die Spalte <strong>"Kosten 100 kcal"</strong> - ein niedrigerer Wert bedeutet ein besseres Preis-Leistungs-Verhältnis.</li>
-               </ol>
-           </article>
+      <article>
+        <h3>Schneller Vergleich zweier Produkte</h3>
+        <ol>
+          <li>Geben Sie keine Produktnamen ein - gehen Sie direkt zu Kalorien und Preis.</li>
+          <li>Fügen Sie das erste Produkt hinzu.</li>
+          <li>Fügen Sie das zweite Produkt hinzu.</li>
+          <li>Vergleichen Sie die Spalte <strong>"Kosten 100 kcal"</strong> - ein niedrigerer Wert bedeutet ein besseres
+            Preis-Leistungs-Verhältnis.</li>
+        </ol>
+      </article>
 
-           <article>
-               <h3>Berechnung Ihrer täglichen/wöchentlichen Ausgaben</h3>
-               <ul>
-                   <li>Nachdem Sie Ihre Produkte hinzugefügt haben, schauen Sie sich den Bereich <strong>"Lebensmittelausgaben"</strong> unten an.</li>
-                   <li>
-                       Geben Sie Ihre <strong>tägliche Kalorienziel</strong> ein (z.B. 2000 kcal), um zu sehen, wie viel Sie pro Tag/Woche mit verschiedenen Produkten ausgeben würden.
-                   </li>
-                   <li>
-                       Das ist sehr nützlich, um potenzielle Einsparungen oder erhöhte Ausgaben zu verstehen!
-                   </li>
-               </ul>
-               <p id="lastParagraph">
-                   Ob Sie eine standardmäßige tägliche Kalorienaufnahme verfolgen oder verschiedene Kalorienziele für Trainings- und Ruhetage verwalten, dieses Tool bietet eine <em>klare Kostenaufschlüsselung</em>. Es ist eine <em>fantastische Möglichkeit, die finanziellen Auswirkungen Ihrer Ernährung zu visualisieren</em>!
-               </p>
-           </article>
-       </section>
+      <article>
+        <h3>Berechnung Ihrer täglichen/wöchentlichen Ausgaben</h3>
+        <ul>
+          <li>Nachdem Sie Ihre Produkte hinzugefügt haben, schauen Sie sich den Bereich
+            <strong>"Lebensmittelausgaben"</strong> unten an.</li>
+          <li>
+            Geben Sie Ihre <strong>tägliche Kalorienziel</strong> ein (z.B. 2000 kcal), um zu sehen, wie viel Sie pro
+            Tag/Woche mit verschiedenen Produkten ausgeben würden.
+          </li>
+          <li>
+            Das ist sehr nützlich, um potenzielle Einsparungen oder erhöhte Ausgaben zu verstehen!
+          </li>
+        </ul>
+        <p id="lastParagraph">
+          Ob Sie eine standardmäßige tägliche Kalorienaufnahme verfolgen oder verschiedene Kalorienziele für Trainings-
+          und Ruhetage verwalten, dieses Tool bietet eine <em>klare Kostenaufschlüsselung</em>. Es ist eine
+          <em>fantastische Möglichkeit, die finanziellen Auswirkungen Ihrer Ernährung zu visualisieren</em>!
+        </p>
+      </article>
+    </section>
 
-       <section id="faq-section">
-           <h2>❓ Häufig gestellte Fragen</h2>
-           
-           <div class="faq-item">
-               <h3>Wie verwende ich den Rechner Schritt für Schritt?</h3>
-               <p>Geben Sie einfach Kalorien pro 100g (auf Lebensmitteletiketten zu finden), Preisinformationen und optional den Produktnamen ein. Wählen Sie den Modus "Pro Kilogramm" für die meisten Ladenprodukte oder "Pro Stück" für einzeln verkaufte Produkte. Klicken Sie auf "Produkt hinzufügen" und vergleichen Sie die Kosten pro 100 kcal in der Ergebnistabelle.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Was ist der Unterschied zwischen den Modi "Pro Kilogramm" und "Pro Stück"?</h3>
-               <p>Der Modus "Pro Kilogramm" ist für nach Gewicht verkaufte Produkte (Reis, Fleisch, Gemüse). Der Modus "Pro Stück" ist für einzeln verpackte Produkte, bei denen Sie das Gewicht pro Stück kennen (Joghurtbecher, Proteinriegel, Tiefkühlgerichte). Die Wahl des Modus hängt davon ab, wie das Produkt im Geschäft verkauft wird.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Wo finde ich die Informationen zu Kalorien pro 100g?</h3>
-               <p>Überprüfen Sie das Nährwertetikett auf jedem verpackten Produkt. Es wird normalerweise als "Energie" oder "Kalorien" pro 100g angegeben. Für frische Produkte können Sie diese Informationen online in Nährwertdatenbanken oder Lebensmittel-Tracking-Apps wie MyFitnessPal finden.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Kann ich diesen Rechner auf meinem Telefon beim Einkaufen verwenden?</h3>
-               <p>Absolut! Der Rechner ist für die mobile Nutzung konzipiert. Sie können ihn für schnellen Zugriff beim Einkaufen zu Ihrem Telefon-Startbildschirm hinzufügen. Tippen Sie einfach auf die Teilen-Schaltfläche in Ihrem Browser und wählen Sie "Zum Startbildschirm hinzufügen".</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Speichert der Rechner meine Produktvergleiche?</h3>
-               <p>Ja, alle Produktdaten werden lokal in Ihrem Browser gespeichert. Wenn Sie zur Website zurückkehren, sind Ihre vorherigen Vergleiche immer noch da. Diese Daten werden jedoch nur auf Ihrem Gerät gespeichert und mit niemandem geteilt.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Wie rechne ich Preise um, wenn Produkte in verschiedenen Einheiten verkauft werden?</h3>
-               <p>Für nach Gewicht verkaufte Produkte, aber nicht pro Kilogramm, teilen Sie den Preis durch das Gewicht und multiplizieren Sie mit 1000. Zum Beispiel: 500g für 15€ = 15€ ÷ 0,5kg = 30€/kg. Der Rechner übernimmt dies automatisch im Modus "Pro Stück", wenn Sie das Gewicht pro Stück eingeben.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Was tun, wenn zwei Produkte sehr ähnliche Kosten pro 100 kcal haben?</h3>
-               <p>Wenn die Kosten ähnlich sind, berücksichtigen Sie andere Faktoren wie Nährwert, Sättigung, Haltbarkeit und persönliche Vorlieben. Ein kleiner Unterschied in den Kalorienkosten ist möglicherweise nicht den Verzicht auf Produkte wert, die Sie mögen oder die bessere Ernährung bieten.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Kann ich Produkte aus verschiedenen Geschäften vergleichen?</h3>
-               <p>Ja! Der Rechner ist ideal für den Vergleich derselben Produkte in verschiedenen Geschäften oder den Vergleich verschiedener Marken. Geben Sie einfach jedes Produkt separat mit seinem jeweiligen Ladenpreis ein, um zu sehen, welches den besten Wert pro Kalorie bietet.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Warum zeigen manche gesunden Lebensmittel höhere Kosten pro Kalorie?</h3>
-               <p>Wasserreiche Produkte (wie Gemüse) oder Produkte mit niedriger Energiedichte kosten natürlich mehr pro Kalorie. Das bedeutet nicht, dass sie einen schlechten Wert haben - sie liefern essentielle Nährstoffe, Ballaststoffe und Sättigung. Verwenden Sie den Rechner in Verbindung mit ernährungsphysiologischen Überlegungen, nicht als einzigen Faktor.</p>
-           </div>
-           
-           <div class="faq-item">
-               <h3>Gibt es ein Limit für die Anzahl der Produkte, die ich vergleichen kann?</h3>
-               <p>Sie können bis zu 500 Produkte hinzufügen, um Leistungsprobleme zu vermeiden. Für die meisten Nutzer reicht der Vergleich von 10-20 Produkten aus, um fundierte Entscheidungen zu treffen. Sie können immer Produkte löschen, die Sie nicht mehr vergleichen müssen.</p>
-           </div>
-       </section>
-   </main>
+    <section id="faq-section">
+      <h2>❓ Häufig Gestellte Fragen</h2>
 
-   <!-- Critical scripts -->
-   <script type="text/javascript" src="../js/lazyLoader.js"></script>
-   <script type="text/javascript" src="../js/i18n-base.js"></script>
-   <script type="text/javascript" src="../js/languages.js"></script>
+      <details class="faq-item">
+        <summary>Wie verwende ich den Rechner Schritt für Schritt?</summary>
+        <p>Geben Sie einfach die Kalorien pro 100g (auf Lebensmitteletiketten zu finden), Preisinformationen und
+          optional einen Produktnamen ein. Wählen Sie den "Pro Kilogramm" Modus für die meisten Ladenprodukte oder den
+          "Pro Stück" Modus für einzeln verkaufte Artikel. Klicken Sie "Produkt hinzufügen" und vergleichen Sie die
+          Kosten pro 100 kcal in der Ergebnistabelle.</p>
+      </details>
 
-   <!-- Non-critical scripts (defer) -->
-   <script type="text/javascript" src="../js/mobilehover.js" defer></script>
-   <script type="text/javascript" src="../js/currencySelect.js" defer></script>
-   <script type="text/javascript" src="../js/i18n-de.js" defer></script>
+      <details class="faq-item">
+        <summary>Was ist der Unterschied zwischen "Pro Kilogramm" und "Pro Stück" Modi?</summary>
+        <p>Der "Pro Kilogramm" Modus ist für Massenprodukte, die nach Gewicht verkauft werden (Reis, Fleisch, Gemüse).
+          Der "Pro Stück" Modus ist für einzeln verpackte Artikel, bei denen Sie das Gewicht pro Stück kennen
+          (Joghurtbecher, Proteinriegel, Tiefkühlgerichte). Die Moduswahl hängt davon ab, wie das Produkt im Laden
+          verkauft wird.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wo finde ich Informationen zu Kalorien pro 100g?</summary>
+        <p>Schauen Sie auf das Nährwertetikett jedes verpackten Lebensmittels. Es ist normalerweise als "Energie" oder
+          "Kalorien" pro 100g aufgeführt. Für frische Produkte können Sie diese Informationen online in
+          Nährstoffdatenbanken oder Lebensmittel-Tracking-Apps wie MyFitnessPal finden.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Kann ich diesen Rechner auf meinem Handy beim Einkaufen verwenden?</summary>
+        <p>Absolut! Der Rechner ist mobilfreundlich gestaltet. Sie können ihn zum Startbildschirm Ihres Handys
+          hinzufügen für schnellen Zugriff beim Lebensmitteleinkauf. Tippen Sie einfach den Teilen-Button in Ihrem
+          Browser und wählen Sie "Zum Startbildschirm hinzufügen".</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Speichert der Rechner meine Produktvergleiche?</summary>
+        <p>Ja, alle Ihre Produktdaten werden lokal in Ihrem Browser gespeichert. Wenn Sie zur Website zurückkehren,
+          werden Ihre vorherigen Vergleiche noch da sein. Diese Daten werden jedoch nur auf Ihrem Gerät gespeichert und
+          nicht mit anderen geteilt.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Wie konvertiere ich Preise, wenn Produkte in verschiedenen Einheiten verkauft werden?</summary>
+        <p>Für Produkte, die nach Gewicht aber nicht pro Kilogramm verkauft werden, teilen Sie den Preis durch das
+          Gewicht und multiplizieren mit 1000. Zum Beispiel: 500g für 3€ = 3€ ÷ 0,5kg = 6€/kg. Der Rechner handhabt dies
+          automatisch im "Pro Stück" Modus, wenn Sie das Stückgewicht eingeben.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Was soll ich tun, wenn zwei Produkte sehr ähnliche Kosten pro 100 kcal haben?</summary>
+        <p>Wenn die Kosten ähnlich sind, berücksichtigen Sie andere Faktoren wie Ernährungsqualität, Sättigung,
+          Haltbarkeit und persönliche Vorlieben. Ein kleiner Unterschied in den Kalorienkosten ist möglicherweise nicht
+          wert, Lebensmittel zu opfern, die Sie mögen oder die bessere Ernährung bieten.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Kann ich Produkte aus verschiedenen Geschäften vergleichen?</summary>
+        <p>Ja! Der Rechner ist perfekt zum Vergleichen der gleichen Produkte in verschiedenen Geschäften oder zum
+          Vergleichen verschiedener Marken. Geben Sie einfach jedes Produkt separat mit seinem jeweiligen Ladenpreis
+          ein, um zu sehen, welches den besten Wert pro Kalorie bietet.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Warum zeigen einige gesunde Lebensmittel höhere Kosten pro Kalorie?</summary>
+        <p>Lebensmittel mit hohem Wassergehalt (wie Gemüse) oder niedriger Energiedichte kosten natürlich mehr pro
+          Kalorie. Das bedeutet nicht, dass sie schlechten Wert haben – sie liefern essentielle Nährstoffe,
+          Ballaststoffe und Sättigung. Verwenden Sie den Rechner in Verbindung mit ernährungsphysiologischen
+          Überlegungen, nicht als einzigen Faktor.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Gibt es ein Limit für die Anzahl der Produkte, die ich vergleichen kann?</summary>
+        <p>Sie können bis zu 500 Produkte hinzufügen, um Leistungsprobleme zu vermeiden. Für die meisten Nutzer reicht
+          der Vergleich von 10-20 Produkten aus, um fundierte Entscheidungen zu treffen. Sie können immer Produkte
+          löschen, die Sie nicht mehr vergleichen müssen.</p>
+      </details>
+    </section>
+
+  </main>
+
+  <!-- Critical scripts -->
+  <script type="text/javascript" src="../js/lazyLoader.js"></script>
+  <script type="text/javascript" src="../js/i18n-base.js"></script>
+  <script type="text/javascript" src="../js/languages.js"></script>
+
+  <!-- Non-critical scripts (defer) -->
+  <script type="text/javascript" src="../js/mobilehover.js" defer></script>
+  <script type="text/javascript" src="../js/currencySelect.js" defer></script>
+  <script type="text/javascript" src="../js/i18n-de.js" defer></script>
 </body>
 
 </html>

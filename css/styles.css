@@ -48,10 +48,7 @@ body {
     width: 45px;
     height: 45px;
     padding: 4px;
-    /* background: rgba(20, 20, 20, 0.8);
-    border: 1px solid rgba(187, 134, 252, 0.3); */
     border-radius: 6px;
-    /* transition: all 0.3s ease; */
 }
 
 
@@ -65,10 +62,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* .hamburger-menu:hover span {
-    background: #E0E1DD;
-    box-shadow: 0 0 8px rgba(187, 134, 252, 0.6);
-} */
+
 
 
 
@@ -291,33 +285,18 @@ body.menu-open {
 
 #mainPageMain p {
     font-weight: 500;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(224, 224, 240, 0.05) 0%, rgba(224, 224, 240, 0.02) 100%);
-    border-radius: 10px;
-    border-left: 4px solid rgba(187, 134, 252, 0.4);
-    transition: all 0.3s ease;
 }
 
-#mainPageMain p:hover {
-    /* transform: translateY(-2px); */
-    box-shadow: 0 5px 15px rgba(187, 134, 252, 0.1);
-    border-left-color: #BB86FC;
-}
+
 
 #mainPageMain h2 {
-    text-align: left;
+    text-align: center;
     text-wrap: balance;
     color: #BB86FC;
-    border-left: 4px solid rgba(187, 134, 252, 0.4);
     padding: 15px 20px;
-    margin: 40px 0 25px 0;
     font-size: 1.4em;
     font-weight: 600;
     position: relative;
-    background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(187, 134, 252, 0.05) 100%);
-    border-radius: 8px;
 }
 
 #mainPageMain h2:hover {
@@ -368,7 +347,6 @@ body.menu-open {
 }
 
 #mainPageul li:hover::before {
-    /* transform: translateX(5px); */
     color: #BB86FC;
 }
 
@@ -398,7 +376,6 @@ body.menu-open {
 }
 
 .home-highlight-box:hover {
-    /* transform: translateY(-3px); */
     box-shadow: 0 8px 25px rgba(187, 134, 252, 0.15);
 }
 
@@ -459,14 +436,11 @@ body.menu-open {
 }
 
 #instructions h2 {
-    border-left: 4px solid #BB86FC;
-    padding-left: 15px;
-    margin-top: 35px;
     margin-bottom: 20px;
     font-size: 1.4em;
     font-weight: 600;
     position: relative;
-    text-align: left;
+    text-align: center;
 }
 
 #instructions h3 {
@@ -856,15 +830,9 @@ top:50px;
     cursor: pointer;
     border-radius: 8px;
     padding: 8px 12px;
-    /* transition: all 0.3s ease;
-    background: rgba(20, 20, 20, 0.8);
-    border: 1px solid rgba(187, 134, 252, 0.3); */
 }
 
-/* #language-toggle:hover {
-    border-color: #BB86FC;
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
-} */
+
 
 #current-flag {
     width: 47px;
@@ -872,7 +840,6 @@ top:50px;
     margin-right: 8px;
     border-radius: 4px;
     object-fit: cover;
-    /* border: 1px solid rgba(224, 224, 240, 0.2); */
 }
 
 #dropdown-arrow {
@@ -946,3 +913,70 @@ top:50px;
     padding: 0 1rem;
     line-height: 1.6;
 }
+
+/* ========== FAQ SECTION STYLES (unified from calc.css) ========== */
+#faq-section {
+    max-width: 500px;
+    margin: 40px auto 20px auto;
+    padding: 25px 20px;
+    background: linear-gradient(135deg, rgba(187, 134, 252, 0.1) 0%, rgba(187, 134, 252, 0.05) 100%);
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(187, 134, 252, 0.1);
+}
+
+
+.faq-item {
+    margin-bottom: 20px;
+    padding: 18px;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(26, 26, 46, 0.6) 100%);
+    border: 1px solid rgba(187, 134, 252, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #BB86FC, #6200EE);
+    border-radius: 0 2px 2px 0;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 20px rgba(187, 134, 252, 0.2);
+    border-color: #BB86FC;
+}
+
+.faq-item h3 {
+    color: #BB86FC;
+    margin: 0 0 12px 0;
+    padding: 0 0 0 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.faq-item p {
+    color: #EAEAEA;
+    margin: 0;
+    padding: 0 0 0 8px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+

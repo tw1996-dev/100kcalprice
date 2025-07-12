@@ -1229,32 +1229,4 @@ input[type="number"] {
     font-weight: 400;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    #faq-section {
-        margin: 30px 15px 20px 15px;
-        padding: 20px 15px;
-        border-radius: 12px;
-    }
-    
-    #faq-section h2 {
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-    
-    .faq-item {
-        padding: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .faq-item h3 {
-        font-size: 1em;
-        margin-bottom: 10px;
-    }
-    
-    .faq-item p {
-        font-size: 0.9em;
-        line-height: 1.5;
-    }
-}
 

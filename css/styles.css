@@ -299,10 +299,7 @@ body.menu-open {
     position: relative;
 }
 
-#mainPageMain h2:hover {
-    box-shadow: 0 5px 15px rgba(187, 134, 252, 0.1);
-    border-left-color: #BB86FC;
-}
+
 
 #mainPageul {
     padding: 25px;
@@ -906,15 +903,13 @@ top:50px;
 
 #faq-section h3 {
     color: #BB86FC;
-    text-align: center;
 }
 
 .faq-item p, #lastParagraph {
-    padding: 0 1rem;
     line-height: 1.6;
 }
 
-/* ========== FAQ SECTION STYLES (unified from calc.css) ========== */
+/* ========== FAQ SECTION STYLES  ========== */
 #faq-section {
     max-width: 500px;
     margin: 40px auto 20px auto;
@@ -948,10 +943,7 @@ top:50px;
     border-radius: 0 2px 2px 0;
 }
 
-.faq-item:hover {
-    box-shadow: 0 8px 20px rgba(187, 134, 252, 0.2);
-    border-color: #BB86FC;
-}
+
 
 .faq-item h3 {
     color: #BB86FC;
@@ -967,8 +959,6 @@ top:50px;
     margin: 0;
     padding: 0 0 0 8px;
     font-size: 0.95em;
-    line-height: 1.6;
-    font-weight: 400;
 }
 
 

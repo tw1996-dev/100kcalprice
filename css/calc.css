@@ -1206,10 +1206,7 @@ input[type="number"] {
     border-radius: 0 2px 2px 0;
 }
 
-.faq-item:hover {
-    box-shadow: 0 8px 20px rgba(187, 134, 252, 0.2);
-    border-color: #BB86FC;
-}
+
 
 .faq-item h3 {
     color: #BB86FC;

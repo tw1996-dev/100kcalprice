@@ -11,6 +11,8 @@ const languages = [
 
 let currentLanguage = 'en';
 let isDropdownOpen = false;
+let flagsLoaded = false;
+
 
 // Get all supported language codes
 const supportedCodes = languages.map(lang => lang.code);
@@ -70,22 +72,37 @@ function renderLanguageList(languagesToShow) {
     const languageList = document.getElementById('language-list');
     if (!languageList) return;
     
+    const flagsPath = getFlagsPath();
+    
     if (languagesToShow.length === 0) {
         languageList.innerHTML = '<div class="no-results">No languages found</div>';
         return;
     }
 
-    const flagsPath = getFlagsPath();
+   
+    flagsLoaded = true;
+
     languageList.innerHTML = languagesToShow.map(lang => `
         <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
              data-code="${lang.code}">
-            <img src="${flagsPath}${lang.flag}.svg" alt="${lang.name} flag">
+            <img src="${flagsPath}${lang.flag}.svg" 
+                 alt="${lang.name} flag">
             <div class="language-info">
                 <span class="language-name">${lang.name}</span>
                 <span class="language-native">${lang.native}</span>
             </div>
         </div>
     `).join('');
+    
+    // Add click handlers for language options
+    const languageOptions = languageList.querySelectorAll('.language-option');
+    languageOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const langCode = this.getAttribute('data-code');
+            changeLanguage(langCode);
+        });
+    });
+}
     
     // Add click handlers
     languageList.querySelectorAll('.language-option').forEach(option => {
@@ -109,25 +126,28 @@ function handleLanguageSearch(e) {
 
 // Toggle language dropdown
 function toggleLanguageDropdown() {
-    const dropdown = document.getElementById('language-dropdown');
-    const toggle = document.getElementById('language-toggle');
-    const searchInput = document.getElementById('language-search-input');
-    
-    isDropdownOpen = !isDropdownOpen;
-    
-    if (isDropdownOpen) {
-        dropdown?.classList.add('show');
-        toggle?.classList.add('active');
-        
-        if (searchInput) {
-            searchInput.value = '';
-            setTimeout(() => searchInput.focus(), 100);
-        }
-        renderLanguageList(languages);
-    } else {
-        dropdown?.classList.remove('show');
-        toggle?.classList.remove('active');
-    }
+   const dropdown = document.getElementById('language-dropdown');
+   const toggle = document.getElementById('language-toggle');
+   const searchInput = document.getElementById('language-search-input');
+   
+   isDropdownOpen = !isDropdownOpen;
+   
+   if (isDropdownOpen) {
+       dropdown?.classList.add('show');
+       toggle?.classList.add('active');
+       
+       if (searchInput) {
+           searchInput.value = '';
+           setTimeout(() => searchInput.focus(), 100);
+       }
+       
+       if (!flagsLoaded) {
+           renderLanguageList(languages);
+       }
+   } else {
+       dropdown?.classList.remove('show');
+       toggle?.classList.remove('active');
+   }
 }
 
 // Change language - preserves exact original logic in compact form

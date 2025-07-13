@@ -93,10 +93,7 @@ function enforcePriceLimits(input) {
        
        if (input.value !== value) {
            input.value = value;
-           // FIXED: Check if input supports selection before setting range
-           if (input.type !== 'number') {
-               input.setSelectionRange(cursorPos, cursorPos);
-           }
+           input.setSelectionRange(cursorPos, cursorPos);
        }
    });
    
@@ -160,10 +157,7 @@ function enforceWeightLimits(input) {
        
        if (input.value !== value) {
            input.value = value;
-           // FIXED: Check if input supports selection before setting range
-           if (input.type !== 'number') {
-               input.setSelectionRange(cursorPos, cursorPos);
-           }
+           input.setSelectionRange(cursorPos, cursorPos);
        }
    });
    
@@ -264,10 +258,7 @@ function enforceCalorieLimits(input) {
        
        if (input.value !== value) {
            input.value = value;
-           // FIXED: Check if input supports selection before setting range
-           if (input.type !== 'number') {
-               input.setSelectionRange(cursorPos, cursorPos);
-           }
+           input.setSelectionRange(cursorPos, cursorPos);
        }
    });
    
@@ -363,10 +354,7 @@ function enforceCostLimits(input) {
        
        if (input.value !== value) {
            input.value = value;
-           // FIXED: Check if input supports selection before setting range
-           if (input.type !== 'number') {
-               input.setSelectionRange(cursorPos, cursorPos);
-           }
+           input.setSelectionRange(cursorPos, cursorPos);
        }
    });
    
@@ -414,10 +402,7 @@ function enforceCaloriesLimits(input) {
        
        if (input.value !== value) {
            input.value = value;
-           // FIXED: Check if input supports selection before setting range
-           if (input.type !== 'number') {
-               input.setSelectionRange(cursorPos, cursorPos);
-           }
+           input.setSelectionRange(cursorPos, cursorPos);
        }
    });
    

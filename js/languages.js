@@ -94,15 +94,7 @@ function renderLanguageList(languagesToShow) {
         </div>
     `).join('');
     
-    // Add click handlers for language options
-    const languageOptions = languageList.querySelectorAll('.language-option');
-    languageOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            const langCode = this.getAttribute('data-code');
-            changeLanguage(langCode);
-        });
-    });
-}
+
     
     // Add click handlers
     languageList.querySelectorAll('.language-option').forEach(option => {
@@ -111,7 +103,7 @@ function renderLanguageList(languagesToShow) {
             changeLanguage(langCode);
         });
     });
-
+}
 
 // Handle language search
 function handleLanguageSearch(e) {

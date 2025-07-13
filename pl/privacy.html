@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polityka Prywatności - 100 kcal Koszt</title>
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
+
+    <!-- Google Analytics - 3 Second Delay -->
+    <script>
+    (function() {
+      // Load GA after page is fully loaded + 3 seconds
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          // Load GA script dynamically
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X258W69QDT';
+          document.head.appendChild(script);
+          
+          // Initialize GA when script loads
+          script.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X258W69QDT');
+          };
+        }, 3000); // 3 second delay
+      });
+    })();
+    </script>
+
+    <!-- Metadata -->
+    <meta name="description" content="Polityka prywatności dla kalkulatora kosztu 100 kcal. Dowiedz się, jak chronimy Twoje dane i prywatność.">
+    <meta name="keywords" content="polityka prywatności, ochrona danych, RODO, cookies, localStorage">
+    <meta name="author" content="tw1996-dev">
+
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content="Polityka Prywatności - Kalkulator Kosztu 100 kcal" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/pl/privacy" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Polityka Prywatności - Kalkulator Kosztu 100 kcal" />
+    <meta property="og:description" content="Polityka prywatności dla kalkulatora kosztu 100 kcal. Dowiedz się, jak chronimy Twoje dane i prywatność." />
+    <meta property="og:site_name" content="Kalkulator Kosztu 100 kcal" />
+    <meta property="og:locale" content="pl_PL" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0d0c1d">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/privacy.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="mobile-nav-menu" id="main-nav" aria-label="Nawigacja główna">
+        <ul>
+            <li><a class="navigation-link" href="/pl/">Strona główna</a></li>
+            <li><a class="navigation-link" href="/pl/calc">Kalkulator🧮</a></li>
+            <li><a class="navigation-link" href="/pl/instruction">Jak używać?</a></li>
+        </ul>
+    </nav>
+
+    <!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="../flags/pl.svg" alt="Aktualny język">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input type="text" id="language-search-input" placeholder="Szukaj języków..." autocomplete="off">
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="privacy-policy">
+            <h1>🔒 Polityka Prywatności</h1>
+            <p><strong>Data ostatniej aktualizacji:</strong> 13 lipca 2025</p>
+            
+            <div class="privacy-section">
+                <h2>📝 Co robimy z Twoimi danymi</h2>
+                
+                <h3>🖥️ Dane kalkulatora</h3>
+                <p>Wszystkie produkty, ceny i kalorie które wprowadzasz są zapisywane <strong>tylko na Twoim urządzeniu</strong> (w przeglądarce). <strong>Nie wysyłamy ich nigdzie.</strong></p>
+                
+                <h3>📊 Google Analytics</h3>
+                <p>Używamy Google Analytics żeby wiedzieć ile osób odwiedza stronę i które funkcje są najpopularniejsze. To pomaga nam ulepszać kalkulator.</p>
+                
+                <h3>💰 Reklamy Google</h3>
+                <p>Planujemy dodać reklamy Google Ads, żeby utrzymać stronę darmową dla wszystkich.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>💾 Jak zapisujemy Twoje ustawienia</h2>
+                <p><strong>Pamięć przeglądarki (localStorage):</strong></p>
+                <ul>
+                    <li>Twoje ustawienia (język, waluta)</li>
+                    <li>Dane kalkulatora (produkty, ceny)</li>
+                </ul>
+                <p><strong>Cookies (tylko Google Analytics i reklamy):</strong></p>
+                <ul>
+                    <li>Analiza ruchu na stronie</li>
+                    <li>Wyświetlanie reklam</li>
+                </ul>
+                <p>Możesz wyczyścić dane strony w ustawieniach przeglądarki.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🛡️ Jak usunąć swoje dane</h2>
+                <ul>
+                    <li><strong>Dane kalkulatora:</strong> Kliknij "Usuń wszystko" w kalkulatorze</li>
+                    <li><strong>Wszystkie dane strony:</strong> Wyczyść dane strony w ustawieniach przeglądarki</li>
+                </ul>
+            </div>
+
+            <div class="privacy-footer">
+                <p><strong>Pamiętaj:</strong> Twoje dane z kalkulatora są tylko na Twoim urządzeniu - my ich nie widzimy ani nie przechowujemy!</p>
+                <p><a href="/pl/">← Powrót do kalkulatora</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/languages.js"></script>
+    <script src="../js/mobilehover.js" defer></script>
+</body>
+</html>

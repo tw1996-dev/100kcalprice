@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - 100 kcal Cost</title>
+
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; connect-src 'self' https:; style-src 'self'; img-src 'self' data: https:;">
+
+    <!-- Google Analytics - 3 Second Delay -->
+    <script>
+    (function() {
+      // Load GA after page is fully loaded + 3 seconds
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          // Load GA script dynamically
+          const script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-X258W69QDT';
+          document.head.appendChild(script);
+          
+          // Initialize GA when script loads
+          script.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-X258W69QDT');
+          };
+        }, 3000); // 3 second delay
+      });
+    })();
+    </script>
+
+    <!-- Metadata -->
+    <meta name="description" content="Privacy policy for the 100 kcal cost calculator. Learn how we protect your data and privacy.">
+    <meta name="keywords" content="privacy policy, data protection, GDPR, cookies, localStorage">
+    <meta name="author" content="tw1996-dev">
+
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content="Privacy Policy - 100 kcal Cost Calculator" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.100kcalcost.com/privacy" />
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Privacy Policy - 100 kcal Cost Calculator" />
+    <meta property="og:description" content="Privacy policy for the 100 kcal cost calculator. Learn how we protect your data and privacy." />
+    <meta property="og:site_name" content="100 kcal Cost Calculator" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0d0c1d">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/privacy.css">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="mobile-nav-menu" id="main-nav" aria-label="Main navigation">
+        <ul>
+            <li><a class="navigation-link" href="/">Home</a></li>
+            <li><a class="navigation-link" href="/calc">Calculator🧮</a></li>
+            <li><a class="navigation-link" href="/instruction">How to use?</a></li>
+        </ul>
+    </nav>
+
+    <!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="flags/gb.svg" alt="Current language">
+            <div id="dropdown-arrow"></div>
+        </div>
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input type="text" id="language-search-input" placeholder="Search languages..." autocomplete="off">
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section id="privacy-policy">
+            <h1>🔒 Privacy Policy</h1>
+            <p><strong>Last updated:</strong> July 13, 2025</p>
+            
+            <div class="privacy-section">
+                <h2>📝 What we do with your data</h2>
+                
+                <h3>🖥️ Calculator data</h3>
+                <p>All products, prices, and calories you enter are saved <strong>only on your device</strong> (in the browser). <strong>We don't send them anywhere.</strong></p>
+                
+                <h3>📊 Google Analytics</h3>
+                <p>We use Google Analytics to know how many people visit the site and which features are most popular. This helps us improve the calculator.</p>
+                
+                <h3>💰 Google Ads</h3>
+                <p>We plan to add Google Ads to keep the site free for everyone.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>💾 How we save your settings</h2>
+                <p><strong>Browser storage (localStorage):</strong></p>
+                <ul>
+                    <li>Your settings (language, currency)</li>
+                    <li>Calculator data (products, prices)</li>
+                </ul>
+                <p><strong>Cookies (only Google Analytics and ads):</strong></p>
+                <ul>
+                    <li>Site traffic analysis</li>
+                    <li>Ad display</li>
+                </ul>
+                <p>You can clear site data in your browser settings.</p>
+            </div>
+
+            <div class="privacy-section">
+                <h2>🛡️ How to delete your data</h2>
+                <ul>
+                    <li><strong>Calculator data:</strong> Click "Delete all" in the calculator</li>
+                    <li><strong>All site data:</strong> Clear site data in your browser settings</li>
+                </ul>
+            </div>
+
+            <div class="privacy-footer">
+                <p><strong>Remember:</strong> Your calculator data is only on your device - we can't see or store it!</p>
+                <p><a href="/">← Back to calculator</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/languages.js"></script>
+    <script src="js/mobilehover.js" defer></script>
+</body>
+</html>

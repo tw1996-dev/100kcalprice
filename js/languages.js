@@ -111,7 +111,7 @@ function renderLanguageList(languagesToShow) {
             changeLanguage(langCode);
         });
     });
-}
+
 
 // Handle language search
 function handleLanguageSearch(e) {

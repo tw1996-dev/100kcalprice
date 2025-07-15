@@ -3,140 +3,182 @@
   <!-- English pages -->
   <url>
     <loc>https://100kcalcost.com/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://100kcalcost.com/calc.html</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://100kcalcost.com/calc</loc>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://100kcalcost.com/instruction.html</loc>
-    <lastmod>2025-07-12</lastmod>
+    <loc>https://100kcalcost.com/instruction</loc>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   
   <!-- Polish pages -->
   <url>
     <loc>https://100kcalcost.com/pl/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/pl/calc</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/pl/instruction</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/pl/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Norwegian pages -->
   <url>
     <loc>https://100kcalcost.com/no/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/no/calc</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/no/instruction</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/no/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- French pages -->
   <url>
     <loc>https://100kcalcost.com/fr/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/fr/calc</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/fr/instruction</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/fr/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Spanish pages -->
   <url>
     <loc>https://100kcalcost.com/es/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/es/calc</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/es/instruction</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/es/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- German pages -->
   <url>
     <loc>https://100kcalcost.com/de/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/de/calc</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/de/instruction</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/de/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Italian pages -->
   <url>
     <loc>https://100kcalcost.com/it/</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/it/calc</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://100kcalcost.com/it/instruction</loc>
-    <lastmod>2025-07-12</lastmod>
+    <lastmod>2025-07-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://100kcalcost.com/it/privacy</loc>
+    <lastmod>2025-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

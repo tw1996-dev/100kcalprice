@@ -1,6 +1,22 @@
 {
   "rewrites": [
     {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/calc",
+      "destination": "/calc.html"
+    },
+    {
+      "source": "/instruction", 
+      "destination": "/instruction.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
       "source": "/pl",
       "destination": "/pl/index.html"
     },
@@ -15,6 +31,10 @@
     {
       "source": "/pl/instruction",
       "destination": "/pl/instruction.html"
+    },
+    {
+      "source": "/pl/privacy",
+      "destination": "/pl/privacy.html"
     },
     {
       "source": "/no",
@@ -33,6 +53,10 @@
       "destination": "/no/instruction.html"
     },
     {
+      "source": "/no/privacy",
+      "destination": "/no/privacy.html"
+    },
+    {
       "source": "/fr",
       "destination": "/fr/index.html"
     },
@@ -47,6 +71,10 @@
     {
       "source": "/fr/instruction",
       "destination": "/fr/instruction.html"
+    },
+    {
+      "source": "/fr/privacy",
+      "destination": "/fr/privacy.html"
     },
     {
       "source": "/es",
@@ -65,6 +93,10 @@
       "destination": "/es/instruction.html"
     },
     {
+      "source": "/es/privacy",
+      "destination": "/es/privacy.html"
+    },
+    {
       "source": "/de",
       "destination": "/de/index.html"
     },
@@ -81,6 +113,10 @@
       "destination": "/de/instruction.html"
     },
     {
+      "source": "/de/privacy",
+      "destination": "/de/privacy.html"
+    },
+    {
       "source": "/it",
       "destination": "/it/index.html"
     },
@@ -95,6 +131,10 @@
     {
       "source": "/it/instruction",
       "destination": "/it/instruction.html"
+    },
+    {
+      "source": "/it/privacy",
+      "destination": "/it/privacy.html"
     }
   ]
 }

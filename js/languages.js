@@ -86,7 +86,8 @@ function renderLanguageList(languagesToShow) {
         <div class="language-option ${lang.code === currentLanguage ? 'active' : ''}" 
              data-code="${lang.code}">
             <img src="${flagsPath}${lang.flag}.svg" 
-                 alt="${lang.name} flag">
+            alt="${lang.name} flag" 
+            loading="lazy">
             <div class="language-info">
                 <span class="language-name">${lang.name}</span>
                 <span class="language-native">${lang.native}</span>

@@ -12,7 +12,6 @@
 <!-- Google Adsense -->
 <meta name="google-adsense-account" content="ca-pub-7362869609163039">
 
-
 <!-- Google Analytics - 3 Second Delay -->
 <script>
 (function() {
@@ -37,154 +36,149 @@
 })();
 </script>
 
-
-
-    <!---- Metadata for search engines and social sharing ---->
+    <!-- Metadata for search engines and social sharing -->
     <meta name="description"
         content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
     <meta name="keywords"
         content="kalori kostnad, mat kalkulator, kalori kalkulator, kostnad per kalori, mat sammenligning, budsjett mat, sunt kosthold kostnad">
     <meta name="author" content="tw1996-dev">
 
-<!---- Enhanced Open Graph ---->
-<meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.100kcalcost.com/no/" />
-<meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="100 kcal Kostnadskalkulator grensesnitt som viser sammenligning av matkostnader" />
-<meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt." />
-<meta property="og:site_name" content="100 kcal Kostnadskalkulator" />
-<meta property="og:locale" content="nb_NO" />
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.100kcalcost.com/no/">
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="100 kcal Kostnadskalkulator grensesnitt som viser sammenligning av matkostnader">
+    <meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
+    <meta property="og:site_name" content="100 kcal Kostnadskalkulator">
+    <meta property="og:locale" content="nb_NO">
 
-<!---- Themecolor ---->
-<meta name="theme-color" content="#0d0c1d">
+    <!-- Themecolor -->
+    <meta name="theme-color" content="#0d0c1d">
 
-
-
-    <!---- CSS ---->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/calc.css">
 
- <!-- Favicons and icons -->
-<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <!-- Favicons and icons -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 
-<script>
-// Dynamically set start_url based on current page
-if ('serviceWorker' in navigator) {
-    // Get current path
-    const currentPath = window.location.pathname;
-    
-    // Create dynamic manifest
-    const manifestContent = {
-        "name": "100 kcal Cost Calculator",
-        "short_name": "100kcal Cost",
-        "description": "Calculate and compare the cost of 100 calories for various food products",
-        "icons": [
-            {
-                "src": "/favicon/web-app-manifest-192x192.png",
-                "sizes": "192x192",
-                "type": "image/png",
-                "purpose": "any"
-            },
-            {
-                "src": "/favicon/web-app-manifest-512x512.png", 
-                "sizes": "512x512",
-                "type": "image/png",
-                "purpose": "any"
-            }
-        ],
-        "theme_color": "#BB86FC",
-        "background_color": "#1A1A2E",
-        "display": "minimal-ui",
-        "start_url": currentPath,
-        "scope": "/",
-        "orientation": "portrait-primary",
-        "categories": ["utilities", "productivity", "food"]
-    };
-    
-    // Create blob and update manifest link
-    const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
-    const manifestURL = URL.createObjectURL(manifestBlob);
-    
-    // Update manifest link
-    const manifestLink = document.querySelector('link[rel="manifest"]');
-    if (manifestLink) {
-        manifestLink.href = manifestURL;
+    <script>
+    // Dynamically set start_url based on current page
+    if ('serviceWorker' in navigator) {
+        // Get current path
+        const currentPath = window.location.pathname;
+        
+        // Create dynamic manifest
+        const manifestContent = {
+            "name": "100 kcal Cost Calculator",
+            "short_name": "100kcal Cost",
+            "description": "Calculate and compare the cost of 100 calories for various food products",
+            "icons": [
+                {
+                    "src": "/favicon/web-app-manifest-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png",
+                    "purpose": "any"
+                },
+                {
+                    "src": "/favicon/web-app-manifest-512x512.png", 
+                    "sizes": "512x512",
+                    "type": "image/png",
+                    "purpose": "any"
+                }
+            ],
+            "theme_color": "#BB86FC",
+            "background_color": "#1A1A2E",
+            "display": "minimal-ui",
+            "start_url": currentPath,
+            "scope": "/",
+            "orientation": "portrait-primary",
+            "categories": ["utilities", "productivity", "food"]
+        };
+        
+        // Create blob and update manifest link
+        const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        
+        // Update manifest link
+        const manifestLink = document.querySelector('link[rel="manifest"]');
+        if (manifestLink) {
+            manifestLink.href = manifestURL;
+        }
     }
-}
-</script>
+    </script>
 
-
-
-<!-- WebApplication Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "100 kcal Kostnadskalkulator",
-  "url": "https://www.100kcalcost.com/no/calc-no.html",
-  "description": "Interaktiv kalkulator for å bestemme kostnaden for 100 kalorier for forskjellige matprodukter. Sammenlign priser og ta informerte kjøpsbeslutninger.",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Chrome, Firefox, Safari, Edge",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "featureList": [
-    "Sanntids kalori kostnad beregninger",
-    "Støtte for flere valutaer",
-    "Per kilogram og per stykke input modus",
-    "Sorterbar sammenligning tabell",
-    "Lokal data lagring",
-    "Rediger eksisterende oppføringer",
-    "Slett alle funksjoner",
-    "Input validering",
-    "Mobil responsiv grensesnitt"
-  ],
-  "softwareVersion": "1.0",
-  "datePublished": "2025-07-09",
-  "dateModified": "2025-07-09",
-  "author": {
-    "@type": "Person",
-    "name": "tw1996-dev"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "100kcal Cost",
-    "url": "https://www.100kcalcost.com"
-  },
-  "inLanguage": "no",
-  "isAccessibleForFree": true,
-  "mainEntity": {
-    "@type": "SoftwareApplication",
-    "name": "Kalori Kostnad Kalkulator Motor",
-    "applicationCategory": "CalculatorApplication",
-    "operatingSystem": "Nettleser"
-  }
-}
-</script>
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "100 kcal Kostnadskalkulator",
+      "url": "https://www.100kcalcost.com/no/calc-no.html",
+      "description": "Interaktiv kalkulator for å bestemme kostnaden for 100 kalorier for forskjellige matprodukter. Sammenlign priser og ta informerte kjøpsbeslutninger.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Chrome, Firefox, Safari, Edge",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Sanntids kalori kostnad beregninger",
+        "Støtte for flere valutaer",
+        "Per kilogram og per stykke input modus",
+        "Sorterbar sammenligning tabell",
+        "Lokal data lagring",
+        "Rediger eksisterende oppføringer",
+        "Slett alle funksjoner",
+        "Input validering",
+        "Mobil responsiv grensesnitt"
+      ],
+      "softwareVersion": "1.0",
+      "datePublished": "2025-07-09",
+      "dateModified": "2025-07-09",
+      "author": {
+        "@type": "Person",
+        "name": "tw1996-dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "100kcal Cost",
+        "url": "https://www.100kcalcost.com"
+      },
+      "inLanguage": "no",
+      "isAccessibleForFree": true,
+      "mainEntity": {
+        "@type": "SoftwareApplication",
+        "name": "Kalori Kostnad Kalkulator Motor",
+        "applicationCategory": "CalculatorApplication",
+        "operatingSystem": "Nettleser"
+      }
+    }
+    </script>
 </head>
 
 <body>
-            <div class="hamburger-menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    <nav class="mobile-nav-menu"  id="main-nav" aria-label="Hovednavigasjon">
+    <nav class="mobile-nav-menu" id="main-nav" aria-label="Hovednavigasjon">
         <ul>
             <li><a class="navigation-link" href="/no/">Hjem</a></li>
             <li><a class="navigation-link" href="/no/calc">Kalkulator🧮</a></li>
             <li><a class="navigation-link" href="/no/instruction">Hvordan bruke?</a></li>
         </ul>
     </nav>
-<!-- Language Selector -->
+
+    <!-- Language Selector -->
     <div id="language-selector">
         <div id="language-toggle">
             <img id="current-flag" src="../flags/no.svg" alt="Nåværende språk">
@@ -195,7 +189,7 @@ if ('serviceWorker' in navigator) {
                 <input 
                     type="text" 
                     id="language-search-input" 
-                    placeholder="Search languages..."
+                    placeholder="Søk språk..."
                     autocomplete="off"
                 >
             </div>
@@ -204,12 +198,12 @@ if ('serviceWorker' in navigator) {
             </div>
         </div>
     </div>
+
     <div class="container">
         <header>
             <h1>💰 100 kcal Kostnadskalkulator</h1>
             <p>Sjekk kostnaden for energi i forskjellige produkter</p>
         </header>
-
 
         <div class="mode-switcher">
             <div class="mode-slider"></div>
@@ -230,12 +224,12 @@ if ('serviceWorker' in navigator) {
 
                 <div class="forms-wrapper">
                     <div class="form-group">
-                        <input type="number" id="calories1" placeholder=" "  inputmode="numeric">
+                        <input type="number" id="calories1" placeholder=" " inputmode="numeric">
                         <label for="calories1">Kcal/100g</label>
                     </div>
 
                     <div class="form-group">
-                        <input type="number" id="pricePerKg" placeholder=" "  inputmode="decimal">
+                        <input type="number" id="pricePerKg" placeholder=" " inputmode="decimal">
                         <label for="pricePerKg">Pris per kg</label>
                     </div>
                 </div>
@@ -250,23 +244,23 @@ if ('serviceWorker' in navigator) {
 
                 <div class="forms-wrapper">
                     <div class="form-group">
-                        <input type="number" id="pieceWeight" placeholder=" "  inputmode="numeric">
+                        <input type="number" id="pieceWeight" placeholder=" " inputmode="numeric">
                         <label for="pieceWeight">Vekt per stykke (g)</label>
                     </div>
 
                     <div class="form-group">
-                        <input type="number" id="calories2" placeholder=" "  inputmode="numeric">
+                        <input type="number" id="calories2" placeholder=" " inputmode="numeric">
                         <label for="calories2">Kcal/100g</label>
                     </div>
                 </div>
 
                 <div class="forms-wrapper">
                     <div class="price-input-group">
-                        <input type="number" id="pricePerPiece" placeholder=" "  inputmode="numeric">
+                        <input type="number" id="pricePerPiece" placeholder=" " inputmode="numeric">
                         <label for="pricePerPiece">Pris per stykke</label>
                     </div>
                     <div class="price-input-group">
-                        <input type="number" id="pricePerKg2" placeholder=" "  inputmode="numeric">
+                        <input type="number" id="pricePerKg2" placeholder=" " inputmode="numeric">
                         <label for="pricePerKg2">Pris per kg</label>
                     </div>
                 </div>
@@ -294,160 +288,155 @@ if ('serviceWorker' in navigator) {
         </div>
     </div>
 
-<!-- Food Cost Calculator Section -->
-<div class="food-cost-section">
-    <div class="food-cost-section-header">
-        <h2>🤔 Morsomt Faktum</h2>
-        <p>Du kan beregne hvor mye du vil bruke på mat med en spesifikk kostnad per 100 kcal</p>
-    </div>
-
-    <div class="cost-mode-switcher">
-        <div class="cost-mode-slider"></div>
-       <button class="cost-mode-btn active" data-cost-mode="0">
-            Normal
-        </button>
-        <button class="cost-mode-btn" data-cost-mode="1">
-            Trening/Hvile
-        </button>
-    </div>
-
-    <!-- Normal Mode -->
-    <div class="cost-input-section active" id="cost-mode-normal">
-        <div class="cost-form-group">
-            <input type="number" id="dailyCalories" placeholder=" " inputmode="numeric">
-            <label for="dailyCalories">Hvor mange kalorier spiser du daglig</label>
+    <!-- Food Cost Calculator Section -->
+    <div class="food-cost-section">
+        <div class="food-cost-section-header">
+            <h2>🤔 Morsomt Faktum</h2>
+            <p>Du kan beregne hvor mye du vil bruke på mat med en spesifikk kostnad per 100 kcal</p>
         </div>
 
-        <div class="cost-forms-wrapper">
-            <div class="cost-form-group">
-                <input type="number" id="cost100kcal1" placeholder=" "  inputmode="decimal">
-                <label for="cost100kcal1">Gjennomsnittlig kostnad per 100 kcal</label>
-            </div>
-            <div class="cost-form-group">
-                <input type="number" id="cost100kcal2" placeholder=" "  inputmode="decimal">
-                <label for="cost100kcal2">Andre kostnad per 100 kcal (valgfritt)</label>
-            </div>
+        <div class="cost-mode-switcher">
+            <div class="cost-mode-slider"></div>
+           <button class="cost-mode-btn active" data-cost-mode="0">
+                Normal
+            </button>
+            <button class="cost-mode-btn" data-cost-mode="1">
+                Trening/Hvile
+            </button>
         </div>
 
-        <button class="cost-calculate-btn" id="calculateNormalBtn">
-            🧮 Beregn Kostnader
-        </button>
-    </div>
+        <!-- Normal Mode -->
+        <div class="cost-input-section active" id="cost-mode-normal">
+            <div class="cost-form-group">
+                <input type="number" id="dailyCalories" placeholder=" " inputmode="numeric">
+                <label for="dailyCalories">Hvor mange kalorier spiser du daglig</label>
+            </div>
 
-    <!-- Training/Rest Mode -->
-    <div class="cost-input-section" id="cost-mode-dtdnt">
-        <div class="cost-forms-wrapper">
-            <div class="cost-form-group">
-                <input type="number" id="trainingDayCalories" placeholder=" " inputmode="numeric">
-                <label for="trainingDayCalories">Kalorier på treningsdag</label>
+            <div class="cost-forms-wrapper">
+                <div class="cost-form-group">
+                    <input type="number" id="cost100kcal1" placeholder=" " inputmode="decimal">
+                    <label for="cost100kcal1">Gjennomsnittlig kostnad per 100 kcal</label>
+                </div>
+                <div class="cost-form-group">
+                    <input type="number" id="cost100kcal2" placeholder=" " inputmode="decimal">
+                    <label for="cost100kcal2">Andre kostnad per 100 kcal (valgfritt)</label>
+                </div>
             </div>
-            <div class="cost-form-group">
-                <input type="number" id="nonTrainingDayCalories" placeholder=" " inputmode="numeric">
-                <label for="nonTrainingDayCalories">Kalorier på hviledag</label>
-            </div>
+
+            <button class="cost-calculate-btn" id="calculateNormalBtn">
+                🧮 Beregn Kostnader
+            </button>
         </div>
 
-        <div class="cost-forms-wrapper">
-            <div class="cost-form-group">
-                <input type="number" id="trainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
-                <label for="trainingDaysPerWeek">Treningsdager per uke</label>
+        <!-- Training/Rest Mode -->
+        <div class="cost-input-section" id="cost-mode-dtdnt">
+            <div class="cost-forms-wrapper">
+                <div class="cost-form-group">
+                    <input type="number" id="trainingDayCalories" placeholder=" " inputmode="numeric">
+                    <label for="trainingDayCalories">Kalorier på treningsdag</label>
+                </div>
+                <div class="cost-form-group">
+                    <input type="number" id="nonTrainingDayCalories" placeholder=" " inputmode="numeric">
+                    <label for="nonTrainingDayCalories">Kalorier på hviledag</label>
+                </div>
             </div>
-            <div class="cost-form-group">
-                <input type="number" id="nonTrainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
-                <label for="nonTrainingDaysPerWeek">Hviledager per uke</label>
+
+            <div class="cost-forms-wrapper">
+                <div class="cost-form-group">
+                    <input type="number" id="trainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
+                    <label for="trainingDaysPerWeek">Treningsdager per uke</label>
+                </div>
+                <div class="cost-form-group">
+                    <input type="number" id="nonTrainingDaysPerWeek" placeholder=" " min="0" max="7" inputmode="numeric">
+                    <label for="nonTrainingDaysPerWeek">Hviledager per uke</label>
+                </div>
             </div>
+
+            <div class="cost-forms-wrapper">
+                <div class="cost-form-group">
+                    <input type="number" id="dtCost100kcal1" placeholder=" " step="0.01" inputmode="decimal">
+                    <label for="dtCost100kcal1">Gjennomsnittlig kostnad per 100 kcal</label>
+                </div>
+                <div class="cost-form-group">
+                    <input type="number" id="dtCost100kcal2" placeholder=" " step="0.01" inputmode="decimal">
+                    <label for="dtCost100kcal2">Andre kostnad per 100 kcal (valgfritt)</label>
+                </div>
+            </div>
+
+            <button class="cost-calculate-btn" id="calculateDTDNTBtn">
+                🧮 Beregn Kostnader
+            </button>
         </div>
 
-        <div class="cost-forms-wrapper">
-            <div class="cost-form-group">
-                <input type="number" id="dtCost100kcal1" placeholder=" " step="0.01" inputmode="decimal">
-                <label for="dtCost100kcal1">Gjennomsnittlig kostnad per 100 kcal</label>
-            </div>
-            <div class="cost-form-group">
-                <input type="number" id="dtCost100kcal2" placeholder=" " step="0.01" inputmode="decimal">
-                <label for="dtCost100kcal2">Andre kostnad per 100 kcal (valgfritt)</label>
+        <!-- Results -->
+        <div class="cost-results" id="costResults">
+            <h3>💰 Dine Matutgifter</h3>
+            <div class="cost-comparison" id="costComparison">
+                <!-- Results will be inserted here by JavaScript -->
             </div>
         </div>
-
-        <button class="cost-calculate-btn" id="calculateDTDNTBtn">
-            🧮 Beregn Kostnader
-        </button>
     </div>
 
-    <!-- Results -->
-    <div class="cost-results" id="costResults">
-        <h3>💰 Dine Matutgifter</h3>
-        <div class="cost-comparison" id="costComparison">
-            <!-- Results will be inserted here by JavaScript -->
+    <section id="faq-section">
+        <h2>🧮 Kalkulatortips og FAQ</h2>
+        
+        <details class="faq-item">
+            <summary>Hvilke matvarer tilbyr typisk de billigste kaloriene?</summary>
+            <p>Generelt gir korn (ris, pasta, brød), belgfrukter (bønner, linser), vegetabilske oljer, nøtter og poteter de mest rimelige kaloriene. Bearbeidet mat og ferske produkter koster vanligvis mer per kalori, selv om de kan tilby andre ernæringsfordeler.</p>
+        </details>
+        
+        <details class="faq-item">
+            <summary>Hvordan kan denne kalkulatoren hjelpe meg med å spare penger på dagligvarer?</summary>
+            <p>Ved å identifisere hvilke matvarer som gir deg mest energi for pengene, kan du bygge måltider rundt kostnadseffektive kalorikilder og bruke dyre ingredienser som smaksforsterkere i stedet for hovedingredienser. Denne tilnærmingen kan redusere dagligvareregninger med 20-30%.</p>
+        </details>
+        
+        <details class="faq-item">
+            <summary>Bør jeg alltid velge det billigste kalorialternativet?</summary>
+            <p>Nei. Selv om kostnad per kalori er viktig for budsjettering, vurder også ernæringskvalitet, metthet, smak og måltidsvariation. De billigste kaloriene kommer ofte fra raffinert sukker og oljer, som ikke bør dominere kostholdet ditt. Bruk dette verktøyet som én faktor i matbeslutninger.</p>
+        </details>
+        
+        <details class="faq-item">
+            <summary>Hvordan beregner jeg mine daglige matkostnader ved hjelp av resultatene?</summary>
+            <p>Bruk "Morsomt Faktum"-seksjonen under kalkulatoren! Skriv inn ditt daglige kaloriinntak og gjennomsnittlig kostnad per 100 kcal fra dine produktsammenligninger. Verktøyet vil vise dine daglige, ukentlige, månedlige og årlige matutgifter basert på kalorikostnader.</p>
+        </details>
+        
+        <details class="faq-item">
+            <summary>Hva er en god kostnad per 100 kcal å sikte mot?</summary>
+            <p>Dette varierer etter sted og valuta, men generelt: under 4 kr per 100 kcal er svært økonomisk, 4-8 kr er moderat, og over 8 kr er dyrt. Bruk kalkulatoren til å etablere din lokale baseline ved å sammenligne basismatvarer i ditt område.</p>
+        </details>
+        
+        <details class="faq-item">
+            <summary>Kan jeg bruke dette til måltidsplanlegging?</summary>
+            <p>Absolutt! Beregn kostnaden per 100 kcal for dine favorittingredienser, og bygg deretter måltider ved å bruke kostnadseffektive baser (som ris eller pasta) supplert med dyrere men næringsrike tillegg (som grønnsaker eller magert protein) for å balansere kostnad og ernæring.</p>
+        </details>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/100kcalcost/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="../images/icon-logo-instagram.webp" alt="Instagram" loading="lazy">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578339297536" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="../images/icon-logo-facebook.webp" alt="Facebook" loading="lazy">
+            </a>
         </div>
-    </div>
-</div>
+        <div class="footer-privacy">
+            <a href="privacy.html">Personvernerklæring</a>
+        </div>
+    </footer>
 
-<section id="faq-section">
-    <h2>🧮 Kalkulatortips og FAQ</h2>
-    
-    <details class="faq-item">
-        <summary>Hvilke matvarer tilbyr typisk de billigste kaloriene?</summary>
-        <p>Generelt gir korn (ris, pasta, brød), belgfrukter (bønner, linser), vegetabilske oljer, nøtter og poteter de mest rimelige kaloriene. Bearbeidet mat og ferske produkter koster vanligvis mer per kalori, selv om de kan tilby andre ernæringsfordeler.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvordan kan denne kalkulatoren hjelpe meg med å spare penger på dagligvarer?</summary>
-        <p>Ved å identifisere hvilke matvarer som gir deg mest energi for pengene, kan du bygge måltider rundt kostnadseffektive kalorikilder og bruke dyre ingredienser som smaksforsterkere i stedet for hovedingredienser. Denne tilnærmingen kan redusere dagligvareregninger med 20-30%.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Bør jeg alltid velge det billigste kalorialternativet?</summary>
-        <p>Nei. Selv om kostnad per kalori er viktig for budsjettering, vurder også ernæringskvalitet, metthet, smak og måltidsvariation. De billigste kaloriene kommer ofte fra raffinert sukker og oljer, som ikke bør dominere kostholdet ditt. Bruk dette verktøyet som én faktor i matbeslutninger.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvordan beregner jeg mine daglige matkostnader ved hjelp av resultatene?</summary>
-        <p>Bruk "Morsomt Faktum"-seksjonen under kalkulatoren! Skriv inn ditt daglige kaloriinntak og gjennomsnittlig kostnad per 100 kcal fra dine produktsammenligninger. Verktøyet vil vise dine daglige, ukentlige, månedlige og årlige matutgifter basert på kalorikostnader.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hva er en god kostnad per 100 kcal å sikte mot?</summary>
-        <p>Dette varierer etter sted og valuta, men generelt: under 4 kr per 100 kcal er svært økonomisk, 4-8 kr er moderat, og over 8 kr er dyrt. Bruk kalkulatoren til å etablere din lokale baseline ved å sammenligne basismatvarer i ditt område.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Kan jeg bruke dette til måltidsplanlegging?</summary>
-        <p>Absolutt! Beregn kostnaden per 100 kcal for dine favorittingredienser, og bygg deretter måltider ved å bruke kostnadseffektive baser (som ris eller pasta) supplert med dyrere men næringsrike tillegg (som grønnsaker eller magert protein) for å balansere kostnad og ernæring.</p>
-    </details>
-</section>
+    <!-- Critical scripts -->
+    <script src="../js/lazyLoader.js"></script>
+    <script src="../js/i18n-base.js"></script>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-social">
-        <a href="https://www.instagram.com/100kcalcost/" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="../images/icon-logo-instagram.webp" alt="Instagram" />
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61578339297536" target="_blank" rel="noopener" aria-label="Facebook">
-            <img src="../images/icon-logo-facebook.webp" alt="Facebook" />
-        </a>
-    </div>
-    <div class="footer-privacy">
-        <a href="privacy.html">Personvernerklæring</a>
-    </div>
-</footer>
+    <!-- Non-critical scripts (defer) -->
+    <script src="../js/mobilehover.js" defer></script>
+    <script src="../js/calculator.js" defer></script>
+    <script src="../js/validations.js" defer></script>
+    <script src="../js/extracounting.js" defer></script>
 
-
-<!-- Critical scripts -->
-<script type="text/javascript" src="../js/lazyLoader.js"></script>
-<script type="text/javascript" src="../js/i18n-base.js" ></script>
-
-<!-- Non-critical scripts (defer) -->
-
-<script type="text/javascript" src="../js/mobilehover.js" defer></script>
-<script type="text/javascript" src="../js/calculator.js" defer></script>
-<script type="text/javascript" src="../js/validations.js" defer></script>
-<script type="text/javascript" src="../js/extracounting.js" defer></script>
-
-<script type="text/javascript" src="../js/i18n-no.js" defer></script>
-<script type="text/javascript" src="../js/languages.js" defer></script>
-
-
-
+    <script src="../js/i18n-no.js" defer></script>
+    <script src="../js/languages.js" defer></script>
 </body>
 </html>

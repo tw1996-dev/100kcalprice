@@ -37,170 +37,162 @@
 </script>
 
 
-    <!---- Metadata for search engines and social sharing ---->
+    <!-- Metadata for search engines and social sharing -->
     <meta name="description"
         content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
     <meta name="keywords"
         content="kalori kostnad, mat kalkulator, kalori kalkulator, kostnad per kalori, mat sammenligning, budsjett mat, sunt kosthold kostnad">
     <meta name="author" content="tw1996-dev">
 
-<!---- Enhanced Open Graph ---->
-<meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.100kcalcost.com/no/" />
-<meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="100 kcal Kostnadskalkulator grensesnitt som viser sammenligning av matkostnader" />
-<meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt." />
-<meta property="og:site_name" content="100 kcal Kostnadskalkulator" />
-<meta property="og:locale" content="nb_NO" />
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.100kcalcost.com/no/">
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="100 kcal Kostnadskalkulator grensesnitt som viser sammenligning av matkostnader">
+    <meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
+    <meta property="og:site_name" content="100 kcal Kostnadskalkulator">
+    <meta property="og:locale" content="nb_NO">
 
-<!---- Themecolor ---->
-<meta name="theme-color" content="#0d0c1d">
+    <!-- Themecolor -->
+    <meta name="theme-color" content="#0d0c1d">
 
-
-
-    <!---- CSS ---->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 
-
- <!-- Favicons and icons -->
-<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<script>
-// Dynamically set start_url based on current page
-if ('serviceWorker' in navigator) {
-    // Get current path
-    const currentPath = window.location.pathname;
-    
-    // Create dynamic manifest
-    const manifestContent = {
-        "name": "100 kcal Cost Calculator",
-        "short_name": "100kcal Cost",
-        "description": "Calculate and compare the cost of 100 calories for various food products",
-        "icons": [
-            {
-                "src": "/favicon/web-app-manifest-192x192.png",
-                "sizes": "192x192",
-                "type": "image/png",
-                "purpose": "any"
-            },
-            {
-                "src": "/favicon/web-app-manifest-512x512.png", 
-                "sizes": "512x512",
-                "type": "image/png",
-                "purpose": "any"
-            }
-        ],
-        "theme_color": "#BB86FC",
-        "background_color": "#1A1A2E",
-        "display": "minimal-ui",
-        "start_url": currentPath,
-        "scope": "/",
-        "orientation": "portrait-primary",
-        "categories": ["utilities", "productivity", "food"]
-    };
-    
-    // Create blob and update manifest link
-    const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
-    const manifestURL = URL.createObjectURL(manifestBlob);
-    
-    // Update manifest link
-    const manifestLink = document.querySelector('link[rel="manifest"]');
-    if (manifestLink) {
-        manifestLink.href = manifestURL;
+    <!-- Favicons and icons -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <script>
+    // Dynamically set start_url based on current page
+    if ('serviceWorker' in navigator) {
+        // Get current path
+        const currentPath = window.location.pathname;
+        
+        // Create dynamic manifest
+        const manifestContent = {
+            "name": "100 kcal Cost Calculator",
+            "short_name": "100kcal Cost",
+            "description": "Calculate and compare the cost of 100 calories for various food products",
+            "icons": [
+                {
+                    "src": "/favicon/web-app-manifest-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png",
+                    "purpose": "any"
+                },
+                {
+                    "src": "/favicon/web-app-manifest-512x512.png", 
+                    "sizes": "512x512",
+                    "type": "image/png",
+                    "purpose": "any"
+                }
+            ],
+            "theme_color": "#BB86FC",
+            "background_color": "#1A1A2E",
+            "display": "minimal-ui",
+            "start_url": currentPath,
+            "scope": "/",
+            "orientation": "portrait-primary",
+            "categories": ["utilities", "productivity", "food"]
+        };
+        
+        // Create blob and update manifest link
+        const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        
+        // Update manifest link
+        const manifestLink = document.querySelector('link[rel="manifest"]');
+        if (manifestLink) {
+            manifestLink.href = manifestURL;
+        }
     }
-}
-</script>
+    </script>
 
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "100 kcal Kostnadskalkulator",
+      "url": "https://www.100kcalcost.com/no/index-no.html",
+      "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt. Gratis online verktøy for kalorianalyse.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Chrome, Firefox, Safari, Edge",
+      "permissions": "localStorage",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Beregn kostnad per 100 kalorier",
+        "Sammenlign matprodukter etter kalori kostnad",
+        "Støtte for flere valutaer",
+        "Per kilogram og per stykke beregninger",
+        "Data persistens med localStorage",
+        "Responsiv design for mobil og desktop",
+        "Sorterbar produktsammenligningstabell",
+        "Rediger og slett produktoppføringer",
+        "Ingen registrering nødvendig"
+      ],
+      "softwareVersion": "1.0",
+      "datePublished": "2025-07-09",
+      "dateModified": "2025-07-09",
+      "author": {
+        "@type": "Person",
+        "name": "tw1996-dev"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "100kcal Cost",
+        "url": "https://www.100kcalcost.com"
+      },
+      "inLanguage": "no",
+      "isAccessibleForFree": true,
+      "usageInfo": "Gratis å bruke for personlige og kommersielle formål",
+      "applicationSubCategory": "Mat Kalkulator",
+      "serviceType": "Online Kalkulator"
+    }
+    </script>
 
-
-
-
-
-<!-- WebApplication Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "100 kcal Kostnadskalkulator",
-  "url": "https://www.100kcalcost.com/no/index-no.html",
-  "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt. Gratis online verktøy for kalorianalyse.",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Any",
-  "browserRequirements": "Chrome, Firefox, Safari, Edge",
-  "permissions": "localStorage",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "featureList": [
-    "Beregn kostnad per 100 kalorier",
-    "Sammenlign matprodukter etter kalori kostnad",
-    "Støtte for flere valutaer",
-    "Per kilogram og per stykke beregninger",
-    "Data persistens med localStorage",
-    "Responsiv design for mobil og desktop",
-    "Sorterbar produktsammenligningstabell",
-    "Rediger og slett produktoppføringer",
-    "Ingen registrering nødvendig"
-  ],
-  "softwareVersion": "1.0",
-  "datePublished": "2025-07-09",
-  "dateModified": "2025-07-09",
-  "author": {
-    "@type": "Person",
-    "name": "tw1996-dev"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "100kcal Cost",
-    "url": "https://www.100kcalcost.com"
-  },
-  "inLanguage": "no",
-  "isAccessibleForFree": true,
-  "usageInfo": "Gratis å bruke for personlige og kommersielle formål",
-  "applicationSubCategory": "Mat Kalkulator",
-  "serviceType": "Online Kalkulator"
-}
-</script>
-
-<!-- WebSite Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "100 kcal Kostnadskalkulator",
-  "url": "https://www.100kcalcost.com/no/index-no.html",
-  "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter",
-  "publisher": {
-    "@type": "Organization",
-    "name": "100kcal Cost",
-    "url": "https://www.100kcalcost.com"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://www.100kcalcost.com/no/calc-no.html?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+    <!-- WebSite Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "100 kcal Kostnadskalkulator",
+      "url": "https://www.100kcalcost.com/no/index-no.html",
+      "description": "Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter",
+      "publisher": {
+        "@type": "Organization",
+        "name": "100kcal Cost",
+        "url": "https://www.100kcalcost.com"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.100kcalcost.com/no/calc-no.html?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 
 <body>
-            <div class="hamburger-menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    <nav class="mobile-nav-menu"  id="main-nav" aria-label="Hovednavigasjon">
+    <nav class="mobile-nav-menu" id="main-nav" aria-label="Hovednavigasjon">
         <ul>
             <li><a class="navigation-link" href="/no/">Hjem</a></li>
             <li><a class="navigation-link" href="/no/calc">Kalkulator🧮</a></li>
@@ -208,7 +200,7 @@ if ('serviceWorker' in navigator) {
         </ul>
     </nav>
 
-<!-- Language Selector -->
+    <!-- Language Selector -->
     <div id="language-selector">
         <div id="language-toggle">
             <img id="current-flag" src="../flags/no.svg" alt="Nåværende språk">
@@ -273,53 +265,54 @@ if ('serviceWorker' in navigator) {
                     nøkkelen</em>.</p>
         </div>
 
-       <section id="faq-section">
-    <h2>💡 Ofte Stilte Spørsmål</h2>
-    
-    <details class="faq-item">
-        <summary>Hva er en 100 kcal kostnadskalkulator?</summary>
-        <p>En 100 kcal kostnadskalkulator er et verktøy som hjelper deg med å bestemme hvor mye du betaler for 100 kalorier fra forskjellige matprodukter. I stedet for bare å sammenligne priser per kilogram, viser den deg den faktiske energikostnaden, og hjelper deg med å ta smartere handlebeslutninger og finne de mest budsjettvenlige kalorikilden.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvorfor bør jeg sammenligne matpriser etter kaloriinnhold?</summary>
-        <p>Å sammenligne mat etter kalorikostnad avslører den sanne verdien av det du kjøper. For eksempel kan nøtter virke dyre per kilogram, men de er energirike og kan faktisk gi billigere kalorier enn noen bearbeidede snacks. Dette er spesielt verdifullt for folk som teller kalorier, administrerer matbudsjetter eller prøver å gå ned i vekt kostnadseffektivt.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvor mye penger kan jeg spare ved å bruke denne kalkulatoren?</summary>
-        <p>Brukere sparer typisk 15-30% på dagligvareregningene sine ved å identifisere de mest kostnadseffektive kalorikilden. Ved å bytte fra dyre lavkaloriprodukter til billigere høyenergi alternativer når det er hensiktsmessig, kan du betydelig redusere kostnaden per kalori mens du opprettholder dine ernæringsmål.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Er denne kalkulatoren nyttig for vekttap?</summary>
-        <p>Ja! Når du går ned i vekt, trenger du færre kalorier, så hver kalori bør telle både ernæringsmessig og økonomisk. Kalkulatoren hjelper deg med å finne rimelige, mettende matvarer som gir god verdi per kalori, noe som gjør det lettere å holde seg til dietten uten å sprenge budsjettet.</p>
-    </details>
-</section>
+        <section id="faq-section">
+            <h2>💡 Ofte Stilte Spørsmål</h2>
+            
+            <details class="faq-item">
+                <summary>Hva er en 100 kcal kostnadskalkulator?</summary>
+                <p>En 100 kcal kostnadskalkulator er et verktøy som hjelper deg med å bestemme hvor mye du betaler for 100 kalorier fra forskjellige matprodukter. I stedet for bare å sammenligne priser per kilogram, viser den deg den faktiske energikostnaden, og hjelper deg med å ta smartere handlebeslutninger og finne de mest budsjettvenlige kalorikilden.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Hvorfor bør jeg sammenligne matpriser etter kaloriinnhold?</summary>
+                <p>Å sammenligne mat etter kalorikostnad avslører den sanne verdien av det du kjøper. For eksempel kan nøtter virke dyre per kilogram, men de er energirike og kan faktisk gi billigere kalorier enn noen bearbeidede snacks. Dette er spesielt verdifullt for folk som teller kalorier, administrerer matbudsjetter eller prøver å gå ned i vekt kostnadseffektivt.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Hvor mye penger kan jeg spare ved å bruke denne kalkulatoren?</summary>
+                <p>Brukere sparer typisk 15-30% på dagligvareregningene sine ved å identifisere de mest kostnadseffektive kalorikilden. Ved å bytte fra dyre lavkaloriprodukter til billigere høyenergi alternativer når det er hensiktsmessig, kan du betydelig redusere kostnaden per kalori mens du opprettholder dine ernæringsmål.</p>
+            </details>
+            
+            <details class="faq-item">
+                <summary>Er denne kalkulatoren nyttig for vekttap?</summary>
+                <p>Ja! Når du går ned i vekt, trenger du færre kalorier, så hver kalori bør telle både ernæringsmessig og økonomisk. Kalkulatoren hjelper deg med å finne rimelige, mettende matvarer som gir god verdi per kalori, noe som gjør det lettere å holde seg til dietten uten å sprenge budsjettet.</p>
+            </details>
+        </section>
 
     </main>
 
     <!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-social">
-        <a href="https://www.instagram.com/100kcalcost/" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="../images/icon-logo-instagram.webp" alt="Instagram" />
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61578339297536" target="_blank" rel="noopener" aria-label="Facebook">
-            <img src="../images/icon-logo-facebook.webp" alt="Facebook" />
-        </a>
-    </div>
-    <div class="footer-privacy">
-        <a href="privacy.html">Personvernerklæring</a>
-    </div>
-</footer>
-<!-- Critical scripts -->
-<script type="text/javascript" src="../js/lazyLoader.js"></script>
-<script type="text/javascript" src="../js/i18n-base.js"></script>
-<script type="text/javascript" src="../js/languages.js"></script>
-<!-- Non-critical scripts (defer) -->
-<script type="text/javascript" src="../js/mobilehover.js" defer></script>
-<script type="text/javascript" src="../js/i18n-no.js" defer></script>
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/100kcalcost/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="../images/icon-logo-instagram.webp" alt="Instagram" loading="lazy">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578339297536" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="../images/icon-logo-facebook.webp" alt="Facebook" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-privacy">
+            <a href="privacy.html">Personvernerklæring</a>
+        </div>
+    </footer>
+
+    <!-- Critical scripts -->
+    <script src="../js/lazyLoader.js"></script>
+    <script src="../js/i18n-base.js"></script>
+    <script src="../js/languages.js"></script>
+    <!-- Non-critical scripts (defer) -->
+    <script src="../js/mobilehover.js" defer></script>
+    <script src="../js/i18n-no.js" defer></script>
 </body>
 
 </html>

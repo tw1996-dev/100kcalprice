@@ -36,87 +36,83 @@
 })();
 </script>
 
-
-    <!---- Metadata for search engines and social sharing ---->
+    <!-- Metadata for search engines and social sharing -->
     <meta name="description"
         content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
     <meta name="keywords"
         content="kalori kostnad, mat kalkulator, kalori kalkulator, kostnad per kalori, mat sammenligning, budsjett mat, sunt kosthold kostnad">
     <meta name="author" content="tw1996-dev">
 
-<!---- Enhanced Open Graph ---->
-<meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.100kcalcost.com/no/" />
-<meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="100 kcal Kostnadskalkulator grensesnitt som viser sammenligning av matkostnader" />
-<meta property="og:description" content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt." />
-<meta property="og:site_name" content="100 kcal Kostnadskalkulator" />
-<meta property="og:locale" content="nb_NO" />
+    <!-- Enhanced Open Graph -->
+    <meta property="og:title" content="100 kcal Kostnadskalkulator - Sammenlign Matpriser etter Energiinnhold">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.100kcalcost.com/no/">
+    <meta property="og:image" content="https://www.100kcalcost.com/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt"
+        content="100 kcal Kostnadskalkulator grensesnitt som viser sammenligning av matkostnader">
+    <meta property="og:description"
+        content="Beregn og sammenlign kostnaden for 100 kalorier for forskjellige matprodukter for å ta informerte kjøpsbeslutninger og administrere budsjettet ditt.">
+    <meta property="og:site_name" content="100 kcal Kostnadskalkulator">
+    <meta property="og:locale" content="nb_NO">
 
-<!---- Themecolor ---->
-<meta name="theme-color" content="#0d0c1d">
+    <!-- Themecolor -->
+    <meta name="theme-color" content="#0d0c1d">
 
-
-
-
-    <!---- CSS ---->
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/styles.css">
 
- <!-- Favicons and icons -->
-<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-<link rel="shortcut icon" href="/favicon/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-<script>
-// Dynamically set start_url based on current page
-if ('serviceWorker' in navigator) {
-    // Get current path
-    const currentPath = window.location.pathname;
-    
-    // Create dynamic manifest
-    const manifestContent = {
-        "name": "100 kcal Cost Calculator",
-        "short_name": "100kcal Cost",
-        "description": "Calculate and compare the cost of 100 calories for various food products",
-        "icons": [
-            {
-                "src": "/favicon/web-app-manifest-192x192.png",
-                "sizes": "192x192",
-                "type": "image/png",
-                "purpose": "any"
-            },
-            {
-                "src": "/favicon/web-app-manifest-512x512.png", 
-                "sizes": "512x512",
-                "type": "image/png",
-                "purpose": "any"
+    <!-- Favicons and icons -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <script>
+        // Dynamically set start_url based on current page
+        if ('serviceWorker' in navigator) {
+            // Get current path
+            const currentPath = window.location.pathname;
+
+            // Create dynamic manifest
+            const manifestContent = {
+                "name": "100 kcal Cost Calculator",
+                "short_name": "100kcal Cost",
+                "description": "Calculate and compare the cost of 100 calories for various food products",
+                "icons": [
+                    {
+                        "src": "/favicon/web-app-manifest-192x192.png",
+                        "sizes": "192x192",
+                        "type": "image/png",
+                        "purpose": "any"
+                    },
+                    {
+                        "src": "/favicon/web-app-manifest-512x512.png",
+                        "sizes": "512x512",
+                        "type": "image/png",
+                        "purpose": "any"
+                    }
+                ],
+                "theme_color": "#BB86FC",
+                "background_color": "#1A1A2E",
+                "display": "minimal-ui",
+                "start_url": currentPath,
+                "scope": "/",
+                "orientation": "portrait-primary",
+                "categories": ["utilities", "productivity", "food"]
+            };
+
+            // Create blob and update manifest link
+            const manifestBlob = new Blob([JSON.stringify(manifestContent)], { type: 'application/json' });
+            const manifestURL = URL.createObjectURL(manifestBlob);
+
+            // Update manifest link
+            const manifestLink = document.querySelector('link[rel="manifest"]');
+            if (manifestLink) {
+                manifestLink.href = manifestURL;
             }
-        ],
-        "theme_color": "#BB86FC",
-        "background_color": "#1A1A2E",
-        "display": "minimal-ui",
-        "start_url": currentPath,
-        "scope": "/",
-        "orientation": "portrait-primary",
-        "categories": ["utilities", "productivity", "food"]
-    };
-    
-    // Create blob and update manifest link
-    const manifestBlob = new Blob([JSON.stringify(manifestContent)], {type: 'application/json'});
-    const manifestURL = URL.createObjectURL(manifestBlob);
-    
-    // Update manifest link
-    const manifestLink = document.querySelector('link[rel="manifest"]');
-    if (manifestLink) {
-        manifestLink.href = manifestURL;
-    }
-}
-</script>
-
-
+        }
+    </script>
 
     <!-- HowTo Schema -->
     <script type="application/ld+json">
@@ -256,43 +252,38 @@ if ('serviceWorker' in navigator) {
 </head>
 
 <body>
-    <!----------------- NAVIGATION-------------------->
-            <div class="hamburger-menu">
-    <span></span>
-    <span></span>
-    <span></span>
+    <!-- Navigation -->
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
-    <nav class="mobile-nav-menu"  id="main-nav" aria-label="Hovednavigasjon">
+    <nav class="mobile-nav-menu" id="main-nav" aria-label="Hovednavigasjon">
         <ul>
             <li><a class="navigation-link" href="/no/">Hjem</a></li>
             <li><a class="navigation-link" href="/no/calc">Kalkulator🧮</a></li>
             <li><a class="navigation-link" href="/no/instruction">Hvordan bruke?</a></li>
         </ul>
     </nav>
-<!-- Language Selector -->
-<div id="language-selector">
-    <div id="language-toggle">
-        <img id="current-flag" src="../flags/no.svg" alt="Nåværende språk">
-        <div id="dropdown-arrow"></div>
-    </div>
-    <div id="language-dropdown">
-        <div class="language-search-container">
-            <input 
-                type="text" 
-                id="language-search-input" 
-                placeholder="Søk språk..."
-                autocomplete="off"
-            >
+
+    <!-- Language Selector -->
+    <div id="language-selector">
+        <div id="language-toggle">
+            <img id="current-flag" src="../flags/no.svg" alt="Nåværende språk">
+            <div id="dropdown-arrow"></div>
         </div>
-        <div class="language-list" id="language-list">
-            <!-- Languages will be dynamically generated -->
+        <div id="language-dropdown">
+            <div class="language-search-container">
+                <input type="text" id="language-search-input" placeholder="Søk språk..." autocomplete="off">
+            </div>
+            <div class="language-list" id="language-list">
+                <!-- Languages will be dynamically generated -->
+            </div>
         </div>
     </div>
-</div>
-        
 
     <section id="currency-selector">
-        <p id="selectorFirstP">💰 Velg Din Valuta</p>
+        <h2 id="selectorFirstP">💰 Velg Din Valuta</h2>
         <p>Velg din foretrukne valuta for prisberegninger. Denne innstillingen vil bli husket og brukt i
             kalkulatoren.</p>
 
@@ -308,12 +299,8 @@ if ('serviceWorker' in navigator) {
         </div>
     </section>
 
-
-
     <main id="instructions">
         <h1>📱 100 kcal Kostnadskalkulator Brukerveiledning</h1>
-
-
 
         <section>
             <h2>🚀 Første Oppstart</h2>
@@ -323,7 +310,8 @@ if ('serviceWorker' in navigator) {
                 <li>Legg til en snarvei på hjemskjermen til telefonen:
                     <ul>
                         <li><strong class="strong">På Android:</strong> Trykk meny (⋮) → "Legg til på hjemskjerm".</li>
-                        <li><strong class="strong">På iPhone:</strong> Trykk del-knappen (□↗) → "Legg til på hjemskjerm".</li>
+                        <li><strong class="strong">På iPhone:</strong> Trykk del-knappen (□↗) → "Legg til på
+                            hjemskjerm".</li>
                     </ul>
                 </li>
                 <li>På denne måten kan du starte kalkulatoren med ett trykk fra hjemskjermen!</li>
@@ -339,10 +327,12 @@ if ('serviceWorker' in navigator) {
                     <p>For de fleste produkter i butikker</p>
                 </div>
                 <ol>
-                    <li><strong class="strong">Produktnavn</strong> - valgfritt (du kan hoppe over dette for rask sammenligning)
+                    <li><strong class="strong">Produktnavn</strong> - valgfritt (du kan hoppe over dette for rask
+                        sammenligning)
                     </li>
                     <li><strong class="strong">Kcal/100g</strong> - finner du på produktetiketten</li>
-                    <li><strong class="strong">Pris per kg</strong> - konverter prisen til per kilogram (f.eks. 500g for 50 kr = 100 kr/kg)</li>
+                    <li><strong class="strong">Pris per kg</strong> - konverter prisen til per kilogram (f.eks. 500g for
+                        50 kr = 100 kr/kg)</li>
                     <li><strong class="strong">Klikk</strong> <strong>"➕ Legg til Produkt"</strong></li>
                 </ol>
             </article>
@@ -411,9 +401,11 @@ if ('serviceWorker' in navigator) {
                 <h3>Brukseksempler</h3>
                 <div class="examples">
                     <ul>
-                        <li><strong class="strong">Frokostblanding</strong>: "Per Kilogram" modus (350 kcal/100g, 80 kr/kg)
+                        <li><strong class="strong">Frokostblanding</strong>: "Per Kilogram" modus (350 kcal/100g, 80
+                            kr/kg)
                         </li>
-                        <li><strong class="strong">Yoghurt</strong>: "Per Stykke" modus (150g, 80 kcal/100g, 25 kr/stykke)
+                        <li><strong class="strong">Yoghurt</strong>: "Per Stykke" modus (150g, 80 kcal/100g, 25
+                            kr/stykke)
                         </li>
                         <li><strong class="strong">Nøtter</strong>: "Per Kilogram" modus (580 kcal/100g, 250 kr/kg)</li>
                     </ul>
@@ -433,7 +425,8 @@ if ('serviceWorker' in navigator) {
         <section>
             <h2>Mål med Kalkulatoren</h2>
             <div class="important">
-                <p>Kalkulatoren viser deg <strong>hvor mye 100 kcal koster</strong> fra et gitt produkt. Jo lavere verdi,
+                <p>Kalkulatoren viser deg <strong>hvor mye 100 kcal koster</strong> fra et gitt produkt. Jo lavere
+                    verdi,
                     jo bedre pris-til-energiverdi-forhold har produktet.</p>
             </div>
 
@@ -447,15 +440,16 @@ if ('serviceWorker' in navigator) {
             <h3>Morsomt Faktum: Lås opp dine Matkostnad Innsikter!</h3>
             <p>Har du noen gang lurt på den virkelige kostnaden for ditt daglige kosthold?</p>
 
-
             <ul>
                 <li>
                     <strong>Beregn din totale matkostnad</strong> basert på et spesifikt daglig kaloriinntak og
                     <strong>kostnaden per 100 kcal</strong>.
                 </li>
                 <li>
-                    <strong>Sammenlign to forskjellige scenarier</strong> for å se den <strong>økonomiske forskjellen</strong>
-                    mellom to dietter eller ingrediensvalg over forskjellige perioder (daglig, ukentlig, månedlig, årlig). Dette
+                    <strong>Sammenlign to forskjellige scenarier</strong> for å se den <strong>økonomiske
+                        forskjellen</strong>
+                    mellom to dietter eller ingrediensvalg over forskjellige perioder (daglig, ukentlig, månedlig,
+                    årlig). Dette
                     er superanyttig for å forstå potensielle besparelser eller økte utgifter!
                 </li>
             </ul>
@@ -466,88 +460,107 @@ if ('serviceWorker' in navigator) {
             </p>
         </section>
 
+        <section id="faq-section">
+            <h2>❓ Ofte Stilte Spørsmål</h2>
 
-       <section id="faq-section">
-    <h2>❓ Ofte Stilte Spørsmål</h2>
-    
-    <details class="faq-item">
-        <summary>Hvordan bruker jeg kalkulatoren steg for steg?</summary>
-        <p>Bare skriv inn kalorier per 100g (finnes på matetikett), prisinformasjon og eventuelt et produktnavn. Velg "Per Kilogram" modus for de fleste butikkprodukter eller "Per Stykke" modus for individuelt solgte varer. Klikk "Legg til Produkt" og sammenlign kostnaden per 100 kcal i resultattabellen.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hva er forskjellen mellom "Per Kilogram" og "Per Stykke" moduser?</summary>
-        <p>"Per Kilogram" modus er for bulkprodukter solgt etter vekt (ris, kjøtt, grønnsaker). "Per Stykke" modus er for individuelt pakkede varer hvor du kjenner vekten per stykke (yoghurtkopper, proteinbarer, fryste måltider). Valget av modus avhenger av hvordan produktet selges i butikken.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvor finner jeg informasjon om kalorier per 100g?</summary>
-        <p>Se på næringsinnholdsetiketten på enhver pakket mat. Det er vanligvis oppført som "Energi" eller "Kalorier" per 100g. For ferske produkter kan du finne denne informasjonen online i næringsdatabaser eller matsporing-apper som MyFitnessPal.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Kan jeg bruke denne kalkulatoren på telefonen mens jeg handler?</summary>
-        <p>Absolutt! Kalkulatoren er designet for å være mobilvennlig. Du kan legge den til telefonens startskjerm for rask tilgang mens du handler dagligvarer. Bare trykk på delingsknappen i nettleseren din og velg "Legg til på startskjerm".</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Lagrer kalkulatoren mine produktsammenligninger?</summary>
-        <p>Ja, alle produktdataene dine lagres lokalt i nettleseren din. Når du kommer tilbake til siden, vil dine tidligere sammenligninger fortsatt være der. Imidlertid lagres disse dataene bare på enheten din og deles ikke med noen.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvordan konverterer jeg priser hvis produkter selges i forskjellige enheter?</summary>
-        <p>For produkter solgt etter vekt men ikke per kilogram, del prisen på vekten og multipliser med 1000. For eksempel: 500g for 50 kr = 50 kr ÷ 0.5kg = 100 kr/kg. Kalkulatoren håndterer dette automatisk i "Per Stykke" modus når du skriver inn stykkevekten.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hva skal jeg gjøre hvis to produkter har veldig lik kostnad per 100 kcal?</summary>
-        <p>Når kostnadene er like, vurder andre faktorer som ernæringskvalitet, metthet, holdbarhet og personlige preferanser. En liten forskjell i kalorikostnad er kanskje ikke verdt å ofre mat du liker eller som gir bedre ernæring.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Kan jeg sammenligne produkter fra forskjellige butikker?</summary>
-        <p>Ja! Kalkulatoren er perfekt for å sammenligne de samme produktene på tvers av forskjellige butikker, eller sammenligne forskjellige merker. Bare skriv inn hvert produkt separat med sin respektive butikkpris for å se hvilket som tilbyr best verdi per kalori.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Hvorfor viser noen sunne matvarer høyere kostnader per kalori?</summary>
-        <p>Mat med høyt vanninnhold (som grønnsaker) eller lav energitetthet koster naturlig mer per kalori. Dette betyr ikke at de har dårlig verdi – de gir essensielle næringsstoffer, fiber og metthet. Bruk kalkulatoren sammen med ernæringsmessige hensyn, ikke som den eneste faktoren.</p>
-    </details>
-    
-    <details class="faq-item">
-        <summary>Er det en grense for hvor mange produkter jeg kan sammenligne?</summary>
-        <p>Du kan legge til opptil 500 produkter for å forhindre ytelsesproblemer. For de fleste brukere er det tilstrekkelig å sammenligne 10-20 produkter for å ta informerte beslutninger. Du kan alltid slette produkter du ikke lenger trenger å sammenligne.</p>
-    </details>
-</section>
+            <details class="faq-item">
+                <summary>Hvordan bruker jeg kalkulatoren steg for steg?</summary>
+                <p>Bare skriv inn kalorier per 100g (finnes på matetikett), prisinformasjon og eventuelt et produktnavn.
+                    Velg "Per Kilogram" modus for de fleste butikkprodukter eller "Per Stykke" modus for individuelt
+                    solgte varer. Klikk "Legg til Produkt" og sammenlign kostnaden per 100 kcal i resultattabellen.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hva er forskjellen mellom "Per Kilogram" og "Per Stykke" moduser?</summary>
+                <p>"Per Kilogram" modus er for bulkprodukter solgt etter vekt (ris, kjøtt, grønnsaker). "Per Stykke"
+                    modus er for individuelt pakkede varer hvor du kjenner vekten per stykke (yoghurtkopper,
+                    proteinbarer, fryste måltider). Valget av modus avhenger av hvordan produktet selges i butikken.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hvor finner jeg informasjon om kalorier per 100g?</summary>
+                <p>Se på næringsinnholdsetiketten på enhver pakket mat. Det er vanligvis oppført som "Energi" eller
+                    "Kalorier" per 100g. For ferske produkter kan du finne denne informasjonen online i næringsdatabaser
+                    eller matsporing-apper som MyFitnessPal.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Kan jeg bruke denne kalkulatoren på telefonen mens jeg handler?</summary>
+                <p>Absolutt! Kalkulatoren er designet for å være mobilvennlig. Du kan legge den til telefonens
+                    startskjerm for rask tilgang mens du handler dagligvarer. Bare trykk på delingsknappen i nettleseren
+                    din og velg "Legg til på startskjerm".</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Lagrer kalkulatoren mine produktsammenligninger?</summary>
+                <p>Ja, alle produktdataene dine lagres lokalt i nettleseren din. Når du kommer tilbake til siden, vil
+                    dine tidligere sammenligninger fortsatt være der. Imidlertid lagres disse dataene bare på enheten
+                    din og deles ikke med noen.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hvordan konverterer jeg priser hvis produkter selges i forskjellige enheter?</summary>
+                <p>For produkter solgt etter vekt men ikke per kilogram, del prisen på vekten og multipliser med 1000.
+                    For eksempel: 500g for 50 kr = 50 kr ÷ 0.5kg = 100 kr/kg. Kalkulatoren håndterer dette automatisk i
+                    "Per Stykke" modus når du skriver inn stykkevekten.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hva skal jeg gjøre hvis to produkter har veldig lik kostnad per 100 kcal?</summary>
+                <p>Når kostnadene er like, vurder andre faktorer som ernæringskvalitet, metthet, holdbarhet og
+                    personlige preferanser. En liten forskjell i kalorikostnad er kanskje ikke verdt å ofre mat du liker
+                    eller som gir bedre ernæring.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Kan jeg sammenligne produkter fra forskjellige butikker?</summary>
+                <p>Ja! Kalkulatoren er perfekt for å sammenligne de samme produktene på tvers av forskjellige butikker,
+                    eller sammenligne forskjellige merker. Bare skriv inn hvert produkt separat med sin respektive
+                    butikkpris for å se hvilket som tilbyr best verdi per kalori.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Hvorfor viser noen sunne matvarer høyere kostnader per kalori?</summary>
+                <p>Mat med høyt vanninnhold (som grønnsaker) eller lav energitetthet koster naturlig mer per kalori.
+                    Dette betyr ikke at de har dårlig verdi – de gir essensielle næringsstoffer, fiber og metthet. Bruk
+                    kalkulatoren sammen med ernæringsmessige hensyn, ikke som den eneste faktoren.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Er det en grense for hvor mange produkter jeg kan sammenligne?</summary>
+                <p>Du kan legge til opptil 500 produkter for å forhindre ytelsesproblemer. For de fleste brukere er det
+                    tilstrekkelig å sammenligne 10-20 produkter for å ta informerte beslutninger. Du kan alltid slette
+                    produkter du ikke lenger trenger å sammenligne.</p>
+            </details>
+        </section>
 
     </main>
 
-
     <!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-social">
-        <a href="https://www.instagram.com/100kcalcost/" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="../images/icon-logo-instagram.webp" alt="Instagram" />
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61578339297536" target="_blank" rel="noopener" aria-label="Facebook">
-            <img src="../images/icon-logo-facebook.webp" alt="Facebook" />
-        </a>
-    </div>
-    <div class="footer-privacy">
-        <a href="privacy.html">Personvernerklæring</a>
-    </div>
-</footer>
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.instagram.com/100kcalcost/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="../images/icon-logo-instagram.webp" alt="Instagram" loading="lazy">
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578339297536" target="_blank" rel="noopener"
+                aria-label="Facebook">
+                <img src="../images/icon-logo-facebook.webp" alt="Facebook" loading="lazy">
+            </a>
+        </div>
+        <div class="footer-privacy">
+            <a href="privacy.html">Personvernerklæring</a>
+        </div>
+    </footer>
 
-<!-- Critical scripts -->
-<script type="text/javascript" src="../js/lazyLoader.js"></script>
-<script type="text/javascript" src="../js/i18n-base.js"></script>
-<script type="text/javascript" src="../js/languages.js"></script>
+    <!-- Critical scripts -->
+    <script src="../js/lazyLoader.js"></script>
+    <script src="../js/i18n-base.js"></script>
+    <script src="../js/languages.js"></script>
 
-<!-- Non-critical scripts (defer) -->
-<script type="text/javascript" src="../js/mobilehover.js" defer></script>
-<script type="text/javascript" src="../js/currencySelect.js" defer></script>
-<script type="text/javascript" src="../js/i18n-no.js" defer></script>
+    <!-- Non-critical scripts (defer) -->
+    <script src="../js/mobilehover.js" defer></script>
+    <script src="../js/currencySelect.js" defer></script>
+    <script src="../js/i18n-no.js" defer></script>
 </body>
 
 </html>

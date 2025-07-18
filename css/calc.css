@@ -885,7 +885,6 @@ input[type="number"] {
     cursor: pointer;
     font-size: 16px;
     font-weight: 600;
-    transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 10px;
@@ -1017,15 +1016,9 @@ input[type="number"] {
     cursor: pointer;
     border-radius: 8px;
     padding: 8px 12px;
-    /* transition: all 0.3s ease;
-    background: rgba(20, 20, 20, 0.8);
-    border: 1px solid rgba(187, 134, 252, 0.3); */
 }
 
-/* #language-toggle:hover {
-    border-color: #BB86FC;
-    box-shadow: 0 0 15px rgba(187, 134, 252, 0.4);
-} */
+
 
 #current-flag {
     width: 47px;
@@ -1033,7 +1026,7 @@ input[type="number"] {
     margin-right: 8px;
     border-radius: 4px;
     object-fit: cover;
-    /* border: 1px solid rgba(224, 224, 240, 0.2); */
+
 }
 
 #dropdown-arrow {
@@ -1190,7 +1183,6 @@ input[type="number"] {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.8) 0%, rgba(26, 26, 46, 0.6) 100%);
     border: 1px solid rgba(187, 134, 252, 0.2);
     border-radius: 10px;
-    /* transition: all 0.3s ease; */
     position: relative;
     overflow: hidden;
 }
